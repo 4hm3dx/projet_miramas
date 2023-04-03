@@ -142,12 +142,6 @@ hr {
 	margin-right: 1%;
 }  
 
-label, input, textarea {
-    display: block;
-    margin-bottom: 10px;
-	width: 100%;
-}
-
 #label_nom_utilisateur,
 #nom_utilisateur,
 #label_prenom_utilisateur,
