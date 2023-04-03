@@ -116,3 +116,69 @@ hr {
 .createur_parent {
 	text-align: center;
 }
+
+/* ! Formulaire de contact */
+.formulaire_contact {
+	font-size: 18px;
+}
+
+.fieldset_formulaire_contact {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.field-group {
+    display: inline-block;
+    margin-right: 10px;
+	width: 49%;
+}
+
+.name-fields {
+	
+	width: 100%;
+	margin-right: 1%;
+}  
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+	width: 100%;
+}
+
+#label_nom_utilisateur,
+#nom_utilisateur,
+#label_prenom_utilisateur,
+#prenom_utilisateur,
+#label_mail_utilisateur,
+#mail_utilisateur,
+#label_object_utilisateur,
+#object_utilisateur,
+#label_textarea,
+#contenue_message_form_contact,
+#envoyer_formulaire_contact {
+	display: block;
+    margin-bottom: 10px;
+	width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+    width: 100%;
+}
+
+#envoyer_formulaire_contact {
+	border: none;
+	background-color: rgb(59, 59, 59);
+	color: white;
+	font-size: 18px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+sup{
+	color: red;
+}
