@@ -20,8 +20,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Link css --> 
     <link rel="stylesheet" href="Content/css/style.css">
+
+    <!-- Link Js -->
+    <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
+    <script src="Content/js/app_mdp.js" defer></script>
 
     <!-- Titre --> 
     <title>Les amis du vieux miramas</title>

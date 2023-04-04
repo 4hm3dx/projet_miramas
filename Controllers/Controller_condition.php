@@ -1,6 +1,6 @@
 <?php 
 
-class Controller_newsletters extends Controller
+class Controller_condition extends Controller
 {
 	//* L'action par défaut redirige vers l'action "home"
 	public function action_default()
@@ -8,9 +8,8 @@ class Controller_newsletters extends Controller
 		$this->action_home();
 	}
 
-	public function action_newsletters()
+	public function action_condition()
 	{
-		$this->render("newsletters");
+		$this->render("condition");
 	}
-
 }
