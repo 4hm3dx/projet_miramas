@@ -44,7 +44,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "contact", "connexion", "ajout_document", "newsLetters", "partenaires", "presentation", "recherche"];
+    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";

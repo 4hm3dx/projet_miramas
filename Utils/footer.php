@@ -1,7 +1,7 @@
 <footer>
 	<hr>
 	<div class="inscription_contact">
-		<a href="?controller=newsLetters&action=inscription">
+		<a href="?controller=newsletters&action=newsletters">
 			<div class="button_suscribe">
 				<button class="button_suscribe">
 					<p>S'inscrire/Se déinscrire a notre News Letters</p>
