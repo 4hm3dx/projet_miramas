@@ -72,3 +72,21 @@ document.getElementById('formulaire_inscription').addEventListener('submit', fun
       document.getElementById('checkbox_condition_inscription_erreur').textContent = '';
   }
 });
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Empêcher la soumission traditionnelle du formulaire
+  const formData = new FormData(form); // Créer une instance de FormData pour récupérer les données du formulaire
+  fetch('/submit-form', { // Remplacez '/submit-form' par l'URL qui gère la soumission du formulaire
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    // Gérer la réponse du serveur ici
+    console.log(response);
+  })
+  .catch(error => {
+    // Gérer les erreurs ici
+    console.error(error);
+  });
+});
