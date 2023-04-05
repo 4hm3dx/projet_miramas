@@ -1,4 +1,4 @@
-<div id="Mention_legal">
+<section id="Mention_legal">
 <h1>Mentions légales</h1>
 <p class="detail_mention_legal">Conformément à la LOI n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique :</p>
 <div class="information_hebergement">
@@ -45,4 +45,4 @@ Les données diffusées sur le réseau internet et extranet peuvent être régle
 Nous vous invitons à prendre connaissance de notre <b>politique de confidentialité</b> qui présente les règles de protection 
 des données personnelles dans le cadre de l'utilisation de notre plateforme.
 </p>
-</div>
+</section>
