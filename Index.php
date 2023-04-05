@@ -27,9 +27,11 @@
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
     <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
+    <link rel="stylesheet" href="Content/css/style_condition.css">
 
     <!-- Link Js -->
     <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
+    <script src="Content/js/app_formulaire_contact.js" defer></script>
     <script src="Content/js/app_mdp.js" defer></script>
 
     <!-- Titre --> 
@@ -46,7 +48,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche"];
+    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";
@@ -78,8 +80,8 @@
     }
 
     //* Inclure le fichier de pied de page
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
     require_once 'Utils/footer.php';
     ?>
 </body>
