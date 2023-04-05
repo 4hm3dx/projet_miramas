@@ -1,5 +1,5 @@
 * {
-	margin: 2px;
+	margin: 0;
 }
 .button_connexion {
 	background-color: rgb(255, 243, 168);
@@ -122,6 +122,10 @@ footer {
 	text-align: center;
 }
 
+.logo {
+	width:110px;
+}
+
 @media only screen and (max-width: 768px) {
 	footer {
 		margin: 5px;
@@ -131,6 +135,14 @@ footer {
 		background-color: black;
 	}
 	
+	.navbar-title {
+		font-size: 12px;
+	}
+	
+	.logo {
+		width:70px;
+	}
+
 	.inscription_contact {
 		display: flex;
 		justify-content: space-between;
