@@ -1,5 +1,3 @@
-<h1>contact</h1>
-
 <form action="#" method="POST" class="formulaire_contact">
   <fieldset class="fieldset_formulaire_contact">
     <legend>Nous Contacter</legend>

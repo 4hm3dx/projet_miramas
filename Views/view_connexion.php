@@ -1,5 +1,3 @@
-<h1>Connexion</h1>
-
 <div class="formulaire_inscription_utilisateur">
     <form action="" method="POST" id="formulaire_inscription">
         <fieldset>
@@ -48,4 +46,4 @@
             <span id="inscription">Vous n'êtes pas inscrit? <button id="button_inscription">Incrivez-vous !</button></span>
         </fieldset>
     </form>
-
+</div>
