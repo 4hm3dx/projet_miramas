@@ -150,7 +150,7 @@ input[type="submit"]:hover,
 }
 
 /* & Affichage du mot de passe  */
-/* #toggle_password_connexion {
+/*! #toggle_password_connexion {
 	position: absolute;
 	top: 45%;
 	right: 31%;
@@ -181,21 +181,47 @@ input[type="submit"]:hover,
   #mdp_utilisateur_connexion[type="text"]:not(:focus) + #toggle-password {
 	color: blue;
   } */
-  .label_mdp {
+  /* .input_visibilite_mdp {
 	position: relative;
+  display: inline-block;
   }
   
   #toggle_password_inscription, #toggle_password_connexion {
-	position: absolute;
-	top: 39.5%;
-	right: 31%;
-	transform: translateY(-50%);
+    position: absolute;
+    top: 35.5%;
+    left: 68.5%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
   
   #mdp_utilisateur_inscription, #mdp_utilisateur_connexion {
 	margin-right: 30px;
+  } */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  .input_visibilite_mdp {
+    position: relative;
+    display: inline-block;
   }
-
+  
+  #toggle-password-visibility {
+    position: absolute;
+    top: 10%;
+    right: 600%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  #toggle-password-visibility i {
+    color: #666;
+    font-size: 1.2rem;
+  }
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
   @media only screen and (max-width: 768px) {
     #formulaire_inscription,
     #formulaire_connexion {

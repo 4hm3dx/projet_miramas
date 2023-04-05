@@ -14,10 +14,12 @@
             <label class="label_mdp" for="mdp_utilisateur_inscription">Mot De Passe : <sup>*</sup> </label>
             <i class="fa-regular fa-circle-question" title="Votre mot de passe doit contenir au moins 8 caractères, avec des lettres majuscules, des lettres minuscules et des chiffres."></i>
             <span id="password_inscription_erreur" class="erreur"></span>
+
             <div class="input_visibilite_mdp">
             <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription">
-            <i class="far fa-eye" id="toggle_password_inscription"></i>
-            </div>
+            <button id="toggle-password-visibility"><i class="far fa-eye" id="toggle_password_inscription"></i>
+            </button></div>
+            
             <div id="strength_indicator"></div>
             <br>
             <label class="label_confirme" for="confirme_mdp_utilisateur_inscription">Confirmation : <sup>*</sup> </label>
