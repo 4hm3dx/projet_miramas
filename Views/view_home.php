@@ -41,6 +41,6 @@
     </div>
 </section>
 <section id="video_accueil">
-    <h2>Histoire de la ville</h2>
+    <h2 class="titre_video">Histoire de la ville</h2>
     <img src="Content/img/prtotype_video.png" alt="#" id="prototype_video">
 </section>
