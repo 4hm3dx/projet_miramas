@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
     <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
     <link rel="stylesheet" href="Content/css/style_condition.css">
+    <link rel="stylesheet" href="Content/css/style_partenaire.css">
+    <link rel="stylesheet" href="Content/css/style_accueil.css">
+    
     
 
     <!-- Link Js -->
