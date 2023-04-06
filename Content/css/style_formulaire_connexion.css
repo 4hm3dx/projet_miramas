@@ -150,7 +150,7 @@ input[type="submit"]:hover,
 }
 
 /* & Affichage du mot de passe  */
-/*! #toggle_password_connexion {
+ /* #toggle_password_connexion {
 	position: absolute;
 	top: 45%;
 	right: 31%;
@@ -159,7 +159,7 @@ input[type="submit"]:hover,
   }
   #toggle_password_inscription {
 	position: absolute;
-	top: 67%;
+	top: 37%;
 	right: 31%;
 	transform: translateY(-50%);
 	cursor: pointer;  
@@ -180,47 +180,30 @@ input[type="submit"]:hover,
   #mdp_utilisateur_inscription[type="text"]:not(:focus) + #toggle-password,
   #mdp_utilisateur_connexion[type="text"]:not(:focus) + #toggle-password {
 	color: blue;
-  } */
-  /* .input_visibilite_mdp {
-	position: relative;
-  display: inline-block;
-  }
-  
-  #toggle_password_inscription, #toggle_password_connexion {
-    position: absolute;
-    top: 35.5%;
-    left: 68.5%;
-    transform: translate(-50%, -50%);
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  #mdp_utilisateur_inscription, #mdp_utilisateur_connexion {
-	margin-right: 30px;
-  } */
+  } 
+   */
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-  .input_visibilite_mdp {
-    position: relative;
-    display: inline-block;
-  }
-  
-  #toggle-password-visibility {
-    position: absolute;
-    top: 10%;
-    right: 600%;
-    transform: translate(-50%, -50%);
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-  
-  #toggle-password-visibility i {
-    color: #666;
-    font-size: 1.2rem;
-  }
+.input_visibilite_mdp {
+  position: relative;
+}
+
+.input_visibilite_mdp input[type="password"] {
+  padding-right: 10px; /* ajuster la valeur selon la taille de l'icône */
+}
+
+.input_visibilite_mdp #toggle_password_visibility,
+#toggle-password-visibility-i,
+#toggle-password-visibility-c {
+  position: absolute;
+  top: 50%;
+  right: 5px; /* ajuster la valeur selon la position souhaitée */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
   @media only screen and (max-width: 768px) {
     #formulaire_inscription,

@@ -17,7 +17,7 @@
 
             <div class="input_visibilite_mdp">
             <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription">
-            <button id="toggle-password-visibility"><i class="far fa-eye" id="toggle_password_inscription"></i>
+            <button type="button" id="toggle-password-visibility-i"><i class="far fa-eye" id="toggle_password_inscription"></i>
             </button></div>
             
             <div id="strength_indicator"></div>
@@ -50,8 +50,11 @@
             <label class="label_mail_connexion" for="mail_utilisateur_connexion">E-mail : <sup>*</sup> </label>
             <input type="email" name="mail_utilisateur_connexion" id="mail_utilisateur_connexion">
             <label class="label_mdp_connexion" for="mdp_utilisateur_connexion">Mot De Passe : <sup>*</sup> </label>
-            <input type="password" name="mdp_utilisateur_connexion" id="mdp_utilisateur_connexion">
-            <i class="far fa-eye" id="toggle_password_connexion"></i>
+            <div class="input_visibilite_mdp">
+                <input type="password" name="mdp_utilisateur_connexion" id="mdp_utilisateur_connexion">
+                <button type="button" id="toggle-password-visibility-c"><i class="far fa-eye" id="toggle_password_inscription"></i>
+                </button>
+            </div>
             <input type="submit" id="submit_formulaire_connexion" value="Connexion"><br>
             <span id="inscription">Vous n'êtes pas inscrit? <button id="button_inscription">Incrivez-vous !</button></span>
         </fieldset>

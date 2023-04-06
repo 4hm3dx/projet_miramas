@@ -1,3 +1,4 @@
+// & Controle de la longueur et de la robutesse du mot de passe 
 $(document).ready(function() {
     $('#mdp_utilisateur_inscription').on('input', function() {
         var password = $(this).val();
@@ -55,26 +56,32 @@ $(document).ready(function() {
 });
 
 // & Affichage du mot de passe 
-    // Pour la connexion
-    const togglePasswordConnexion = document.querySelector('#toggle_password_connexion');
-    const passwordConnexion = document.querySelector('#mdp_utilisateur_connexion');
-    
-    togglePasswordConnexion.addEventListener('click', function (e) {
-        const type = passwordConnexion.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordConnexion.setAttribute('type', type);
-        this.classList.toggle('fa-eye-slash');
-    });
-    // Récupération de l'icône de l'oeil pour le mot de passe
-    const togglePasswordInscription = document.querySelector('#toggle_password_inscription');
-    // Récupération du champ de saisie du mot de passe pour le formulaire d'inscription
-    const mdpUtilisateurInscription = document.querySelector('#mdp_utilisateur_inscription');
-    
-    // Ajout d'un gestionnaire d'événements sur le clic de l'icône de l'oeil
-    togglePasswordInscription.addEventListener('click', function(e) {
-      // Changement du type de champ de saisie pour afficher ou cacher le mot de passe
-      const type = mdpUtilisateurInscription.getAttribute('type') === 'password' ? 'text' : 'password';
-      mdpUtilisateurInscription.setAttribute('type', type);
-      // Changement de l'icône pour montrer que le mot de passe est visible ou caché
-      this.classList.toggle('fa-eye-slash');
-    });
+// Récupération des éléments du DOM
+const togglePasswordVisibilityIns = document.querySelector("#toggle-password-visibility-i");
+const togglePasswordVisibilityCon = document.querySelector("#toggle-password-visibility-c");
+const passwordInputIns = document.querySelector("#mdp_utilisateur_inscription");
+const passwordInputCon = document.querySelector("#mdp_utilisateur_connexion");
 
+// Ajout de l'écouteur d'événement de clic pour le bouton d'œil dans le formulaire d'inscription
+togglePasswordVisibilityIns.addEventListener("click", function() {
+  // Si le type de l'input est "password", le changer en "text"
+  if (passwordInputIns.type === "password") {
+    passwordInputIns.type = "text";
+    togglePasswordVisibilityIns.innerHTML = '<i class="far fa-eye-slash"></i>';
+  } else { // Sinon, le changer en "password"
+    passwordInputIns.type = "password";
+    togglePasswordVisibilityIns.innerHTML = '<i class="far fa-eye"></i>';
+  }
+});
+
+// Ajout de l'écouteur d'événement de clic pour le bouton d'œil dans le formulaire de connexion
+togglePasswordVisibilityCon.addEventListener("click", function() {
+  // Si le type de l'input est "password", le changer en "text"
+  if (passwordInputCon.type === "password") {
+    passwordInputCon.type = "text";
+    togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye-slash"></i>';
+  } else { // Sinon, le changer en "password"
+    passwordInputCon.type = "password";
+    togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye"></i>';
+  }
+});
