@@ -85,3 +85,22 @@ togglePasswordVisibilityCon.addEventListener("click", function() {
     togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye"></i>';
   }
 });
+
+const togglePasswordVisibility = function() {
+    const passwordInput = document.getElementById('mdp_utilisateur_inscription');
+    const togglePasswordButton = document.getElementById('toggle-password-visibility-i');
+    const togglePasswordIcon = togglePasswordButton.querySelector('.far');
+  
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      togglePasswordIcon.classList.remove('fa-eye');
+      togglePasswordIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      togglePasswordIcon.classList.add('fa-eye');
+      togglePasswordIcon.classList.remove('fa-eye-slash');
+    }
+  }
+  
+  const togglePasswordButton = document.getElementById('toggle-password-visibility-i');
+  togglePasswordButton.addEventListener('click', togglePasswordVisibility);

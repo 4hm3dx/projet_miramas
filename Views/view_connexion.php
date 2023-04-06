@@ -18,6 +18,7 @@
             <div class="input_visibilite_mdp">
             <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription">
             <button type="button" id="toggle-password-visibility-i"><i class="far fa-eye" id="toggle_password_inscription"></i>
+            <i class="far fa-eye-slash"></i>
             </button></div>
             
             <div id="strength_indicator"></div>
@@ -53,6 +54,7 @@
             <div class="input_visibilite_mdp">
                 <input type="password" name="mdp_utilisateur_connexion" id="mdp_utilisateur_connexion">
                 <button type="button" id="toggle-password-visibility-c"><i class="far fa-eye" id="toggle_password_inscription"></i>
+                <i class="far fa-eye-slash"></i>
                 </button>
             </div>
             <input type="submit" id="submit_formulaire_connexion" value="Connexion"><br>
