@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+    <title>Les Amis du Vieux Miramas</title>
+    <meta name="description"
+        content="Les Amis du Vieux Miramas est une association qui représente un petit village pittoresque et historique situé dans la ville de Miramas, dans la région Provence-Alpes-Côte d'Azur, en France.">
+    <meta name="keywords" content="village, vieux miramas, histoire, patrimoine, évènements">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Les Amis du Vieux Miramas">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Liens boostrp nav  -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <!-- Liens boostrap nav  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!-- Link font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Link css --> 
+    <!-- Link css -->
     <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/css/style_newsletter.css">
+    <link rel="stylesheet" href="Content/css/style_ajout_document.css">
 
-    <!-- Titre --> 
+    <!-- Link js -->
+    <script src="Content/js/app_ajout_document.js" defer></script>
+
+    <!-- Titre -->
     <title>Les amis du vieux miramas</title>
 </head>
 
 <body>
-     <!--//! Voir le fichier exel Samy/CourSurMVC/Exel -->
+    <!--//! Voir le fichier exel Samy/CourSurMVC/Exel -->
     <?php
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
@@ -69,8 +78,8 @@
     }
 
     //* Inclure le fichier de pied de page
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+    //  echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
     require_once 'Utils/footer.php';
     ?>
 </body>

@@ -2,7 +2,7 @@
 	background-color: rgb(255, 243, 168);
 	border: solid 2px black;
 	padding: 5px;
-	border-radius: 10px ;
+	border-radius: 10px;
 	text-decoration: none;
 	color: black;
 }
@@ -21,6 +21,7 @@ hr {
 	justify-content: space-between;
 	align-items: center;
 }
+
 .nous_contacter {
 	border-radius: 10px;
 	padding: 15px;
@@ -33,7 +34,7 @@ hr {
 	border: none;
 	background: none;
 }
-  
+
 .button_suscribe {
 	--primary-color: #111;
 	--hovered-color: #0080FF;
@@ -44,7 +45,7 @@ hr {
 	gap: 0.5rem;
 	align-items: center;
 }
- 
+
 .button_suscribe p {
 	margin: 0;
 	position: relative;
@@ -56,11 +57,11 @@ hr {
 .button_suscribe p:hover {
 	color: #0080FF;
 }
-  
+
 
 .button_suscribe p::before {
 	position: absolute;
-    box-sizing: border-box;
+	box-sizing: border-box;
 	content: "";
 	width: 0%;
 	inset: 0;
@@ -68,20 +69,20 @@ hr {
 	overflow: hidden;
 	transition: 0.3s ease-out;
 }
-  
+
 .button_suscribe:hover::after {
 	width: 100%;
 }
-  
+
 .button_suscribe:hover p::before {
 	width: 100%;
 }
-  
+
 .button_suscribe:hover svg {
 	transform: translateX(4px);
 	color: var(--hovered-color)
 }
-  
+
 .button_suscribe svg {
 	color: var(--primary-color);
 	transition: 0.2s;
@@ -109,7 +110,7 @@ hr {
 
 .nous_contacter:hover {
 	text-decoration: none;
-	color:#0080FF ;
+	color: #0080FF;
 	transform: scale(1.05);
 }
 
