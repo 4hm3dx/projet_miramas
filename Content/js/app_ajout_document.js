@@ -1,13 +1,9 @@
-const popupToggle = document.getElementById('popup-toggle');
+const popupToggle = document.getElementById('popup-toggle-button');
 const popupWrapper = document.querySelector('.popup-wrapper');
 const closeButton = document.querySelector('.close-button');
 
-popupToggle.addEventListener('change', function () {
-    if (this.checked) {
-        popupWrapper.style.display = 'block';
-    } else {
-        popupWrapper.style.display = 'none';
-    }
+popupToggle.addEventListener('click', function () {
+    popupWrapper.style.display = 'block';
 });
 
 closeButton.addEventListener('click', function () {

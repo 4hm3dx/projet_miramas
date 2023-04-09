@@ -14,6 +14,12 @@
     border-radius: 1rem;
 }
 
+#flex-ajout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #division-ajout-document {
     display: flex;
     flex-direction: column;
@@ -29,6 +35,7 @@
     display: flex;
     align-items: center;
     margin-top: 1rem;
+    padding-left: 3rem;
 }
 
 #popup-toggle {
