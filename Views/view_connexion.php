@@ -39,6 +39,7 @@
                 </p>
             </div>
             <input type="submit" id="submit_formulaire_inscription" value="Inscription"><br>
+            <input type="reset" id="reset_formulaire_inscription" value="Reset"><br>
             <span id="se_connecter">Vous êtes déjà inscrit? <button id="button_connexion">Connexion</button></span>
         </fieldset>
     </form>

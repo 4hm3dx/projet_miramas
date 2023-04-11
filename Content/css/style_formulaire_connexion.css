@@ -95,6 +95,7 @@ input[type="password"] {
 
 /* Style pour les boutons */
 input[type="submit"],
+input[type="reset"],
 #button_connexion,
 #button_inscription {
   background-color: #4CAF50;
