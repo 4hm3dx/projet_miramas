@@ -1,0 +1,22 @@
+#presentation_partenaire {
+    background-color: red;
+}
+
+#partenaire_1,
+#partenaire_2,
+#partenaire_3 {
+    margin: 5.2%;
+}
+
+#img_couveture_partenaire1,
+#img_couverture_partenaire2, 
+#img_couverture_partenaire3 {
+    width: 100%;
+}
+
+.text_partenaire1, 
+.text_partenaire2, 
+.text_partenaire3 {
+    margin: 20px;
+    text-align: center;
+}

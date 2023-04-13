@@ -20,8 +20,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Link css --> 
     <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
+    <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
+    <link rel="stylesheet" href="Content/css/style_condition.css">
+    <link rel="stylesheet" href="Content/css/style_partenaire.css">
+    <link rel="stylesheet" href="Content/css/style_accueil.css">
+    
+    
+
+    <!-- Link Js -->
+    <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
+    <script src="Content/js/app_formulaire_contact.js" defer></script>
+    <script src="Content/js/app_mdp.js" defer></script>
 
     <!-- Titre --> 
     <title>Les amis du vieux miramas</title>
@@ -37,7 +52,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "contact", "connexion", "ajout_document", "newsLetters", "partenaires", "presentation", "recherche"];
+    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";
@@ -69,8 +84,8 @@
     }
 
     //* Inclure le fichier de pied de page
-    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
     require_once 'Utils/footer.php';
     ?>
 </body>

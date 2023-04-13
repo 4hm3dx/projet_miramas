@@ -2,7 +2,7 @@
       <!-- Barre de navigation -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="?controller=home&ation=home">
-          <img src="Content/img/images.png" alt="Logo" class="logo" width="110px"/>
+          <img src="Content/img/images.png" alt="Logo" class="logo"/>
           <span class="navbar-title">Les amis du vieux Miramas</span>
         </a>
         <button
