@@ -1,3 +1,6 @@
+* {
+	margin: 0;
+}
 .button_connexion {
 	background-color: rgb(255, 243, 168);
 	border: solid 2px black;
@@ -7,12 +10,14 @@
 	color: black;
 }
 
+
+
 /* ! FOOTER */
 footer {
-	margin: 30px;
+	margin: 15px;
 }
 
-hr {
+.hr_footer {
 	background-color: black;
 }
 
@@ -99,7 +104,7 @@ hr {
 }
 
 .nous_contacter {
-	background-color: lightgray;
+	background-color: rgb(149, 149, 149);
 	border: solid 2px black;
 	border-radius: 10px;
 	padding: 15px;
@@ -116,4 +121,49 @@ hr {
 
 .createur_parent {
 	text-align: center;
+}
+
+.logo {
+	width:110px;
+}
+
+@media only screen and (max-width: 768px) {
+	footer {
+		margin: 5px;
+	}
+	
+	hr {
+		background-color: black;
+	}
+	
+	.navbar-title {
+		font-size: 12px;
+	}
+	
+	.logo {
+		width:70px;
+	}
+
+	.inscription_contact {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.nous_contacter {
+		border-radius: 10px;
+		padding: 5px;
+		font-size: 14px;
+	}
+
+	.button_suscribe > p {
+		font-size: 14px;
+		margin-right: 5px;
+	}
+
+	
+
+	p{
+		font-size: 14px;
+		padding: 5px;
+	}
 }

@@ -1,5 +1,5 @@
 <footer>
-	<hr>
+	<hr class="hr_footer">
 	<div class="inscription_contact">
 		<a href="?controller=newsLetters&action=newsLetters">
 			<div class="button_suscribe">

@@ -28,6 +28,22 @@
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_newsletter.css">
     <link rel="stylesheet" href="Content/css/style_ajout_document.css">
+    <!-- Link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
+    <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
+    <link rel="stylesheet" href="Content/css/style_condition.css">
+    <link rel="stylesheet" href="Content/css/style_partenaire.css">
+    <link rel="stylesheet" href="Content/css/style_accueil.css">
+    
+    
+
+    <!-- Link Js -->
+    <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
+    <script src="Content/js/app_formulaire_contact.js" defer></script>
+    <script src="Content/js/app_mdp.js" defer></script>
 
     <!-- Link js -->
     <script src="Content/js/app_ajout_document.js" defer></script>
@@ -46,7 +62,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "contact", "connexion", "ajout_document", "newsLetters", "partenaires", "presentation", "recherche"];
+    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";
@@ -78,8 +94,13 @@
     }
 
     //* Inclure le fichier de pied de page
+<<<<<<< HEAD
     //  echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
     // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
+=======
+    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+>>>>>>> 873368ed57509cd9acc845b723341842b8a2b812
     require_once 'Utils/footer.php';
     ?>
 </body>
