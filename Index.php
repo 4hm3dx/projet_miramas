@@ -29,7 +29,9 @@
     <link rel="stylesheet" href="Content/css/style_newsletter.css">
     <link rel="stylesheet" href="Content/css/style_ajout_document.css">
     <!-- Link font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
     <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
@@ -37,8 +39,8 @@
     <link rel="stylesheet" href="Content/css/style_condition.css">
     <link rel="stylesheet" href="Content/css/style_partenaire.css">
     <link rel="stylesheet" href="Content/css/style_accueil.css">
-    
-    
+
+
 
     <!-- Link Js -->
     <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
@@ -94,13 +96,8 @@
     }
 
     //* Inclure le fichier de pied de page
-<<<<<<< HEAD
-    //  echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
-=======
     // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
     // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
->>>>>>> 873368ed57509cd9acc845b723341842b8a2b812
     require_once 'Utils/footer.php';
     ?>
 </body>
