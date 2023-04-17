@@ -1,3 +1,4 @@
+<a href="?controller=crud&action=crud">ACCES CRUD</a>
 <section id="image_text_presnetation_asso">
     <img src="Content/img/prototype_accueil.png" alt="#" id="image_accueil_prototype">
         <p class="text_accueil">

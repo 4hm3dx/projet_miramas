@@ -40,6 +40,14 @@
     <link rel="stylesheet" href="Content/css/style_partenaire.css">
     <link rel="stylesheet" href="Content/css/style_accueil.css">
 
+    <!-- link boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
 
     <!-- Link Js -->
@@ -64,7 +72,7 @@
     require_once 'Utils/header.php';
 
     //* Tableau des contrôleurs disponibles
-    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition"];
+    $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition", "crud", "utilisateur", "document", "annonce", "message"];
 
     //* Nom du contrôleur par défaut
     $controller_default = "home";
@@ -96,8 +104,8 @@
     }
 
     //* Inclure le fichier de pied de page
-    // echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+    echo "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
     require_once 'Utils/footer.php';
     ?>
 </body>
