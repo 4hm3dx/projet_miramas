@@ -1,4 +1,4 @@
-<form action="?controller=utilisateur&action=update_utilisateur" method="post" id="addForm">
+<form action="?controller=utilisateur&action=update_annonce" method="post" id="addForm">
     <fieldset>
         <legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
         <input type="hidden" name="id" value="<?= $utilisateur['id'] ?>">
@@ -6,10 +6,12 @@
         <input type="text" name="nom" id="nom" value="<?= valid_input($utilisateur['nom']) ?>">
         <label for="prenom">Prénom :</label>
         <input type="text" name="prenom" id="prenom" value="<?= valid_input($utilisateur['prenom']) ?>">
-        <label for="mail">Mail :</label>
-        <input type="text" name="mail" id="mail" value="<?= valid_input($utilisateur['mail']) ?>">
-        <label for="id_roles">Roles Abonnée : </label>
-        <input type="text" name="id_roles" id="id_roles" value="<?= valid_input($utilisateur['id_roles']) ?>">
+        <label for="texte">Texte :</label>
+        <input type="text" name="texte" id="texte" value="<?= valid_input($utilisateur['texte']) ?>">
+        <label for="image">Image : </label>
+        <input type="text" name="image" id="image" value="<?= valid_input($utilisateur['image']) ?>">
+        <label for="logo">Logo : </label>
+        <input type="text" name="logo" id="logo" value="<?= valid_input($utilisateur['logo']) ?>">
         <input type="submit" value="Modifier" name="submit" id="submit">
         <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
     </fieldset>

@@ -1,6 +1,6 @@
 <form action="?controller=message&action=all_message_objet_list" method="POST">
     <fieldset>
-        <legend>Recherche d'un message par le nom d'utilisateur :</legend>
+        <legend>Recherche d'un message Objet</legend>
         <select name="objet_message" id="objet_message">
             <?php foreach ($objet_message as $om) : ?>
                 <option value="<?= $om->object ?>"><?= $om->object ?></option>
@@ -17,10 +17,9 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>E-mail</th>
+                <th>Date d'envoi</th>
                 <th>Objet</th>
                 <th>Message</th>
-                <th>Date d'envoi</th>
-                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -31,12 +30,12 @@
                     <td class="td"> <?= $oml->nom ?> </td>
                     <td class="td"> <?= $oml->prenom ?> </td>
                     <td class="td"> <?= $oml->mail ?> </td>
+                    <td class="td"> <?= $oml->date_message ?></td>
                     <td class="td"> <?= $oml->object ?> </td>
                     <td class="td"> <?= $oml->message ?> </td>
-                    <td class="td"> <?= $oml->date_message ?></td>
-                    <td><a href='?controller=livre&action=update_livre&id=<?= $oml->id ?>'><i class=" fa-solid fa-pen"></i></a></td>
-                    <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $oml->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
-
+                    <td class="trash"><a href="?controller=message&action=delete_message&id=<?= $oml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+        <i class="fa fa-trash"></i>
+    </a> 
                 </tr>
             <?php endforeach; ?>
         </tbody>

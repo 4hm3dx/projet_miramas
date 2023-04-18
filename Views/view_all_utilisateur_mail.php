@@ -1,15 +1,15 @@
 <form action="?controller=utilisateur&action=all_utilisateur_mail_list" method="POST">
     <fieldset>
-        <select name="utilisateur_mail" id="utilisateur_mail">
-            <legend>Recherche d'utilisateur par mail : </legend>
+      <legend>Recherche d'utilisateur E-mail</legend>
+        <select name="mail_utilisateur" id="mail_utilisateur">
             <?php foreach ($mail as $m) : ?>
                 <option value="<?= $m->mail ?>"><?= $m->mail ?></option>
             <?php endforeach ?>
-            <input type="submit" value="Rechercher" name="utilisateur_mail">
+            <input type="submit" value="Rechercher" name="mail_utilisateur">
         </select>
     </fieldset>
 </form>
-<?php if ($position !== 1) : ?>
+<?php if ($position == 2) : ?>
 
 <table class='table'>
   <thead>
@@ -17,9 +17,7 @@
       <th>Nom</th>
       <th>Prénom</th>
       <th>E-mail</th>
-      <th>Role abonnée</th>
-      <th>Role annonceur</th>
-      <th>Role admin</th>
+      <th>Roles <sup>*</sup></th>
       <th></th>
       <th></th>
     </tr>
@@ -30,14 +28,14 @@
       <td class="td"><?= $uml->nom ?></td>
       <td class="td"><?= $uml->prenom ?></td>
       <td class="td"><?= $uml->mail ?></td>
-      <td class="td"><?= $uml->abonnee ?></td>
-      <td class="td"><?= $uml->annonceur ?></td>
-      <td class="td"><?= $uml->admin ?></td>
-      <td><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $uml->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-      <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $uml->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
-    </tr>
+      <td class="td"><?= $uml->id_roles ?></td>
+      <td><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $u->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+      <td class="trash">
+    <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $u->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+        <i class="fa fa-trash"></i>
+    </a>    </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
-<sup>Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
+<sup class="information_boolean">Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
 <?php endif; ?>

@@ -21,7 +21,7 @@ class Controller_message extends Controller
         $this->render("all_message", $data);
     }
 
-    // rechercher un message par le nom de l'utilisateur qui l'a envoyé
+    // rechercher un message par le nom de l'message qui l'a envoyé
     public function action_all_nom_message()
     {
         $m = Model::get_model();
@@ -81,4 +81,16 @@ class Controller_message extends Controller
             $this->render("all_message_objet", $data);
         }
     }
+
+    // ^ Delete 
+    public function action_delete_message()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $m = Model::get_model();
+            $m->get_delete_message($id);
+            $this->action_all_message();
+        }
+    }
+
 }

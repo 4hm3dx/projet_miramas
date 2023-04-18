@@ -93,6 +93,10 @@
     text-align: center;
   }
   
+  .information_boolean{
+    margin-left: 10px;
+  }
+
   /* Style pour le responsive */
   @media only screen and (max-width: 600px) {
     /* Rendre le tableau responsive et occuper 100% de l'écran */

@@ -1,6 +1,6 @@
 <form action="?controller=message&action=all_message_mail_list" method="POST">
     <fieldset>
-        <legend>Recherche d'un message par l'E-mail de l'utilisateur :</legend>
+        <legend>Recherche d'un message E-mail</legend>
         <select name="mail_message" id="mail_message">
             <?php foreach ($mail_message as $m) : ?>
                 <option value="<?= $m->mail ?>"><?= $m->mail ?></option>
@@ -19,10 +19,9 @@ if ($position !== 1) : ?>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>E-mail</th>
+                <th>Date d'envoi</th>
                 <th>Objet</th>
                 <th>Message</th>
-                <th>Date d'envoi</th>
-                <th></th>
                 <th></th>
             </tr>
         </thead>
@@ -32,12 +31,11 @@ if ($position !== 1) : ?>
                     <td class="td"> <?= $ml->nom ?> </td>
                     <td class="td"> <?= $ml->prenom ?> </td>
                     <td class="td"> <?= $ml->mail ?> </td>
+                    <td class="td"> <?= $ml->date_message ?></td>
                     <td class="td"> <?= $ml->object ?> </td>
                     <td class="td"> <?= $ml->message ?> </td>
-                    <td class="td"> <?= $ml->date_message ?></td>
-                    <td><a href='?controller=livre&action=update_livre&id=<?= $ml->id ?>'><i class=" fa-solid fa-pen"></i></a></td>
-                    <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $ml->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
-
+                    <td class="trash"><a href="?controller=message&action=delete_message&id=<?= $ml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <i class="fa fa-trash"></i></a> 
                 </tr>
             <?php endforeach; ?>
         </tbody>

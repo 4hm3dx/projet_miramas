@@ -13,4 +13,5 @@ class Controller_home extends Controller
 	{
 		$this->render("home");
 	}
+	
 }

@@ -1,6 +1,6 @@
 <form action="?controller=document&action=all_format_document_list" method="POST">
     <fieldset>
-        <legend>Recherche d'un document par son format :</legend>
+        <legend>Recherche de documents par Format</legend>
         <select name="format_document" id="format_document">
             <?php foreach ($format_document as $fd) : ?>
                 <option value="<?= $fd->format?>"><?= $fd->format ?></option>
@@ -37,12 +37,13 @@
                     <td class="td"> <?= $fdl->date_publication ?></td>
                     <td class="td"><?= $fdl->libelle ?></td>
                     <td class="td"><?= $fdl->affichage ?></td>
-                    <td><a href='?controller=livre&action=update_livre&id=<?= $fdl->id ?>'><i class=" fa-solid fa-pen"></i></a></td>
-                    <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $fdl->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
-
+                    <td><a href="?controller=document&action=update_document&id=<?= $d->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class="trash">
+                    <a href="?controller=document&action=delete_document&id=<?= $d->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <i class="fa fa-trash"></i></a>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-    <sup>Affichage des documents : 1 = Affiché, 0 = Masqué</sup>
+    <sup class="information_boolean">Affichage des documents : 1 = Affiché, 0 = Masqué</sup>
 <?php endif; ?>

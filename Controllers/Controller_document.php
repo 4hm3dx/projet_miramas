@@ -34,6 +34,7 @@ class Controller_document extends Controller
     	}
 	}
 
+
     public function action_all_format_document()
     {
         $m = Model::get_model();
@@ -76,6 +77,16 @@ class Controller_document extends Controller
     	}
 	}
    
-    
+        // ^ Delete 
+		// public function action_delete_document()
+		// {
+		// 	if (isset($_GET['id'])) {
+		// 		$id = $_GET['id'];
+		// 		$m = Model::get_model();
+		// 		$m->get_delete_document($id);
+		// 		$this->action_all_document();
+		// 	}
+		// }
+	
 
 }
