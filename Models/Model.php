@@ -1,20 +1,20 @@
 <?php
 
 class Model
-{   //* Début de la Classe
+{ //* Début de la Classe
 
     private $bd;
 
     private static $instance = null;
 
     /*
-         * Constructeur créant l'objet PDO et l'affectant à $bd
-         */
+     * Constructeur créant l'objet PDO et l'affectant à $bd
+     */
     private function __construct()
-    {  //* Fonction qui sert à faire le lien avec la BDD
+    { //* Fonction qui sert à faire le lien avec la BDD
 
-        $dsn = "mysql:host=localhost;dbname=bibliotheque";   //* Coordonnées de la BDD
-        $login = "root";   //* Identifiant d'accès à la BDD
+        $dsn = "mysql:host=localhost;dbname=miramas"; //* Coordonnées de la BDD
+        $login = "root"; //* Identifiant d'accès à la BDD
         $mdp = ""; //* Mot de passe d'accès à la BDD
         $this->bd = new PDO($dsn, $login, $mdp);
         $this->bd->query("SET NAMES 'utf8'");
@@ -33,5 +33,21 @@ class Model
         return self::$instance;
     }
 
-    
+    // Inscription
+    public function get_inscription($Nom, $Prenom, $Mail, $Password)
+    {
+
+
+        $r = "INSERT INTO `utilisateur`(`nom`, `prenom`, `mail`, `mot_de_passe`, `id_roles`) VALUES (:Nom, :Prenom, :Mail, :Password, '1')";
+        $stmt = $this->bd->prepare($r);
+        $stmt->execute([
+            ':Nom' => $Nom,
+            ':Prenom' => $Prenom,
+            ':Mail' => $Mail,
+            ':Password' => $Password
+        ]);
+
+    }
+
+
 }
