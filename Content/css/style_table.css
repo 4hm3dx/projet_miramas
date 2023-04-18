@@ -1,0 +1,137 @@
+/* Style général */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style du formulaire */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  select {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style du tableau */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .table tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .td {
+    text-align: center;
+  }
+
+  .table td:nth-child(8),
+  .table td:nth-child(7) {
+    text-align: center;
+  }
+  
+  /* Style pour le responsive */
+  @media only screen and (max-width: 600px) {
+    /* Rendre le tableau responsive et occuper 100% de l'écran */
+    .table {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+    
+    /* Style de chaque ligne du tableau */
+    .table tr {
+      display: block;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 15px;
+    }
+    
+    /* Style de chaque cellule du tableau */
+    .table td {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    /* Style de chaque en-tête du tableau */
+    .table th {
+      display: none;
+    }
+    
+    /* Style de l'icône de modification */
+    .table td a:first-child {
+      color: #007bff;
+      margin-right: 10px;
+    }
+    
+    /* Style de l'icône de suppression */
+    .table td a:last-child {
+      color: #dc3545;
+    }
+  }

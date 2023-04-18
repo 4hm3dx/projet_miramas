@@ -14,9 +14,9 @@
     <table class='table'>
         <thead>
             <tr>
-                <th>nom</th>
-                <th>prénom</th>
-                <th>email</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>E-mail</th>
                 <th>Objet</th>
                 <th>Message</th>
                 <th>Date d'envoi</th>

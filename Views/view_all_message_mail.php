@@ -1,7 +1,7 @@
 <form action="?controller=message&action=all_message_mail_list" method="POST">
     <fieldset>
         <legend>Recherche d'un message par l'E-mail de l'utilisateur :</legend>
-        <select name="nom_message" id="nom_message">
+        <select name="mail_message" id="mail_message">
             <?php foreach ($mail_message as $m) : ?>
                 <option value="<?= $m->mail ?>"><?= $m->mail ?></option>
                 <?php endforeach ?>
@@ -12,16 +12,13 @@
     
 
     <?php     
-if ($position !== 1) : 
-    var_dump($mail_message_list);
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-    ?>
+if ($position !== 1) : ?>
     <table class='table'>
         <thead>
             <tr>
-                <th>nom</th>
-                <th>prénom</th>
-                <th>email</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>E-mail</th>
                 <th>Objet</th>
                 <th>Message</th>
                 <th>Date d'envoi</th>

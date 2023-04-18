@@ -1,13 +1,13 @@
+<?php if ($position == 1) : ?>
 <table class='table'>
   <thead>
     <tr>
-      <th>id</th>
-      <th>nom</th>
-      <th>prénom</th>
-      <th>email</th>
-      <th>Abonnée</th>
-      <th>Annonceur</th>
-      <th>Admin</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>E-mail</th>
+      <th>Role abonnée</th>
+      <th>Role annonceur</th>
+      <th>Role admin</th>
       <th></th>
       <th></th>
     </tr>
@@ -15,7 +15,6 @@
   <tbody>
     <?php foreach ($utilisateur as $u) : ?>
     <tr>
-      <td class="td"><?= $u->id ?></td>
       <td class="td"><?= $u->nom ?></td>
       <td class="td"><?= $u->prenom ?></td>
       <td class="td"><?= $u->mail ?></td>
@@ -28,6 +27,8 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+<sup>Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
+<?php endif; ?>  
 
 
   

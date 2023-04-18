@@ -36,13 +36,13 @@ class Controller_message extends Controller
 
     	if (isset($_POST['nom_message'])) {
     	    $nom = $_POST['nom_message'];
-    	    $data = ["nom_message_list" => $m->get_all_nom_message_list($nom), "nom_message" => $nom_message, "position" => 2];
+    	    $data = ["nom_message_list" => $m->get_all_nom_message_list($nom_message), "nom_message" => $nom_message, "position" => 2];
     	    $this->render("all_message_nom", $data);
     	} else {
         	$this->render("all_message_nom", ["nom_message" => $nom_message, "position" => 1]);
     	}
 	}
-
+// ^ Mail
 	public function action_all_message_mail()
     {
         $m = Model::get_model();
@@ -51,14 +51,34 @@ class Controller_message extends Controller
     }
 
     public function action_all_message_mail_list()
-{
-    $m = Model::get_model();
-    $mail_message = $m->get_all_message_mail_list();
+    {
+        $m = Model::get_model();
+        $mail_message = $m->get_all_message_mail();
 
-    if (isset($_POST['mail_message'])) {
-        $nom = $_POST['mail_message'];
-        $data = ["mail_message_list" => $m->get_all_message_mail_list($nom), "mail_message" => $mail_message, "position" => 2];
-        $this->render("all_message_mail", $data);
+        if (isset($_POST['mail_message'])) {
+            $mail = $_POST['mail_message'];
+            $data = ["mail_message_list" => $m->get_all_message_mail_list($mail), "mail_message" => $mail_message, "position" => 2];
+            $this->render("all_message_mail", $data);
+        }
     }
-}
+// ^ Objet
+    public function action_all_message_objet()
+    {
+        $m = Model::get_model();
+        $data = ["objet_message" => $m->get_all_message_objet(), "position" => 1];
+        $this->render("all_message_objet", $data);
+    }
+
+    public function action_all_message_objet_list()
+    {
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        $m = Model::get_model();
+        $objet_message = $m->get_all_message_objet();
+    
+        if (isset($_POST['objet_message'])) {
+            $objet = $_POST['objet_message'];
+            $data = ["objet_message_list" => $m->get_all_message_objet_list($objet), "objet_message" => $objet_message, "position" => 2];
+            $this->render("all_message_objet", $data);
+        }
+    }
 }

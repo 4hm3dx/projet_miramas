@@ -54,8 +54,8 @@
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			<a class="dropdown-item" href="?controller=utilisateur&action=all_utilisateur_nom">Par Nom</a>					
-            <a class="dropdown-item" href="?controller=utilisateur&action=all_prenom">Par Prénom</a>
-            <a class="dropdown-item" href="?controller=utilisateur&action=all_mail">Par E-mail</a>
+            <a class="dropdown-item" href="?controller=utilisateur&action=all_utilisateur_prenom">Par Prénom</a>
+            <a class="dropdown-item" href="?controller=utilisateur&action=all_utilisateur_mail">Par E-mail</a>
             <a class="dropdown-item" href="?controller=utilisateur&action=all_utilisateur">Tous les Utilisateurs</a>
 			</div>
 		</li>
@@ -64,9 +64,9 @@
 				Documents
 			</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="?controller=document&action=all_titre">Par Titre</a>
-				<a class="dropdown-item" href="?controller=document&action=all_format">Par Format</a>
-				<a class="dropdown-item" href="?controller=document&action=all_document_utilisateur">Par Utilisateurs</a>
+                <a class="dropdown-item" href="?controller=document&action=all_titre_document">Par Titre</a>
+				<a class="dropdown-item" href="?controller=document&action=all_format_document">Par Format</a>
+				<a class="dropdown-item" href="?controller=document&action=all_utilisateur_document">Par Utilisateurs</a>
 				<a class="dropdown-item" href="?controller=document&action=all_document">Tous les Documents</a>
 			</div>
 		</li>
@@ -77,7 +77,7 @@
 			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="?controller=message&action=all_nom_message">Par Nom</a>
 				<a class="dropdown-item" href="?controller=message&action=all_message_mail">Par E-mail</a>
-				<a class="dropdown-item" href="?controller=message&action=all_objet">Par Objet</a>
+				<a class="dropdown-item" href="?controller=message&action=all_message_objet">Par Objet</a>
 				<a class="dropdown-item" href="?controller=message&action=all_message">Toutes les Messages</a>
 			</div>
 		</li>

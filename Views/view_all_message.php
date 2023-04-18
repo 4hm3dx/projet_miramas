@@ -1,12 +1,12 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>nom</th>
-      <th>prénom</th>
-      <th>mail</th>
-      <th>objet</th>
-      <th>message</th>
-      <th>date</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Mail</th>
+      <th>Objet</th>
+      <th>Message</th>
+      <th>Date d'envoi</th>
       <th></th>
       <th></th>
     </tr>

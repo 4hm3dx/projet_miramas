@@ -1,11 +1,11 @@
 <form action="?controller=utilisateur&action=all_utilisateur_prenom_list" method="POST">
     <fieldset>
-        <select name="prenom" id="prenom">
+        <select name="prenom_utilisateur" id="prenom_utilisateur">
             <legend>Recherche par prénom</legend>
-            <?php foreach ($prenom as $p) : ?>
-                <option value="<?= $p->prenom ?>"><?= $p->prenom ?></option>
+            <?php foreach ($utilisateur_prenom as $up) : ?>
+                <option value="<?= $up->prenom ?>"><?= $up->prenom ?></option>
             <?php endforeach ?>
-            <input type="submit" value="Rechercher" name="prenom">
+            <input type="submit" value="Rechercher" name="utilisateur_prenom">
         </select>
     </fieldset>
 </form>
@@ -14,30 +14,30 @@
     <table class='table'>
         <thead>
             <tr>
-                <th>nom</th>
-                <th>prénom</th>
-                <th>email</th>
-                <th>Roles abonnée</th>
-                <th>Roles annonceur</th>
-                <th>Roles admin</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>E-mail</th>
+                <th>Role abonnée</th>
+                <th>Role annonceur</th>
+                <th>Role admin</th>
                 <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($prenom_list as $pl) : ?>
+            <?php foreach ($utilisateur_prenom_list as $upl) : ?>
                 <tr>
-                    <td class="td"> <?= $pl->nom ?> </td>
-                    <td class="td"> <?= $pl->prenom ?> </td>
-                    <td class="td"> <?= $pl->mail ?> </td>
-                    <td class="td"> <?= $pl->abonnee ?> </td>
-                    <td class="td"> <?= $pl->annonceur ?> </td>
-                    <td class="td"> <?= $pl->admin ?></td>
-                    <td><a href='?controller=livre&action=update_livre&id=<?= $pl->id ?>'><i class=" fa-solid fa-pen"></i></a></td>
-                    <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $pl->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
+                    <td class="td"> <?= $upl->nom ?> </td>
+                    <td class="td"> <?= $upl->prenom ?> </td>
+                    <td class="td"> <?= $upl->mail ?> </td>
+                    <td class="td"> <?= $upl->abonnee ?> </td>
+                    <td class="td"> <?= $upl->annonceur ?> </td>
+                    <td class="td"> <?= $upl->admin ?></td>
+                    <td><a href='?controller=livre&action=update_livre&id=<?= $upl->id ?>'><i class=" fa-solid fa-pen"></i></a></td>
+                    <td class='trash'><a href='?controller=utilisateur&action=delete_utilisateur&id=<?= $upl->id ?>' style='color:red;' onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')"><i class='fa fa-trash'></i></a></td>
 
                 </tr>
                 <?php endforeach; ?>
             </tbody>
-            
-    <?php var_dump($nom_list); endif; ?>
+            <sup>Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
+    <?php endif; ?>

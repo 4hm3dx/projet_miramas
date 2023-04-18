@@ -1,12 +1,12 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>nom</th>
-      <th>prénom</th>
-      <th>titre</th>
-      <th>format</th>
-      <th>description</th>
-      <th>Libelle</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Titre</th>
+      <th>Format</th>
+      <th>Description</th>
+      <th>Libellés</th>
       <th>Affichage</th>
       <th></th>
       <th></th>
