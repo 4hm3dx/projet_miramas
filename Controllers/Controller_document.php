@@ -84,11 +84,12 @@ class Controller_document extends Controller
             $id = $_GET['id'];
             $m = Model::get_model();
             $data = ["document" => $m->get_update_document($id)];
+            var_dump($data["document"]); // Vérifier la valeur de $document
             $this->render("update_document", $data);
         } else if (isset($_POST['submit'])) {
             $m = Model::get_model();
             $m->get_update_document_bdd();
-            $data = ["documents" => $m->get_all_document()];
+            $data = ["document" => $m->get_all_document()];
             $this->render("all_document", $data);
         } else {
             header('Location: ?controller=document&action=all_document');
@@ -97,15 +98,18 @@ class Controller_document extends Controller
 
    
         // ^ Delete 
-		// public function action_delete_document()
-		// {
-		// 	if (isset($_GET['id'])) {
-		// 		$id = $_GET['id'];
-		// 		$m = Model::get_model();
-		// 		$m->get_delete_document($id);
-		// 		$this->action_all_document();
-		// 	}
-		// }
+        public function action_delete_document()
+        {
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $m = Model::get_model();
+                $m->get_delete_document($id);
+                // $data = ["utilisateurs" => $m->get_all_utilisateur()];
+                // $this->render("all_utilisateur", $data);
+                $this->action_all_document();
+                // header("Location: index.php?controller=utilisateur&action=all_utilisateur");
+            }
+        }
 	
 
 }

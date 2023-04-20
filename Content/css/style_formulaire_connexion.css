@@ -94,6 +94,14 @@ input[type="date"] {
   transition: border-color 0.3s ease-in-out;
 }
 
+input[type="file"] {
+  margin-bottom: 10px;
+  border: solid 1px #ccc;
+  width: 100%;
+  border-radius: 4px;
+  
+}
+
 /* Style pour les boutons */
 input[type="submit"],
 input[type="reset"],

@@ -96,7 +96,7 @@ class Controller_utilisateur extends Controller
         } else if (isset($_POST['submit'])) {
             $m = Model::get_model();
             $m->get_update_utilisateur_bdd();
-            $data = ["utilisateurs" => $m->get_all_utilisateur()];
+            $data = ["utilisateur" => $m->get_all_utilisateur()];
             $this->render("all_utilisateur", $data);
         } else {
             header('Location: ?controller=utilisateur&action=all_utilisateur');
@@ -110,7 +110,7 @@ class Controller_utilisateur extends Controller
             $id = $_GET['id'];
             $m = Model::get_model();
             $m->get_delete_utilisateur($id);
-            // $data = ["utilisateurs" => $m->get_all_utilisateur()];
+            $data = ["utilisateurs" => $m->get_all_utilisateur()];
             // $this->render("all_utilisateur", $data);
             $this->action_all_utilisateur();
             // header("Location: index.php?controller=utilisateur&action=all_utilisateur");

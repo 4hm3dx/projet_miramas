@@ -16,16 +16,26 @@ class Controller_ajout_document extends Controller
         $this->render("ajout_document", compact('select_document'));
     }
     
-    public function action_ajout_utiliateur_document()
+    public function action_ajout_utilisateur_document()
     {
-        // $m = Model::get_model();
-        // $data = ["select_utilisateur" => $m-> get_ajout_utilisateur_document()];
-        // $this->render("ajouter_document", $data);
+        $m = Model::get_model();
+        $data = ["select_utilisateurs" => $m->get_ajout_utilisateur_document()];
+        $this->render("ajout_document", $data);
+        var_dump($data);
+        // $model = Model::get_model();
+        // $select_utilisateur = $model->get_ajout_utilisateur_document();
 
-        $model = Model::get_model();
-        $select_utilisateur = $model->get_ajout_utilisateur_document();
+        // $this->render("ajout_document", compact('select_utilisateurs'));
+    }
 
-        $this->render("ajout_document", compact('select_utilisateur'));
+    public function ajout_categorie()
+    {
+        $m = Model::get_model();
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $m->get_ajout_categorie();
+        }
+        $data = ["ajout_categorie" => $m->get_ajout_categorie()];
+        $this->render("ajout_document", $data);
     }
     
     public function action_ajout_document_bdd()
@@ -59,7 +69,7 @@ class Controller_ajout_document extends Controller
         $requete->bindParam(':description', $description);
         $requete->bindParam(':date_publication', $date);
         $requete->bindParam(':id_categorie', $categorie);
-        $requete->bindParam(':fichier', $nom_fichier);
+        $requete->bindParam(':fichier', $destination);
         $requete->execute();
 
         // Redirection vers la page d'accueil avec un message de succès

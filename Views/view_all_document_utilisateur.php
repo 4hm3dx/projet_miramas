@@ -21,7 +21,7 @@
                 <th>Description</th>
                 <th>Date de publication</th>
                 <th>Libellés</th>
-                <th>Affichage</th>
+                <th>Affichage <sup>*</sup></th>
                 <th></th>
                 <th></th>
             </tr>
@@ -33,6 +33,12 @@
                     <td class="td"> <?= $udl->prenom ?> </td>
                     <td class="td"> <?= $udl->titre ?> </td>
                     <td class="td"> <?= $udl->format ?> </td>
+                    <td class="td"><?php
+                      $data = base64_decode($udl->fichier);
+                      $finfo = new finfo(FILEINFO_MIME_TYPE);
+                      $type = $finfo->buffer($data);
+                      echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
+                      ?></td>
                     <td class="td"> <?= $udl->description ?> </td>
                     <td class="td"> <?= $udl->date_publication ?></td>
                     <td class="td"><?= $udl->libelle ?></td>

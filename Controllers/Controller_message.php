@@ -95,8 +95,12 @@ class Controller_message extends Controller
             $id = $_GET['id'];
             $m = Model::get_model();
             $m->get_delete_message($id);
+            // $data = ["annonce" => $m->get_all_utilisateur()];
+            // $this->render("all_utilisateur", $data);
             $this->action_all_message();
+            // header("Location: index.php?controller=utilisateur&action=all_utilisateur");
         }
     }
+
 
 }

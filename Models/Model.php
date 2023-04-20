@@ -260,7 +260,7 @@ class Model
     //^ Affichage des documents
     public function get_all_document()
     {
-        $r = $this->bd->prepare("SELECT d.titre, d.format, d.description, u.nom, u.prenom, c.libelle, c.affichage, d.id FROM document d
+        $r = $this->bd->prepare("SELECT d.titre, d.format, d.description, u.nom, u.prenom, c.libelle, c.affichage, d.id, d.fichier FROM document d
         INNER JOIN utilisateur u ON u.id = d.id_utilisateur
         INNER JOIN categorie c ON c.id = d.id_categorie;");
 
@@ -289,7 +289,7 @@ class Model
         $titre = $this->valid_input($_POST['titre_document']);
 
         // Préparer la requête SQL en utilisant une variable liée pour éviter les attaques par injection SQL
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, c.libelle, c.affichage FROM document d  
+        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, c.libelle, c.affichage, d.fichier  FROM document d  
         INNER JOIN utilisateur u ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE titre = :titre");
         $r->bindValue(':titre', $titre, PDO::PARAM_STR);
@@ -313,7 +313,7 @@ class Model
     public function get_all_format_document_list($format_document)
     {
         $format_document = $this->valid_input($_POST["format_document"]);
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage FROM utilisateur u 
+        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
         INNER JOIN document d ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE format = :format;");
         $r->bindValue(':format', $format_document, PDO::PARAM_STR);
@@ -335,7 +335,7 @@ class Model
     public function get_all_utilisateur_document_list($utilisateur_document)
     {
         $utilisateur_document = $this->valid_input($_POST["utilisateur_document"]);
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage FROM utilisateur u 
+        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
         INNER JOIN document d ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE nom = :utilisateur;");
         $r->bindValue(':utilisateur', $utilisateur_document, PDO::PARAM_STR);
@@ -372,6 +372,8 @@ class Model
         $r->execute();
         //   header("Location: index.php?controller=utilisateur&action=all_utilisateur");
     }
+
+    
 
     // ^ Delete une annonce 
     public function get_delete_annonce($id)
@@ -413,7 +415,7 @@ class Model
         $r->bindParam(':id', $id);
         $r->execute();
     }
-
+    
     public function get_update_annonce($id)
     {
         // $id = $_GET['id'];
@@ -423,7 +425,7 @@ class Model
         
         return $r->fetch();
     }
-
+    
     public function get_update_annonce_bdd()
     {
         // Récupérer les données du formulaire
@@ -433,7 +435,7 @@ class Model
         $mail = $this->valid_input($_POST['mail']);
         $id_roles = $this->valid_input($_POST['id_roles']);
         
-
+        
         $r = $this->bd->prepare("UPDATE annonce a , utilisateur u 
         INNER JOIN annonce ON a.id_utilisateur = u.id
         SET a.texte = :texte, a.image = :image, a.logo = :logo,s u.nom = :nom 
@@ -445,8 +447,51 @@ class Model
         $r->bindParam(':id', $id);
         $r->execute();
     }
+    
+    public function get_update_document($id)
+    {
+        // $id = $_GET['id'];
+        $r = $this->bd->prepare("SELECT d.id, u.nom, d.titre, d.description, c.libelle, c.affichage, d.chemin_multimedia, d.date_publication 
+        FROM document d 
+        JOIN categorie c ON d.id_categorie = c.id
+        JOIN utilisateur u ON d.id_utilisateur = u.id 
+        WHERE d.id = $id");
+        
+        $r->execute();
+        
+        return $r->fetch();
+    }
 
-
+    public function get_update_document_bdd()
+    {
+        // Récupérer les données du formulaire
+        $id = $this->valid_input($_POST['id']);
+        $nom = $this->valid_input($_POST['nom']);
+        $titre = $this->valid_input($_POST['titre']);
+        $description = $this->valid_input($_POST['description']);
+        $date_publication = $this->valid_input($_POST['date_publication']);
+        $chemin_multimedia = $this->valid_input($_POST['chemin_multimedia']);
+        $affichage = $this->valid_input($_POST['affichage']);
+        $libelle = $this->valid_input($_POST['libelle']);
+        
+        
+        
+        $r = $this->bd->prepare("UPDATE document d
+        INNER JOIN utilisateur u ON u.id = d.id_utilisateur
+        INNER JOIN categorie c ON c.id = d.id_categorie
+        SET u.nom = :nom, d.titre = :titre, d.description = :description, d.date_publication = :date_publication, d.chemin_multimedia = :chemin_multimedia, c.affichage = :affichage, c.libelle = :libelle
+        WHERE d.id = :id;");
+        $r->bindParam(':nom', $nom);
+        $r->bindParam(':titre', $titre);
+        $r->bindParam(':description', $description);
+        $r->bindParam(':date_publication', $date_publication);
+        $r->bindParam(':chemin_multimedia', $chemin_multimedia);
+        $r->bindParam(':affichage', $affichage);
+        $r->bindParam(':libelle', $libelle);
+        $r->bindParam(':id', $id);
+        $r->execute();
+    }
+    
     // ^ AJOUT DE DOCUMENT
     public function get_ajout_libelle()
     {
@@ -461,7 +506,6 @@ class Model
         $r = $this->bd->prepare("SELECT DISTINCT nom, id FROM utilisateur");
         $r->execute();
         return $r->fetchAll(PDO::FETCH_OBJ);
-
     }
 
     public function get_ajouter_document_bdd()
@@ -482,6 +526,23 @@ class Model
         // $r->bindParam(':chemin_multimedia', $chemin_multimedia);
 
         $r->execute();
+    }
+
+    // ^ Ajouter une categorie 
+    public function get_ajout_categorie()
+    {
+        try {
+            $libelle = $this->valide_input($_POST["input_ajout_categorie"]);
+    
+            $r = $this->bd->prepare("INSERT INTO categorie (`libelle`, `affichage`) VALUES (:libelle, 1)"); 
+            $r->bindParam(':libelle', $libelle);
+    
+            $r->execute();
+        } catch(PDOException $e) {
+            // Affichage de l'erreur ou log de l'erreur
+            echo "Une erreur est survenue lors de l'ajout de la catégorie : " . $e->getMessage();
+            exit; // ou gestion de l'erreur
+        }
     }
 
 

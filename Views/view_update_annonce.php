@@ -1,11 +1,11 @@
 <form action="?controller=utilisateur&action=update_annonce" method="post" id="addForm">
     <fieldset>
         <legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
-        <input type="hidden" name="id" value="<?= $utilisateur['id'] ?>">
+        <input type="hidden" name="id" value="<?= $annonce['id'] ?>">
         <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" value="<?= valid_input($annonce['nom']) ?>">
+        <input type="text" name="nom" id="nom" value="<?= filter_var($annonce['nom'], FILTER_SANITIZE_STRING ) ?>">
         <label for="texte">Texte :</label>
-        <input type="text" name="texte" id="texte" value="<?= valid_input($annonce['texte']) ?>">
+        <input type="text" name="texte" id="texte" value="<?= filter_var($annonce['texte'], FILTER_SANITIZE_STRING ) ?>">
         <label for="image">Image : </label>
         <input type="text" name="image" id="image" value="<?= valid_input($annonce['image']) ?>">
         <label for="logo">Logo : </label>
@@ -14,7 +14,7 @@
         <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
     </fieldset>
 </form>
-<?php var_dump($utilisateur) ?>
+<?php var_dump($annonce) ?>
 
 
 <?php function valid_input($data)
