@@ -29,13 +29,13 @@
                     <td class="td"> <?= $unl->prenom ?> </td>
                     <td class="td"> <?= $unl->mail ?> </td>
                     <td class="td"> <?= $unl->id_roles ?> </td>
-                    <td><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $u->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-      <td class="trash">
-    <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $u->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-        <i class="fa fa-trash"></i>
-    </a></tr>
+                    <td class="td"><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $unl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class="trash td">
+                    <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $unl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <i class="fa fa-trash"></i>
+                    </a></tr>
             <?php endforeach; ?>
         </tbody>
-        <sup class="information_boolean">Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
     </table>
+    <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
 <?php endif; ?>

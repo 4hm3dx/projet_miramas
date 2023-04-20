@@ -26,7 +26,7 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-<sup class="information_boolean">Roles utilisateurs : 1 = Roles attribué, 0  Roles non attribué</sup>
+<sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
  
 
 

@@ -34,7 +34,7 @@ if ($position !== 1) : ?>
                     <td class="td"> <?= $ml->date_message ?></td>
                     <td class="td"> <?= $ml->object ?> </td>
                     <td class="td"> <?= $ml->message ?> </td>
-                    <td class="trash"><a href="?controller=message&action=delete_message&id=<?= $ml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <td class="trash td"><a href="?controller=message&action=delete_message&id=<?= $ml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
                     <i class="fa fa-trash"></i></a> 
                 </tr>
             <?php endforeach; ?>

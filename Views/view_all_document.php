@@ -23,11 +23,11 @@
       <td class="td"><?= $d->description ?></td>
       <td class="td"><?= $d->libelle ?></td>
       <td class="td"><?= $d->affichage ?></td>
-      <td><a href="?controller=document&action=update_document&id=<?= $d->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-      <td class="trash">
-    <a href="?controller=document&action=delete_document&id=<?= $d->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-        <i class="fa fa-trash"></i>
-    </a>    </tr>
+      <td class="td"><a href="?controller=document&action=update_document&id=<?= $d->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+      <td class="trash td">
+      <a href="?controller=document&action=delete_document&id=<?= $d->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+      <i class="fa fa-trash"></i></a>    
+    </tr>
     <?php endforeach; ?>
   </tbody>
 </table>

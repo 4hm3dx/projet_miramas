@@ -32,8 +32,8 @@
                     <td class="td"> <?= $nml->date_message ?></td>
                     <td class="td"> <?= $nml->object ?> </td>
                     <td class="td"> <?= $nml->message ?> </td>
-                    <td class="trash"><a href="?controller=message&action=delete_message&id=<?= $nml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-        <i class="fa fa-trash"></i></a> 
+                    <td class="trash td"><a href="?controller=message&action=delete_message&id=<?= $nml->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <i class="fa fa-trash"></i></a> 
                 </tr>
             <?php endforeach; ?>
         </tbody>

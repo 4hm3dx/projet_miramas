@@ -21,7 +21,7 @@ class Controller_message extends Controller
         $this->render("all_message", $data);
     }
 
-    // rechercher un message par le nom de l'message qui l'a envoyé
+    //^ rechercher un message par le nom de l'message qui l'a envoyé
     public function action_all_nom_message()
     {
         $m = Model::get_model();
@@ -42,7 +42,8 @@ class Controller_message extends Controller
         	$this->render("all_message_nom", ["nom_message" => $nom_message, "position" => 1]);
     	}
 	}
-// ^ Mail
+    
+    // ^ Mail
 	public function action_all_message_mail()
     {
         $m = Model::get_model();
@@ -61,7 +62,8 @@ class Controller_message extends Controller
             $this->render("all_message_mail", $data);
         }
     }
-// ^ Objet
+    
+    // ^ Objet
     public function action_all_message_objet()
     {
         $m = Model::get_model();
@@ -69,18 +71,22 @@ class Controller_message extends Controller
         $this->render("all_message_objet", $data);
     }
 
+
     public function action_all_message_objet_list()
-    {
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        $m = Model::get_model();
-        $objet_message = $m->get_all_message_objet();
+	{
+    	$m = Model::get_model();
+    	$objet_message = $m->get_all_message_objet();
+
+    	if (isset($_POST['objet_message'])) {
+    	    $objet = $_POST['objet_message'];
+    	    $data = ["objet_message_list" => $m->get_all_message_objet_list($objet_message), "objet_message" => $objet_message, "position" => 2];
+    	    $this->render("all_message_objet", $data);
+    	} else {
+        	$this->render("all_message_objet", ["objet_message" => $objet_message, "position" => 1]);
+    	}
+	}
     
-        if (isset($_POST['objet_message'])) {
-            $objet = $_POST['objet_message'];
-            $data = ["objet_message_list" => $m->get_all_message_objet_list($objet), "objet_message" => $objet_message, "position" => 2];
-            $this->render("all_message_objet", $data);
-        }
-    }
+
 
     // ^ Delete 
     public function action_delete_message()

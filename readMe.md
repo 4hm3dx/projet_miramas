@@ -5,8 +5,10 @@ vue
 <!-- ^ Recherche par preprenom renvoi un tableau vide pas avec la bonne mise ne page ?????  -->
 <!-- ^ Idem pour recherche par mail  -->
 comment mettre le footer a botom zero
-securité
-<!-- ? Valide_input ???????????????????? -->
+
 delete update
-<!-- & Impossible de recupere les roles dans la modification -->
-<!-- & gerer la suppression avec une action ?????? -->
+update annonce gerer l'affichage des input pres remplie 
+utilisateur => Prenom mail 
+document => titre 
+message => objet
+

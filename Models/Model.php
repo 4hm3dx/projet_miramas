@@ -1,5 +1,7 @@
 <?php
-
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 class Model
 {   //* Début de la Classe
 
@@ -67,7 +69,7 @@ class Model
             $nom = $this->valid_input($_POST['nom_utilisateur']);
         
             // Préparer la requête SQL pour sélectionner tous les utilisateurs ayant le même nom
-            $r = $this->bd->prepare("SELECT u.id, u.nom, u.prenom, u.mail, r.admin, r.annonceur, r.abonnee FROM utilisateur u JOIN roles r ON u.id_roles = r.id WHERE nom = :nom;");
+            $r = $this->bd->prepare("SELECT id, nom, prenom, mail, id_roles FROM utilisateur WHERE nom = :nom;");
         
             $r->bindValue(':nom', $nom, PDO::PARAM_STR);
             // Exécuter la requête
@@ -75,10 +77,6 @@ class Model
         
             // Récupérer tous les résultats sous forme d'un tableau d'objets
             $resultats = $r->fetchAll(PDO::FETCH_OBJ);
-            
-            // Ajouter un message de débogage pour afficher les résultats de la requête SQL
-            echo "Les résultats de la requête SQL sont les suivants : ";
-            print_r($resultats);
             
             return $resultats;
         }
@@ -98,78 +96,62 @@ class Model
 
     public function get_all_utilisateur_prenom_list()
     {
-        $prenom = $this->valid_input($_POST['utilisateur_prenom']);
-       
-        // Préparer la requête SQL pour sélectionner tous les livres dans l'ordre alphabétique par prenom
-        $r = $this->bd->prepare("SELECT u.id, u.nom, u.prenom, u.mail, r.admin, r.annonceur, r.abonnee FROM utilisateur u 
-        JOIN roles r ON u.id_roles = r.id WHERE prenom = :prenom;");
+        if (isset($_POST['prenom_utilisateur'])) {
+            $prenom = $this->valid_input($_POST['prenom_utilisateur']);
+        
+            // Préparer la requête SQL pour sélectionner tous les utilisateurs ayant le même nom
+            $r = $this->bd->prepare("SELECT id, nom, prenom, mail, id_roles FROM utilisateur WHERE prenom = :prenom;");
+        
+            $r->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+            // Exécuter la requête
+            $r->execute();
+        
+            // Récupérer tous les résultats sous forme d'un tableau d'objets
+            return $r->fetchAll(PDO::FETCH_OBJ);
+            
+            // return $resultats;
+        }
+    }
+    
 
-        $r->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+    public function get_all_utilisateur_mail()
+    {
+        // Préparer la requête SQL pour sélectionner tous les livres dans l'ordre alphabétique par prenom
+        $r = $this->bd->prepare("SELECT DISTINCT(mail) FROM utilisateur");
+
         // Exécuter la requête
         $r->execute();
 
         // Récupérer tous les résultats sous forme d'un tableau d'objets
-        return $r->fetchAll(PDO::FETCH_OBJ);
-     
-    }
-
-    public function get_all_utilisateur_mail(){
-
-        $r = $this->bd->prepare("SELECT DISTINCT mail FROM utilisateur");
-
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
+        // $tmp = $r->fetchAll(PDO::FETCH_OBJ);
+        // var_dump($tmp);
+        // return $tmp;
+        return $r->fetchAll(PDO::FETCH_OBJ); 
     }
 
     public function get_all_utilisateur_mail_list()
     {
-        $mail_utilisateur = $this->valid_input($_POST["mail_utilisateur"]); 
-
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, u.mail, u.id_roles FROM utilisateur u  WHERE u.mail = :mail;");
-        $r->bindValue(':mail', $mail_utilisateur, PDO::PARAM_STR);
-
-        $r->execute();
-
-        return $r->fetchAll(PDO::FETCH_OBJ);
+        if (isset($_POST['mail_utilisateur'])) {
+            $mail = $this->valid_input($_POST['mail_utilisateur']);
+            //! try {} catch(PDOExeption) {$e->message()}
+            
+            // Préparer la requête SQL pour sélectionner tous les utilisateurs ayant le même nom
+            $r = $this->bd->prepare("SELECT id, nom, prenom, mail, id_roles FROM utilisateur WHERE mail = :mail");
+            
+            $r->bindParam(':mail', $mail, PDO::PARAM_STR);
+            // Exécuter la requête
+            $r->execute();
+            
+            // $tmp = $r->fetchAll(PDO::FETCH_OBJ);
+            // var_dump($tmp);
+            // return $tmp;
+            // Récupérer tous les résultats sous forme d'un tableau d'objets
+            return $r->fetchAll(PDO::FETCH_OBJ);
+            
+        }
     }
 
-    public function get_update_utilisateur($id)
-    {
-        // $id = $_GET['id'];
-        $r = $this->bd->prepare("SELECT * FROM utilisateur WHERE id = $id");
-        
-        $r->execute();
-        
-        return $r->fetch();
-    }
-
-    public function get_update_utilisateur_bdd()
-    {
-        // Récupérer les données du formulaire
-        $id = $this->valid_input($_POST['id']);
-        $nom = $this->valid_input($_POST['nom']);
-        $prenom = $this->valid_input($_POST['prenom']);
-        $mail = $this->valid_input($_POST['mail']);
-        $id_roles = $this->valid_input($_POST['id_roles']);
-        
-
-        // UPDATE utilisateur u 
-        //     INNER JOIN roles r ON u.id_roles = r.id 
-        //     SET u.nom = :nom, u.prenom = :prenom, u.mail = :mail, r.abonnee = :abonnee, r.annonceur = :annonceur, r.admin = :admin 
-        //     WHERE u.id = :id;
-        // Mettre à jour les données dans la base de données
-        $r = $this->bd->prepare("UPDATE utilisateur  
-        SET nom = :nom, prenom = :prenom, mail = :mail, id_roles = :id_roles 
-        WHERE id = :id;");
-        $r->bindParam(':nom', $nom);
-        $r->bindParam(':prenom', $prenom);
-        $r->bindParam(':mail', $mail);
-        $r->bindParam(':id_roles', $id_roles);
-        $r->bindParam(':id', $id);
-        $r->execute();
-    }
-
+   
     //^ Affichage des annonces
     public function get_all_annonce()
     {
@@ -250,24 +232,21 @@ class Model
 
     public function get_all_message_objet()
     {
-        // Préparer la requête SQL pour sélectionner tous les livres dans l'ordre alphabétique par prenom
-        $r = $this->bd->prepare("SELECT distinct object FROM message;");
+        $r = $this->bd->prepare("SELECT DISTINCT object FROM message");
 
-        // Exécuter la requête
         $r->execute();
 
-        // Récupérer tous les résultats sous forme d'un tableau d'objets
-        return $r->fetchAll(PDO::FETCH_OBJ); 
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function get_all_message_objet_list()
     {
-        if (isset($_POST['objet'])) {
-            $objet = $this->valid_input(($_POST['objet']));
+        // if (isset($_POST['mail'])) {
+            $objet = $this->valid_input($_POST['objet_message']);
 
             // Préparer la requête SQL pour sélectionner tous les utilisateurs ayant le même nom
             $r = $this->bd->prepare("SELECT u.nom, u.prenom, u.mail, m.object, m.message, m.date_message FROM utilisateur u 
-            JOIN message m ON message m ON u.id = m.id_utilisateur  WHERE object = :objet;");
+            JOIN message m ON u.id = m.id_utilisateur WHERE object = :objet;");
 
             $r->bindValue(':objet', $objet, PDO::PARAM_STR);
             // Exécuter la requête
@@ -275,9 +254,9 @@ class Model
 
             // Récupérer tous les résultats sous forme d'un tableau d'objets
             return $r->fetchAll(PDO::FETCH_OBJ);
-        }
+        // }
     }
-    
+
     //^ Affichage des documents
     public function get_all_document()
     {
@@ -404,18 +383,120 @@ class Model
     }
 
 
+    // ! UPDATE
+    public function get_update_utilisateur($id)
+    {
+        // $id = $_GET['id'];
+        $r = $this->bd->prepare("SELECT * FROM utilisateur WHERE id = $id");
+        
+        $r->execute();
+        
+        return $r->fetch();
+    }
+
+    public function get_update_utilisateur_bdd()
+    {
+        // Récupérer les données du formulaire
+        $id = $this->valid_input($_POST['id']);
+        $nom = $this->valid_input($_POST['nom']);
+        $prenom = $this->valid_input($_POST['prenom']);
+        $mail = $this->valid_input($_POST['mail']);
+        $id_roles = $this->valid_input($_POST['id_roles']);
+        
+        $r = $this->bd->prepare("UPDATE utilisateur  
+        SET nom = :nom, prenom = :prenom, mail = :mail, id_roles = :id_roles 
+        WHERE id = :id;");
+        $r->bindParam(':nom', $nom);
+        $r->bindParam(':prenom', $prenom);
+        $r->bindParam(':mail', $mail);
+        $r->bindParam(':id_roles', $id_roles);
+        $r->bindParam(':id', $id);
+        $r->execute();
+    }
+
+    public function get_update_annonce($id)
+    {
+        // $id = $_GET['id'];
+        $r = $this->bd->prepare("SELECT * FROM annonce WHERE id = $id");
+        
+        $r->execute();
+        
+        return $r->fetch();
+    }
+
+    public function get_update_annonce_bdd()
+    {
+        // Récupérer les données du formulaire
+        $id = $this->valid_input($_POST['id']);
+        $nom = $this->valid_input($_POST['nom']);
+        $prenom = $this->valid_input($_POST['prenom']);
+        $mail = $this->valid_input($_POST['mail']);
+        $id_roles = $this->valid_input($_POST['id_roles']);
+        
+
+        $r = $this->bd->prepare("UPDATE annonce a , utilisateur u 
+        INNER JOIN annonce ON a.id_utilisateur = u.id
+        SET a.texte = :texte, a.image = :image, a.logo = :logo,s u.nom = :nom 
+        WHERE id = :id;");
+        $r->bindParam(':nom', $nom);
+        $r->bindParam(':prenom', $prenom);
+        $r->bindParam(':mail', $mail);
+        $r->bindParam(':id_roles', $id_roles);
+        $r->bindParam(':id', $id);
+        $r->execute();
+    }
+
+
+    // ^ AJOUT DE DOCUMENT
+    public function get_ajout_libelle()
+    {
+        $r = $this->bd->prepare("SELECT DISTINCT libelle, id FROM categorie");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
+    }
+    
+    public function get_ajout_utilisateur_document()
+    {
+        $r = $this->bd->prepare("SELECT DISTINCT nom, id FROM utilisateur");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
+
+    }
+
+    public function get_ajouter_document_bdd()
+    {
+        $titre = $this->valid_input($_POST['titre_document']);
+        $description = $this->valid_input($_POST['description_document']);
+        $date_publication = $this->valid_input($_POST['date_document']);
+        $id_categorie = $this->valid_input($_POST['select_categorie']);
+        // $chemin_multimedia = $this->valid_input($_POST['chemin_multimedia']);
+
+        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`) 
+        VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur)");
+
+        $r->bindParam(':titre', $titre);
+        $r->bindParam(':description', $description);
+        $r->bindParam(':date_publication', $date_publication);
+        $r->bindParam(':id_categorie', $id_categorie);
+        // $r->bindParam(':chemin_multimedia', $chemin_multimedia);
+
+        $r->execute();
+    }
+
+
     function valid_input($data)
     {
         //todo Supprime les espaces en début et fin de chaîne
-        $data = trim($data);
+        // $data = trim($data);
         //todo Supprime les barres obliques inverses de la chaîne
-        $data = stripslashes($data);
+        // $data = stripslashes($data);
         //todo Supprime les balises et les caractères spéciaux
-        $data = filter_var($data, FILTER_SANITIZE_STRING);
+        // $data = filter_var($data, FILTER_SANITIZE_STRING);
         //todo Convertit les caractères spéciaux en entités HTML
-        $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        // $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         //todo Encode les caractères spéciaux en UTF-8
-        $data = filter_var($data, FILTER_SANITIZE_ENCODED);
+        // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
         //todo Retourne la chaîne de caractères validée
         return $data;
     }

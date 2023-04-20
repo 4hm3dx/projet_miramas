@@ -84,7 +84,8 @@
 /* Style pour les champs de saisie */
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="date"] {
   padding: 8px 10px;
   border-radius: 4px;
   border: 1px solid #ccc;

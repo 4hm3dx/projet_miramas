@@ -37,9 +37,9 @@
                     <td class="td"> <?= $udl->date_publication ?></td>
                     <td class="td"><?= $udl->libelle ?></td>
                     <td class="td"><?= $udl->affichage ?></td>
-                    <td><a href="?controller=document&action=update_document&id=<?= $d->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-                    <td class="trash">
-                    <a href="?controller=document&action=delete_document&id=<?= $d->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+                    <td class="td"><a href="?controller=document&action=update_document&id=<?= $udl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+                    <td class="trash td">
+                    <a href="?controller=document&action=delete_document&id=<?= $udl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
                     <i class="fa fa-trash"></i></a>   </tr>
             <?php endforeach; ?>
         </tbody>

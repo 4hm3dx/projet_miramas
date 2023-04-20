@@ -3,15 +3,13 @@
         <legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
         <input type="hidden" name="id" value="<?= $utilisateur['id'] ?>">
         <label for="nom">Nom :</label>
-        <input type="text" name="nom" id="nom" value="<?= valid_input($utilisateur['nom']) ?>">
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" id="prenom" value="<?= valid_input($utilisateur['prenom']) ?>">
+        <input type="text" name="nom" id="nom" value="<?= valid_input($annonce['nom']) ?>">
         <label for="texte">Texte :</label>
-        <input type="text" name="texte" id="texte" value="<?= valid_input($utilisateur['texte']) ?>">
+        <input type="text" name="texte" id="texte" value="<?= valid_input($annonce['texte']) ?>">
         <label for="image">Image : </label>
-        <input type="text" name="image" id="image" value="<?= valid_input($utilisateur['image']) ?>">
+        <input type="text" name="image" id="image" value="<?= valid_input($annonce['image']) ?>">
         <label for="logo">Logo : </label>
-        <input type="text" name="logo" id="logo" value="<?= valid_input($utilisateur['logo']) ?>">
+        <input type="text" name="logo" id="logo" value="<?= valid_input($annonce['logo']) ?>">
         <input type="submit" value="Modifier" name="submit" id="submit">
         <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
     </fieldset>

@@ -9,9 +9,9 @@
           <input type="submit" value="Rechercher" name="titre">
     </fieldset>
 </form>
-<?php print_r( $titre_document); ?>
+
 <?php if($position !== 1) : ?>
-  <?php var_dump($titre_document_list); ?>
+  <?php //var_dump($titre_document_list); ?>
   <table class='table'>
   <thead>
     <tr>
@@ -36,9 +36,9 @@
       <td class="td"><?= $tdl->description ?></td>
       <td class="td"><?= $tdl->libelle ?></td>
       <td class="td"><?= $tdl->affichage ?></td>
-      <td><a href="?controller=document&action=update_document&id=<?= $d->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-      <td class="trash">
-      <a href="?controller=document&action=delete_document&id=<?= $d->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+      <td class="td"><a href="?controller=document&action=update_document&id=<?= $tdl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+      <td class="trash td">
+      <a href="?controller=document&action=delete_document&id=<?= $tdl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
       <i class="fa fa-trash"></i></a> </tr>
     <?php endforeach; ?>
   </tbody>

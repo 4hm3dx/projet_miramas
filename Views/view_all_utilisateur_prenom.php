@@ -23,19 +23,20 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($utilisateur_prenom_list as $upl) : ?>
-                <tr>
-                    <td class="td"> <?= $upl->nom ?> </td>
-                    <td class="td"> <?= $upl->prenom ?> </td>
-                    <td class="td"> <?= $upl->mail ?> </td>
-                    <td class="td"> <?= $upl->id_roles ?> </td>
-                    <td><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $u->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-      <td class="trash">
-    <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $u->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-        <i class="fa fa-trash"></i>
-    </a>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-            <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
-    <?php endif; ?>
+<?php foreach ($utilisateur_prenom_list as $upl) : ?>
+        <tr>
+            <td class="td"> <?= $upl->nom ?> </td>
+            <td class="td"> <?= $upl->prenom ?> </td>
+            <td class="td"> <?= $upl->mail ?> </td>
+            <td class="td"> <?= $upl->id_roles ?> </td>
+            <td class="td"><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $upl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
+            <td class="trash td ">
+            <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $upl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+            <i class="fa fa-trash"></i>
+            </a>
+            </tr>
+            <?php endforeach; ?> 
+    </tbody>
+</table>
+    <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
+<?php endif; ?>

@@ -20,12 +20,11 @@
       <td class="td"><?= $m->date_message ?></td>
       <td class="td"><?= $m->object ?></td>
       <td class="td"><?= $m->message ?></td>
-      <td class="trash">
+      <td class="trash td">
       <a href="?controller=message&action=delete_message&id=<?= $m->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
         <i class="fa fa-trash"></i>
       </a>    
     </tr>
-    <?php var_dump($message)?>
     <?php endforeach; ?>
   </tbody>
 </table>

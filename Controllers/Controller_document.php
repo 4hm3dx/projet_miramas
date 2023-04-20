@@ -76,6 +76,25 @@ class Controller_document extends Controller
         	$this->render("all_document_utilisateur", ["utilisateur_document" => $utilisateur_document, "position" => 1]);
     	}
 	}
+
+	// ^ update 
+	public function action_update_document()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $m = Model::get_model();
+            $data = ["document" => $m->get_update_document($id)];
+            $this->render("update_document", $data);
+        } else if (isset($_POST['submit'])) {
+            $m = Model::get_model();
+            $m->get_update_document_bdd();
+            $data = ["documents" => $m->get_all_document()];
+            $this->render("all_document", $data);
+        } else {
+            header('Location: ?controller=document&action=all_document');
+        }
+    }
+
    
         // ^ Delete 
 		// public function action_delete_document()
