@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="Content/css/style_condition.css">
     <link rel="stylesheet" href="Content/css/style_partenaire.css">
     <link rel="stylesheet" href="Content/css/style_accueil.css">
+    <link rel="stylesheet" href="Content/css/style_recherche.css">
 
 
 

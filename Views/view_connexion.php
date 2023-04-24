@@ -34,6 +34,7 @@
             </label>
             <input type="password" name="confirme_mdp_utilisateur_inscription"
                 id="confirme_mdp_utilisateur_inscription">
+
             <div class="condition_general_utilisation">
                 <p>
                     <label class="label_checkbox_condition" for="condition_general"></label><sup>*</sup>
@@ -62,7 +63,8 @@
 </section>
 
 <section class="formulaire_connexion_utilisateur">
-    <form action="" method="POST" id="formulaire_connexion" name="form2">
+    <form action="?controller=connexion&action=connexion_utilisateur" method="POST" id="formulaire_connexion"
+        name="form2">
         <fieldset>
             <legend id="legend_connexion">Connexion</legend>
             <label class="label_mail_connexion" for="mail_utilisateur_connexion">E-mail : <sup>*</sup> </label>
@@ -75,7 +77,8 @@
                     <i class="far fa-eye-slash"></i>
                 </button>
             </div>
-            <input type="submit" id="submit_formulaire_connexion" value="Connexion"><br>
+            <input type="submit" id="submit_formulaire_connexion" name="submit_formulaire_connexion"
+                value="Connexion"><br>
             <span id="inscription">Vous n'êtes pas inscrit? <button id="button_inscription">Inscrivez-vous
                     !</button></span>
         </fieldset>

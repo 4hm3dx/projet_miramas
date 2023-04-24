@@ -1,4 +1,4 @@
-// ! Affichage des formulire
+// ! Affichage des formulaire
 
 // Récupération des éléments HTML du formulaire d'inscription et de connexion
 const formulaireInscription = document.getElementById('formulaire_inscription');
@@ -24,7 +24,9 @@ formulaireInscription.style.display = 'none';
 formulaireConnexion.style.display = 'block';
 
 // & Condition de soumission du formulaire 
-document.getElementById('formulaire_inscription').addEventListener('submit', function (event) {
+//document.getElementById('formulaire_inscription').addEventListener('submit', function (e) {
+function validerInscription(e) {
+  e.preventDefault();
   let nom = document.getElementById('nom_utilisateur_inscription').value.trim();
   let prenom = document.getElementById('prenom_utilisateur_inscription').value.trim();
   let email = document.getElementById('mail_utilisateur_inscription').value.trim();
@@ -36,7 +38,7 @@ document.getElementById('formulaire_inscription').addEventListener('submit', fun
   let email_regex = /^\S+@\S+\.\S+$/;
   let password_regex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-  // let error_messages = [];
+  let error_messages = [];
 
   if (!nom_regex.test(nom)) {
     document.getElementById('nom_inscription_erreur').textContent = 'Le nom doit contenir entre 2 et 30 caractères.';
@@ -71,10 +73,10 @@ document.getElementById('formulaire_inscription').addEventListener('submit', fun
   } else {
     document.getElementById('checkbox_condition_inscription_erreur').textContent = '';
   }
-});
+};
 
-const form = document.querySelector('form');
+formulaireInscription.addEventListener('submit', validerInscription);
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault(); // Empêcher la soumission traditionnelle du formulaire
-});
+/*form.addEventListener('submit', (event) => {
+  // Empêcher la soumission traditionnelle du formulaire
+});*/

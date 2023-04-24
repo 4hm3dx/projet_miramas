@@ -3,6 +3,10 @@
 class Controller_connexion extends Controller
 {
 	//* L'action par défaut redirige vers l'action "home"
+	public function action_home()
+	{
+	}
+
 	public function action_default()
 	{
 		$this->action_home();
@@ -12,6 +16,54 @@ class Controller_connexion extends Controller
 	{
 		$this->render("connexion");
 	}
+	public function action_connexion_utilisateur()
+	{
+		if (isset($_POST['submit_formulaire_connexion'])) {
+			$email = filter_input(INPUT_POST, 'mail_utilisateur_connexion', FILTER_VALIDATE_EMAIL);
+			$password = filter_input(INPUT_POST, 'mdp_utilisateur_connexion', FILTER_SANITIZE_STRING);
+			$password_regex = '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/';
+			$email_regex = '/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/';
+
+			if (empty($email) || empty($password)) {
+				$this->render("connexion");
+				var_dump($email);
+				var_dump($password);
+				echo 'empty';
+				exit();
+			}
+
+			$email = trim($email);
+			$password = trim($password);
+
+			if (!preg_match($email_regex, $email) || !preg_match($password_regex, $password)) {
+				echo 'email ou mot de passe incorrect';
+				exit();
+			}
+
+			$m = Model::get_model();
+			$m->get_connexion_utilisateur($email, $password);
+			if ($m->get_connexion_utilisateur($email, $password)) {
+				// L'utilisateur existe dans la base de données
+
+				// Vérifier si l'utilisateur est admin
+				if ($_SESSION['admin'] == 1) {
+					// L'utilisateur est admin
+					// Faites quelque chose ici pour les utilisateurs admin
+					header('Location: admin/?controller=home&action=home ');
+				} else {
+					// L'utilisateur n'est pas admin
+					// Faites quelque chose ici pour les utilisateurs non-admin
+					header('Location: user/?controller=home&action=connexion_user');
+				}
+
+			} else {
+				// L'utilisateur n'existe pas dans la base de données
+				// Faites quelque chose ici pour les utilisateurs inexistants
+				header('Location:?controller=home&action=home');
+			}
+		}
+	}
+
 	public function action_inscription()
 	{
 		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,16 +71,16 @@ class Controller_connexion extends Controller
 			$Nom = filter_input(INPUT_POST, 'nom_utilisateur_inscription', FILTER_SANITIZE_STRING);
 			$Prenom = filter_input(INPUT_POST, 'prenom_utilisateur_inscription', FILTER_SANITIZE_STRING);
 			$Mail = filter_input(INPUT_POST, 'mail_utilisateur_inscription', FILTER_VALIDATE_EMAIL);
-			$Password = filter_input(INPUT_POST, 'mdp', FILTER_UNSAFE_RAW);
+			$Password = filter_input(INPUT_POST, 'mdp_utilisateur_inscription', FILTER_UNSAFE_RAW);
 			$Password_confirm = filter_input(INPUT_POST, 'confirme_mdp_utilisateur_inscription', FILTER_UNSAFE_RAW);
 			$nom_regex = '/^[a-zA-Z\s]{2,30}$/';
-			$password_regex = '/^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/';
+			$password_regex = '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/';
 			$email_regex = '/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/';
 
-			/*if (empty($Nom) || empty($Prenom) || empty($Mail) || empty($Password)) {
-			echo 'Certains champs sont vides';
-			exit;
-			}*/
+			if (empty($Nom) || empty($Prenom) || empty($Mail) || empty($Password)) {
+				echo 'Certains champs sont vides';
+				exit;
+			}
 
 			$Nom = trim($Nom);
 			$Prenom = trim($Prenom);
@@ -47,7 +99,7 @@ class Controller_connexion extends Controller
 			}
 
 
-			if (preg_match($password_regex, $Password)) {
+			if (!preg_match($password_regex, $Password)) {
 				echo 'Format du mot de passe incorrect';
 				exit;
 			}
@@ -63,8 +115,10 @@ class Controller_connexion extends Controller
 			}
 
 			if ($Password !== $Password_confirm) {
-				echo 'Les mots de passe ne sont pas les mêmes';
+				echo 'Les mots de passe ne sont pas identiques';
+				exit;
 			}
+
 
 
 			// Hash de mot de passe
@@ -75,7 +129,9 @@ class Controller_connexion extends Controller
 			$m->get_inscription($Nom, $Prenom, $Mail, $hashedPassword);
 
 			$this->render("home");
+
 		} else {
+
 			$this->render("connexion");
 		}
 	}
