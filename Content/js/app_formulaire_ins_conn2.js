@@ -1,121 +1,121 @@
-// ! Affichage des formulire 
+// // ! Affichage des formulire 
 
-// Récupération des éléments HTML du formulaire d'inscription et de connexion
-const formulaireInscription = document.getElementById('formulaire_inscription');
-const formulaireConnexion = document.getElementById('formulaire_connexion');
+// // Récupération des éléments HTML du formulaire d'inscription et de connexion
+// const formulaireInscription = document.getElementById('formulaire_inscription');
+// const formulaireConnexion = document.getElementById('formulaire_connexion');
 
-// Récupération des boutons de basculement d'inscription et de connexion
-const buttonInscription = document.getElementById('button_inscription');
-const buttonConnexion = document.getElementById('button_connexion');
+// // Récupération des boutons de basculement d'inscription et de connexion
+// const buttonInscription = document.getElementById('button_inscription');
+// const buttonConnexion = document.getElementById('button_connexion');
 
-// Ajout de gestionnaires d'événements pour les boutons de basculement
-buttonInscription.addEventListener('mousedown', function () {
-    formulaireInscription.style.display = 'block';
-    formulaireConnexion.style.display = 'none';
-});
+// // Ajout de gestionnaires d'événements pour les boutons de basculement
+// buttonInscription.addEventListener('mousedown', function () {
+//     formulaireInscription.style.display = 'block';
+//     formulaireConnexion.style.display = 'none';
+// });
 
-buttonConnexion.addEventListener('mousedown', function () {
-    formulaireInscription.style.display = 'none';
-    formulaireConnexion.style.display = 'block';
-});
+// buttonConnexion.addEventListener('mousedown', function () {
+//     formulaireInscription.style.display = 'none';
+//     formulaireConnexion.style.display = 'block';
+// });
 
-// Par défaut, le formulaire de connexion est affiché et le formulaire d'inscription est masqué
-formulaireInscription.style.display = 'none';
-formulaireConnexion.style.display = 'block';
+// // Par défaut, le formulaire de connexion est affiché et le formulaire d'inscription est masqué
+// formulaireInscription.style.display = 'none';
+// formulaireConnexion.style.display = 'block';
 
-// & Condition de soumission du formulaire 
-const form = document.querySelector('form');
+// // & Condition de soumission du formulaire 
+// const form = document.querySelector('form');
 
-document.getElementById('formulaire_inscription').addEventListener('submit', function (event) {
-    let nom = document.getElementById('nom_utilisateur_inscription').value.trim();
-    let prenom = document.getElementById('prenom_utilisateur_inscription').value.trim();
-    let email = document.getElementById('mail_utilisateur_inscription').value.trim();
-    let password = document.getElementById('mdp_utilisateur_inscription').value.trim();
-    let confirm_password = document.getElementById('confirme_mdp_utilisateur_inscription').value.trim();
-    let checkbox_condition = document.getElementById('condition_general').checked;
+// document.getElementById('formulaire_inscription').addEventListener('submit', function (event) {
+//     let nom = document.getElementById('nom_utilisateur_inscription').value.trim();
+//     let prenom = document.getElementById('prenom_utilisateur_inscription').value.trim();
+//     let email = document.getElementById('mail_utilisateur_inscription').value.trim();
+//     let password = document.getElementById('mdp_utilisateur_inscription').value.trim();
+//     let confirm_password = document.getElementById('confirme_mdp_utilisateur_inscription').value.trim();
+//     let checkbox_condition = document.getElementById('condition_general').checked;
 
 
-    let nom_regex = /^[a-zA-Z\s]{2,30}$/;
-    let email_regex = /^\S+@\S+\.\S+$/;
-    let password_regex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+//     let nom_regex = /^[a-zA-Z\s]{2,30}$/;
+//     let email_regex = /^\S+@\S+\.\S+$/;
+//     let password_regex = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-    // let error_messages = [];
-    function nomf() {
-        if (!nom_regex.test(nom)) {
-            document.getElementById('nom_inscription_erreur').textContent = 'Le nom doit contenir entre 2 et 30 caractères.';
-            return false;
-        } else {
-            document.getElementById('nom_inscription_erreur').textContent = '';
-            return true;
-        }
-    }
+//     // let error_messages = [];
+//     function nomf() {
+//         if (!nom_regex.test(nom)) {
+//             document.getElementById('nom_inscription_erreur').textContent = 'Le nom doit contenir entre 2 et 30 caractères.';
+//             return false;
+//         } else {
+//             document.getElementById('nom_inscription_erreur').textContent = '';
+//             return true;
+//         }
+//     }
 
-    function prenomf() {
-        if (!nom_regex.test(prenom)) {
-            document.getElementById('prenom_inscription_erreur').textContent = 'Le prénom doit contenir entre 2 et 30 caractères.';
-            return false;
-        } else {
-            document.getElementById('prenom_inscription_erreur').textContent = '';
-            return true;
-        }
-    }
+//     function prenomf() {
+//         if (!nom_regex.test(prenom)) {
+//             document.getElementById('prenom_inscription_erreur').textContent = 'Le prénom doit contenir entre 2 et 30 caractères.';
+//             return false;
+//         } else {
+//             document.getElementById('prenom_inscription_erreur').textContent = '';
+//             return true;
+//         }
+//     }
 
-    function mailf() {
-        if (!email_regex.test(email)) {
-            document.getElementById('mail_inscription_erreur').textContent = 'Le format de l\'e-mail est invalide (xxxx@xxxx.xx).';
-            return false;
-        } else {
-            document.getElementById('mail_inscription_erreur').textContent = '';
-            return true;
-        }
-    }
+//     function mailf() {
+//         if (!email_regex.test(email)) {
+//             document.getElementById('mail_inscription_erreur').textContent = 'Le format de l\'e-mail est invalide (xxxx@xxxx.xx).';
+//             return false;
+//         } else {
+//             document.getElementById('mail_inscription_erreur').textContent = '';
+//             return true;
+//         }
+//     }
 
-    function passwordf() {
-        if (!password_regex.test(password)) {
-            document.getElementById('password_inscription_erreur').textContent = 'Le mot de passe doit contenir au moins une majuscule, un chiffre et faire minimum 8 caractères.';
-            return false;
-        } else {
-            document.getElementById('password_inscription_erreur').textContent = '';
-            return true;
-        }
-    }
+//     function passwordf() {
+//         if (!password_regex.test(password)) {
+//             document.getElementById('password_inscription_erreur').textContent = 'Le mot de passe doit contenir au moins une majuscule, un chiffre et faire minimum 8 caractères.';
+//             return false;
+//         } else {
+//             document.getElementById('password_inscription_erreur').textContent = '';
+//             return true;
+//         }
+//     }
 
-    function confirmPasswordf() {
-        if (password !== confirm_password) {
-            error_messages.push('Les mots de passe ne correspondent pas.');
-            return false;
-        }
-        return true;
-    }
+//     function confirmPasswordf() {
+//         if (password !== confirm_password) {
+//             error_messages.push('Les mots de passe ne correspondent pas.');
+//             return false;
+//         }
+//         return true;
+//     }
 
-    function checkboxf() {
-        if (!checkbox_condition) {
-            document.getElementById('checkbox_condition_inscription_erreur').textContent = 'Vous devez accepter les conditions générales.';
-            return false;
-        } else {
-            document.getElementById('checkbox_condition_inscription_erreur').textContent = '';
-            return true;
-        }
-    }
+//     function checkboxf() {
+//         if (!checkbox_condition) {
+//             document.getElementById('checkbox_condition_inscription_erreur').textContent = 'Vous devez accepter les conditions générales.';
+//             return false;
+//         } else {
+//             document.getElementById('checkbox_condition_inscription_erreur').textContent = '';
+//             return true;
+//         }
+//     }
 
-    if (nomf() || prenomf() || mailf() || passwordf() || confirmPasswordf() || checkboxf()) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêcher la soumission traditionnelle du formulaire
-            const formData = new FormData(form); // Créer une instance de FormData pour récupérer les données du formulaire
-            fetch('/submit-form', { // Remplacez '/submit-form' par l'URL qui gère la soumission du formulaire
-                method: 'POST',
-                body: formData
-            })
-                .then(response => {
-                    // Gérer la réponse du serveur ici
-                    console.log(response);
-                })
-                .catch(error => {
-                    // Gérer les erreurs ici
-                    console.error(error);
-                });
-        });
-    }
+//     if (nomf() || prenomf() || mailf() || passwordf() || confirmPasswordf() || checkboxf()) {
+//         form.addEventListener('submit', (e) => {
+//             e.preventDefault(); // Empêcher la soumission traditionnelle du formulaire
+//             const formData = new FormData(form); // Créer une instance de FormData pour récupérer les données du formulaire
+//             fetch('/submit-form', { // Remplacez '/submit-form' par l'URL qui gère la soumission du formulaire
+//                 method: 'POST',
+//                 body: formData
+//             })
+//                 .then(response => {
+//                     // Gérer la réponse du serveur ici
+//                     console.log(response);
+//                 })
+//                 .catch(error => {
+//                     // Gérer les erreurs ici
+//                     console.error(error);
+//                 });
+//         });
+//     }
 
-});
+// });
 
