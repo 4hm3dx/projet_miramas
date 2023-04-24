@@ -289,7 +289,7 @@ class Model
         $titre = $this->valid_input($_POST['titre_document']);
 
         // Préparer la requête SQL en utilisant une variable liée pour éviter les attaques par injection SQL
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, c.libelle, c.affichage, d.fichier  FROM document d  
+        $r = $this->bd->prepare("SELECT d.id, u.nom, u.prenom, d.titre, d.format, d.description, c.libelle, c.affichage, d.fichier  FROM document d  
         INNER JOIN utilisateur u ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE titre = :titre");
         $r->bindValue(':titre', $titre, PDO::PARAM_STR);
@@ -313,7 +313,7 @@ class Model
     public function get_all_format_document_list($format_document)
     {
         $format_document = $this->valid_input($_POST["format_document"]);
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
+        $r = $this->bd->prepare("SELECT d.id, u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
         INNER JOIN document d ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE format = :format;");
         $r->bindValue(':format', $format_document, PDO::PARAM_STR);
@@ -335,7 +335,7 @@ class Model
     public function get_all_utilisateur_document_list($utilisateur_document)
     {
         $utilisateur_document = $this->valid_input($_POST["utilisateur_document"]);
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
+        $r = $this->bd->prepare("SELECT d.id, u.nom, u.prenom, d.titre, d.format, d.description, d.date_publication, c.libelle, c.affichage, d.fichier FROM utilisateur u 
         INNER JOIN document d ON u.id = d.id_utilisateur 
         INNER JOIN categorie c ON c.id = d.id_categorie WHERE nom = :utilisateur;");
         $r->bindValue(':utilisateur', $utilisateur_document, PDO::PARAM_STR);
@@ -419,7 +419,9 @@ class Model
     public function get_update_annonce($id)
     {
         // $id = $_GET['id'];
-        $r = $this->bd->prepare("SELECT * FROM annonce WHERE id = $id");
+        $r = $this->bd->prepare("SELECT u.nom, u.prenom, a.texte, a.image FROM annonce a 
+        INNER JOIN utilisateur u ON u.id = a.id_utilisateur
+        WHERE a.id = $id");
         
         $r->execute();
         
@@ -451,7 +453,7 @@ class Model
     public function get_update_document($id)
     {
         // $id = $_GET['id'];
-        $r = $this->bd->prepare("SELECT d.id, u.nom, d.titre, d.description, c.libelle, c.affichage, d.chemin_multimedia, d.date_publication 
+        $r = $this->bd->prepare("SELECT d.id, u.nom, d.titre, d.description, c.libelle, c.affichage, d.fichier, d.date_publication 
         FROM document d 
         JOIN categorie c ON d.id_categorie = c.id
         JOIN utilisateur u ON d.id_utilisateur = u.id 
@@ -470,7 +472,7 @@ class Model
         $titre = $this->valid_input($_POST['titre']);
         $description = $this->valid_input($_POST['description']);
         $date_publication = $this->valid_input($_POST['date_publication']);
-        $chemin_multimedia = $this->valid_input($_POST['chemin_multimedia']);
+        $fichier = $this->valid_input($_POST['image']);
         $affichage = $this->valid_input($_POST['affichage']);
         $libelle = $this->valid_input($_POST['libelle']);
         
@@ -479,13 +481,13 @@ class Model
         $r = $this->bd->prepare("UPDATE document d
         INNER JOIN utilisateur u ON u.id = d.id_utilisateur
         INNER JOIN categorie c ON c.id = d.id_categorie
-        SET u.nom = :nom, d.titre = :titre, d.description = :description, d.date_publication = :date_publication, d.chemin_multimedia = :chemin_multimedia, c.affichage = :affichage, c.libelle = :libelle
+        SET u.nom = :nom, d.titre = :titre, d.description = :description, d.date_publication = :date_publication, d.fichier = :fichier, c.affichage = :affichage, c.libelle = :libelle
         WHERE d.id = :id;");
         $r->bindParam(':nom', $nom);
         $r->bindParam(':titre', $titre);
         $r->bindParam(':description', $description);
         $r->bindParam(':date_publication', $date_publication);
-        $r->bindParam(':chemin_multimedia', $chemin_multimedia);
+        $r->bindParam(':fichier', $fichier);
         $r->bindParam(':affichage', $affichage);
         $r->bindParam(':libelle', $libelle);
         $r->bindParam(':id', $id);
@@ -513,17 +515,19 @@ class Model
         $titre = $this->valid_input($_POST['titre_document']);
         $description = $this->valid_input($_POST['description_document']);
         $date_publication = $this->valid_input($_POST['date_document']);
+        $fichier = $this->valid_input($_POST['image']);
         $id_categorie = $this->valid_input($_POST['select_categorie']);
-        // $chemin_multimedia = $this->valid_input($_POST['chemin_multimedia']);
+        // $fichier = $this->valid_input($_POST['fichier']);
 
-        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`) 
-        VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur)");
+        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`, `fichier`) 
+        VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur, :fichier)");
 
         $r->bindParam(':titre', $titre);
+        $r->bindParam(':fichier', $fichier);
         $r->bindParam(':description', $description);
         $r->bindParam(':date_publication', $date_publication);
         $r->bindParam(':id_categorie', $id_categorie);
-        // $r->bindParam(':chemin_multimedia', $chemin_multimedia);
+        // $r->bindParam(':fichier', $fichier);
 
         $r->execute();
     }

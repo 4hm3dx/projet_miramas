@@ -9,11 +9,12 @@
                 <div class="popup-wrapper">
                 <div class="popup-content">
                     <button class="close-button">&times;</button>
-                        <form id="popup-form" action="?controle=ajout_document&action=ajout_categorie" method="POST">
-                            <label for="popup-input">Saisissez votre nom :</label>
-                            <input type="text" id="popup-input" name="input_ajout_categorie">
-                            <input type="submit" value="Ajouter">
-                        </form>
+                    <form id="popup-form" action="?controller=ajout_document&action=ajout_categorie" method="POST">
+                        <label for="popup-input">Saisissez votre nom :</label>
+                        <input type="text" id="popup-input" name="input_ajout_categorie">
+                        <input type="submit" value="Ajouter">
+                    </form>
+                        <?php var_dump($ajout_categorie); ?>
                 </div>
                 </div>
             <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST" enctype="multipart/form-data">
@@ -31,66 +32,65 @@
                     <option value="<?= $sc->id ?>"><?= $sc->libelle ?></option>
                 <?php endforeach ?>
             </select>
-            <select name="select_utilisateur" id="select_utilisateur">
-                <?php foreach ($select_utilisateurs as $su) : ?> 
-                    <option value="<?= $su->id ?>"><?= $su->nom ?></option>
-                    <?php endforeach; ?>
-                </select>
-                
+            <select name="ajout_utilisateur_document" id="ajout_utilisateur_document">
+                <?php foreach ($ajout_utilisateur_document as $aud) : ?>
+                    <option value="<?= $aud->id ?>"><?= $aud->nom ?></option>
+                <?php endforeach ?>
+            </select>   
                 <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
                 <input type="reset" id="input-submit-supprimer" value="Annuler">
             </form>
         </div>
-        <?php var_dump($select_utilisateur); ?>
+        <?php var_dump($ajout_utilisateur_document); ?>
             </div>
           
         </div>
     </section>
 </section>
 <?php
-if($_SERVER['REQUEST_METHOD'] === "POST"){
-    //Controller se qu'on recois avec $_FILES
-    if(isset($_FILES['image'])){
-       $files = $_FILES['image'];
+// if($_SERVER['REQUEST_METHOD'] === "POST"){
+//     //Controller se qu'on recois avec $_FILES
+//     if(isset($_FILES['image'])){
+//        $files = $_FILES['image'];
     
 
-    if($files['error'] > 0){
-        die("Error while uploading");
-    }
+//     if($files['error'] > 0){
+//         die("Error while uploading");
+//     }
     
-    // tableau pour les extentions que l'on pourra telecharger
-    $valideExt = ["jpg", "png", "jpeg", "mp4", "mp3"];
-    // Taille des fichier recu 
-    $maxSize = 3000000;
+//     // tableau pour les extentions que l'on pourra telecharger
+//     $valideExt = ["jpg", "png", "jpeg", "mp4", "mp3"];
+//     // Taille des fichier recu 
+//     $maxSize = 3000000;
     
-    //Controler l'extention du fichier envoyer
-    $mimeType = mime_content_type($files['tmp_name']);
-    $mimeType = explode('/', $mimeType);
-    // var_dump(end($mimeType));
-    $fileExt = end($mimeType);
+//     //Controler l'extention du fichier envoyer
+//     $mimeType = mime_content_type($files['tmp_name']);
+//     $mimeType = explode('/', $mimeType);
+//     // var_dump(end($mimeType));
+//     $fileExt = end($mimeType);
     
-    //controle si l'extention chargé fait partie de celle que j'autorise
-    if (!in_array($fileExt, $valideExt)) {
-        die("The file does not have an authorized extension ");
-    }
+//     //controle si l'extention chargé fait partie de celle que j'autorise
+//     if (!in_array($fileExt, $valideExt)) {
+//         die("The file does not have an authorized extension ");
+//     }
     
-    //Controler la taille du fichier 
-    if($files['size'] > $maxSize){
-        die("This file is too big.");
-    }
+//     //Controler la taille du fichier 
+//     if($files['size'] > $maxSize){
+//         die("This file is too big.");
+//     }
 
-    // Partie stockage du fichier telechargé 
-    $tmpName = $_FILES['image']['tmp_name'];
-    $uniqueName = md5(uniqid(rand(), true));
-    // pathinfo = Renvoie des informations sur le chemin d'accès à un fichier
+//     // Partie stockage du fichier telechargé 
+//     $tmpName = $_FILES['image']['tmp_name'];
+//     $uniqueName = md5(uniqid(rand(), true));
+//     // pathinfo = Renvoie des informations sur le chemin d'accès à un fichier
 
-    $fileExt = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-    $fileName = $uniqueName . '.' . $fileExt;
-    $destination = "uploads/" . $fileName;
+//     $fileExt = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+//     $fileName = $uniqueName . '.' . $fileExt;
+//     $destination = "uploads/" . $fileName;
 
-    $status = move_uploaded_file($tmpName, $destination);
-    if(!$status) {
-        die("Failed to upload file.");
-    }
-}}
+//     $status = move_uploaded_file($tmpName, $destination);
+//     if(!$status) {
+//         die("Failed to upload file.");
+//     }
+// }}
 ?>

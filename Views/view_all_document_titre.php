@@ -19,6 +19,7 @@
       <th>Prénom</th>
       <th>Titre</th>
       <th>Format</th>
+      <th>Fichier</th>
       <th>Description</th>
       <th>Libellés</th>
       <th>Affichage <sup>*</sup></th>

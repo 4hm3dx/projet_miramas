@@ -16,25 +16,23 @@ class Controller_ajout_document extends Controller
         $this->render("ajout_document", compact('select_document'));
     }
     
-    public function action_ajout_utilisateur_document()
+    public function action_ajout_utilisateur()
     {
-        $m = Model::get_model();
-        $data = ["select_utilisateurs" => $m->get_ajout_utilisateur_document()];
-        $this->render("ajout_document", $data);
-        var_dump($data);
-        // $model = Model::get_model();
-        // $select_utilisateur = $model->get_ajout_utilisateur_document();
+        $model = Model::get_model();
+        $ajout_utilisateur_document = $model->get_ajout_utilisateur_document();
 
-        // $this->render("ajout_document", compact('select_utilisateurs'));
+        $this->render("ajout_document", compact('ajout_utilisateur_document'));
     }
 
     public function ajout_categorie()
     {
         $m = Model::get_model();
+        $ajout_categorie = null; // Initialisation de la variable
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $m->get_ajout_categorie();
+            $m->add_category($_POST['input_ajout_categorie']);
         }
-        $data = ["ajout_categorie" => $m->get_ajout_categorie()];
+        $ajout_categorie = $m->get_ajout_categorie(); // Assignation de la valeur de retour de la fonction à la variable
+        $data = ["ajout_categorie" => $ajout_categorie];
         $this->render("ajout_document", $data);
     }
     

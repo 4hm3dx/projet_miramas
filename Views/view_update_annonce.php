@@ -6,15 +6,12 @@
         <input type="text" name="nom" id="nom" value="<?= filter_var($annonce['nom'], FILTER_SANITIZE_STRING ) ?>">
         <label for="texte">Texte :</label>
         <input type="text" name="texte" id="texte" value="<?= filter_var($annonce['texte'], FILTER_SANITIZE_STRING ) ?>">
-        <label for="image">Image : </label>
-        <input type="text" name="image" id="image" value="<?= valid_input($annonce['image']) ?>">
-        <label for="logo">Logo : </label>
-        <input type="text" name="logo" id="logo" value="<?= valid_input($annonce['logo']) ?>">
+        <label for="image">Image : <sup>*</sup> <i class="fa-regular fa-circle-question" title="Votre fichier ne doit pas depasser les 5Mo et etre au format suivant : .png, .jpg, .jpeg, .mp3, .mp4."></i></label>
+        <input type="file" name="image" id="image" value="<?= valid_input($annonce['image']) ?>">
         <input type="submit" value="Modifier" name="submit" id="submit">
         <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
     </fieldset>
 </form>
-<?php var_dump($annonce) ?>
 
 
 <?php function valid_input($data)

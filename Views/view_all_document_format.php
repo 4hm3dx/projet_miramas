@@ -18,6 +18,7 @@
                 <th>Prénom</th>
                 <th>Titre</th>
                 <th>Format</th>
+                <th>Fichier</th>
                 <th>Description</th>
                 <th>Date de publication</th>
                 <th>Libellés</th>
@@ -44,9 +45,9 @@
                     <td class="td"><?= $fdl->libelle ?></td>
                     <td class="td"><?= $fdl->affichage ?></td>
                     <td class="td"><a href="?controller=document&action=update_document&id=<?= $fdl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-                    <td class="trash td">
-                    <a href="?controller=document&action=delete_document&id=<?= $fdl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-                    <i class="fa fa-trash"></i></a>
+      <td class="trash td">
+      <a href="?controller=document&action=delete_document&id=<?= $fdl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
+      <i class="fa fa-trash"></i></a>
                 </tr>
             <?php endforeach; ?>
         </tbody>

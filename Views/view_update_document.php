@@ -15,15 +15,12 @@
         <input type="text" name="libelle" id="libelle" value="<?= filter_var($document['libelle'], FILTER_SANITIZE_STRING) ?>">
         <label for="affichage">Affichage : </label>
         <input type="text" name="affichage" id="affichage" value="<?= filter_var($document['affichage'], FILTER_SANITIZE_STRING) ?>">
-        <label for="chemin_multimedia">Chemin Multimédia : </label>
-        <input type="text" name="chemin_multimedia" id="chemin_multimedia" value="<?= filter_var($document['chemin_multimedia'], FILTER_SANITIZE_STRING) ?>">
-        <sup>Changer uniquement le nom et l'exetention de l'image si l'image a été remplacé !</sup>
-        <label for="image">Image : </label>
+        <label for="image">Image : <sup>*</sup> <i class="fa-regular fa-circle-question" title="Votre fichier ne doit pas depasser les 5Mo et etre au format suivant : .png, .jpg, .jpeg, .mp3, .mp4."></i></label>
         <input type="file" name="image" id="image" value="">
         <input type="submit" value="Modifier" name="submit" id="submit">
     </fieldset>
 </form>
-<?php var_dump($document) ?>
+
 
 
 <?php 
