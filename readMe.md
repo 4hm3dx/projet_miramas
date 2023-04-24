@@ -1,7 +1,4 @@
-
-
-delete update
-update annonce gerer l'affichage des input pres remplie id utilisateur 
+Voir pour l'icone d'affichage du moi de passe ! 
 
 
 <!--! comment modifier le chemin de l'image sans supprimer l'image (mais je renome le nom de l'image) je ne peux pas modifier en dur le nom de l'image ?????? -->

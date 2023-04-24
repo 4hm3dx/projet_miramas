@@ -1,4 +1,4 @@
-<form action="#" method="POST" class="formulaire_contact">
+<form action="?controller=contact&action=message_visiteur" method="POST" class="formulaire_contact">
   <fieldset class="fieldset_formulaire_contact">
     <legend>Nous Contacter</legend>
     <div class="field-group">
@@ -20,7 +20,7 @@
     <label for="contenue_message_form_contact" id="label_textarea">Message : <sup>*</sup></label>
     <textarea name="contenue_message_form_contact" id="contenue_message_form_contact" cols="60" rows="10"></textarea>
     <span id="message_erreur" class="erreur"></span>
-    <input type="submit" name="envoyer_formulaire_contact" id="envoyer_formulaire_contact" value="Envoyer le message " onclick="return validerFormulaire()">
+    <input type="submit" name="envoyer_formulaire_contact" id="envoyer_formulaire_contact" value="Envoyer le message "
+      onclick="return validerFormulaire()">
   </fieldset>
 </form>
-

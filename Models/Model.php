@@ -3,17 +3,17 @@
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 class Model
-{   //* Début de la Classe
+{ //* Début de la Classe
 
     private $bd;
 
     private static $instance = null;
 
     /*
-         * Constructeur créant l'objet PDO et l'affectant à $bd
-         */
+     * Constructeur créant l'objet PDO et l'affectant à $bd
+     */
     private function __construct()
-    {  //* Fonction qui sert à faire le lien avec la BDD
+    { //* Fonction qui sert à faire le lien avec la BDD
 
         $dsn = "mysql:host=localhost;dbname=les_amis_du_vieux_miramas";   //* Coordonnées de la BDD
         $login = "root";   //* Identifiant d'accès à la BDD

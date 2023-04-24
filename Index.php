@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="Content/css/style_accueil.css">
     <link rel="stylesheet" href="Content/css/style_table.css">
     <link rel="stylesheet" href="Content/css/style_presentation.css">
+    <link rel="stylesheet" href="Content/css/style_recherche.css">
+
 
     <!-- link boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -107,8 +109,10 @@
     }
 
     //* Inclure le fichier de pied de page
+
     echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
     echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+
     require_once 'Utils/footer.php';
     ?>
 </body>
