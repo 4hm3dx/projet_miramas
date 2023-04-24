@@ -515,7 +515,7 @@ class Model
         $titre = $this->valid_input($_POST['titre_document']);
         $description = $this->valid_input($_POST['description_document']);
         $date_publication = $this->valid_input($_POST['date_document']);
-        $fichier = $this->valid_input($_POST['image']);
+        $fichier = $this->valid_input($_POST['input-file-ajout-document']);
         $id_categorie = $this->valid_input($_POST['select_categorie']);
         // $fichier = $this->valid_input($_POST['fichier']);
 
@@ -536,7 +536,7 @@ class Model
     public function get_ajout_categorie()
     {
         try {
-            $libelle = $this->valide_input($_POST["input_ajout_categorie"]);
+            $libelle = $this->valid_input($_POST["input_ajout_categorie"]);
     
             $r = $this->bd->prepare("INSERT INTO categorie (`libelle`, `affichage`) VALUES (:libelle, 1)"); 
             $r->bindParam(':libelle', $libelle);
@@ -593,6 +593,12 @@ class Model
             // L'utilisateur n'existe pas dans la base de données
             return false;
         }
+
+         // Démarre la session pour stocker l'ID de l'utilisateur connecté
+         session_start();
+         $_SESSION['user_id'] = $user->id;
+ 
+         return $user;
     }
 
     public function get_message_visiteur($nom, $prenom, $mail, $objet, $message)

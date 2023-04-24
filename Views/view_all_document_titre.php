@@ -42,7 +42,10 @@
                       $type = $finfo->buffer($data);
                       // On affiche l'image en utilisant les données décodées et le type MIME obtenu
                       echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
-                      ?></td>
+                      ?>
+                    <!--  <img
+            src="data:image/ --><?php // echo pathinfo($ac->fichier, PATHINFO_EXTENSION); ?><!--;base64,--><?php // echo base64_encode($ac->fichier); ?><!-- " />-->
+            </td>
       <td class="td"><?= $tdl->description ?></td>
       <td class="td"><?= $tdl->libelle ?></td>
       <td class="td"><?= $tdl->affichage ?></td>

@@ -68,7 +68,7 @@
 </head>
 
 <body>
-    <!--//! Voir le fichier exel Samy/CourSurMVC/Exel -->
+
     <?php
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';

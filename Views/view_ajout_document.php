@@ -14,11 +14,10 @@
                         <input type="text" id="popup-input" name="input_ajout_categorie">
                         <input type="submit" value="Ajouter">
                     </form>
-                        <?php var_dump($ajout_categorie); ?>
                 </div>
-                </div>
+            </div>
             <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST" enctype="multipart/form-data">
-            <label for="titre_document">Titre du document : <sup>*</sup></label>
+                <label for="titre_document">Titre du document : <sup>*</sup></label>
             <input type="text" name="titre_document" class="titre_document">
             <label for="description_document">Description du document : <sup>*</sup></label>
             <input type="text" name="description_document" class="description_document">
@@ -41,7 +40,7 @@
                 <input type="reset" id="input-submit-supprimer" value="Annuler">
             </form>
         </div>
-        <?php var_dump($ajout_utilisateur_document); ?>
+        <?php // var_dump($ajout_utilisateur_document); ?>
             </div>
           
         </div>

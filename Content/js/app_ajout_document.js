@@ -13,7 +13,7 @@ closeButton.addEventListener('click', function () {
 const popupForm = document.getElementById('popup-form');
 
 popupForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     const popupInput = document.getElementById('popup-input');
     alert('Vous avez saisi: ' + popupInput.value);
     popupWrapper.style.display = 'none';

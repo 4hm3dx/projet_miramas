@@ -12,28 +12,32 @@ class Controller_ajout_document extends Controller
     {
         $model = Model::get_model();
         $select_document = $model->get_ajout_libelle();
+        $ajout_utilisateur_document = $this->action_ajout_utilisateur();
 
-        $this->render("ajout_document", compact('select_document'));
+        $this->action_ajout_utilisateur();
+        $this->render("ajout_document", compact(['select_document', 'ajout_utilisateur_document']));
     }
     
     public function action_ajout_utilisateur()
     {
         $model = Model::get_model();
-        $ajout_utilisateur_document = $model->get_ajout_utilisateur_document();
-
-        $this->render("ajout_document", compact('ajout_utilisateur_document'));
+        return $model->get_ajout_utilisateur_document();
+        // var_dump($ajout_utilisateur_document);
+        // die();
+        // $this->render("ajout_document", compact('ajout_utilisateur_document'));
     }
 
-    public function ajout_categorie()
+    public function action_ajout_categorie()
     {
         $m = Model::get_model();
-        $ajout_categorie = null; // Initialisation de la variable
+        $ajout_categorie = "test"; // Initialisation de la variable
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $m->add_category($_POST['input_ajout_categorie']);
+            $m->get_ajout_categorie($_POST['input_ajout_categorie']);
         }
-        $ajout_categorie = $m->get_ajout_categorie(); // Assignation de la valeur de retour de la fonction à la variable
-        $data = ["ajout_categorie" => $ajout_categorie];
+       $data = ['select_document' => $m->get_ajout_libelle(), 'ajout_utilisateur_document' => $m->get_ajout_utilisateur_document()];
         $this->render("ajout_document", $data);
+       
+
     }
     
     public function action_ajout_document_bdd()
