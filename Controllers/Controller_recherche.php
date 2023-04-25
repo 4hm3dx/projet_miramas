@@ -10,11 +10,15 @@ class Controller_recherche extends Controller
 
 	public function action_recherche()
 	{
-		$m = Model::get_model();
-		$data = ["select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "position" => 1];
-		$this->render("recherche", $data);
+	    $m = Model::get_model();
+	    $data = [
+	        "select_categorie" => $m->get_recherche(),
+	        "select_format_fichier" => $m->get_liste_format(),
+	        "derniers_documents" => $m->get_derniers_documents(),
+	        "position" => 1
+	    ];
+	    $this->render("recherche", $data);
 	}
-
 
 	public function action_recherche_document()
 	{
@@ -39,5 +43,14 @@ class Controller_recherche extends Controller
 		if (isset($_POST['select_format_fichier'])) {
 		}
 	}
+
+	// ^ Affichage des 3 derniers post 
+// 	public function derniers_documents()
+// 	{
+// 	// 	$m = Model::get_model();
+// 	//     $data = ["derniers_documents" => $m->get_derniers_documents()];
+// 	// 	// $derniers_documents = $this->document_model->get_derniers_documents();
+// 	//     $this->view->afficher_derniers_documents($derniers_documents);
+// 	// }
 
 }

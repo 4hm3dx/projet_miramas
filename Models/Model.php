@@ -515,8 +515,9 @@ class Model
         $titre = $this->valid_input($_POST['titre_document']);
         $description = $this->valid_input($_POST['description_document']);
         $date_publication = $this->valid_input($_POST['date_document']);
-        $fichier = $this->valid_input($_POST['input-file-ajout-document']);
+        $fichier = $_FILES['input-file-ajout-document']['name'];
         $id_categorie = $this->valid_input($_POST['select_categorie']);
+        $ajout_utilisateur_document = $this->valid_input($_POST['ajout_utilisateur_document']);
         // $fichier = $this->valid_input($_POST['fichier']);
 
         $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`, `fichier`) 
@@ -527,6 +528,7 @@ class Model
         $r->bindParam(':description', $description);
         $r->bindParam(':date_publication', $date_publication);
         $r->bindParam(':id_categorie', $id_categorie);
+        $r->bindParam(':id_utilisateur', $ajout_utilisateur_document);
         // $r->bindParam(':fichier', $fichier);
 
         $r->execute();
@@ -697,6 +699,14 @@ class Model
             $r->execute();
             return $r->fetchAll(PDO::FETCH_OBJ);
         }
+    }
+
+    // ^ Affichage des 3 derniers post sur la page de recherche
+    public function get_derniers_documents()
+    {
+        $r = $this->bd->prepare("SELECT titre, fichier FROM document ORDER BY date_publication DESC LIMIT 3");
+        $r->execute();
+        return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
 

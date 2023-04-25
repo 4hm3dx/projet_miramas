@@ -1,6 +1,17 @@
 <aside class="suggestion_dernier_post">
-  Suugestion des trois derniere post.
+    <h2 class="titre_dernier_document_ajout">Derniers documents ajoutés</h2>
+    <ul class="liste">
+        <?php foreach ($derniers_documents as $d) : ?>
+            <li class="liste">
+                <div class="dernier_post">
+                    <h5 class="titre_dernier_post"><?php echo $d->titre ?></h5>
+                    <img class="image_dernier_post" src="data:image/jpg;base64,<?php echo base64_encode($d->fichier) ?>" /><hr>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </aside>
+
 
 <form action="?controller=recherche&action=recherche_document" method="POST" id="formulaire_recherche_document">
   <fieldset id="fieldset_formulaire_recherche">
