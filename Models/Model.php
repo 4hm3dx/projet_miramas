@@ -539,7 +539,7 @@ class Model
     {
         try {
             $libelle = $this->valid_input($_POST["input_ajout_categorie"]);
-    
+
             $r = $this->bd->prepare("INSERT INTO categorie (`libelle`, `affichage`) VALUES (:libelle, 1)");
             $r->bindParam(':libelle', $libelle);
 
@@ -554,22 +554,40 @@ class Model
     public function get_inscription($Nom, $Prenom, $Mail, $Password)
     {
 
-        $stmt = $this->bd->prepare("SELECT * FROM utilisateur WHERE mail = :Mail");
-        $stmt->execute([':Mail' => $Mail]);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($row) {
+        $requete = "SELECT * FROM utilisateur WHERE mail = :Mail";
+        $stmt = $this->bd->prepare($requete);
+        $stmt->bindParam(':Mail', $Mail);
+        $stmt->execute();
+        $row = $stmt->fetch();
+        echo $row['id_roles'];
+        $idr = $row['id_roles'];
+
+        if ($stmt->rowCount() > 0 && $idr == 4) {
+
+            $requete2 = "UPDATE `utilisateur` SET mot_de_passe = :password, id_roles = 1 WHERE mail = :mail";
+            $stmt2 = $this->bd->prepare($requete2);
+            $stmt2->bindParam(':mail', $Mail);
+            $stmt2->bindParam(':password', $Password);
+            $stmt2->execute();
+
+        } else if ($stmt->rowCount() > 0 && $idr < 4) {
+
             exit('Cet email existe déjà');
         }
 
 
-        $r = "INSERT INTO `utilisateur`(`nom`, `prenom`, `mail`, `mot_de_passe`, `id_roles`) VALUES (:Nom, :Prenom, :Mail, :Password, '1')";
-        $stmt = $this->bd->prepare($r);
-        $stmt->execute([
-            ':Nom' => $Nom,
-            ':Prenom' => $Prenom,
-            ':Mail' => $Mail,
-            ':Password' => $Password
-        ]);
+        if ($stmt->rowCount() == 0) {
+
+
+            $r = "INSERT INTO `utilisateur`(`nom`, `prenom`, `mail`, `mot_de_passe`, `id_roles`) VALUES (:Nom, :Prenom, :Mail, :Password, '1')";
+            $stmt = $this->bd->prepare($r);
+            $stmt->execute([
+                ':Nom' => $Nom,
+                ':Prenom' => $Prenom,
+                ':Mail' => $Mail,
+                ':Password' => $Password
+            ]);
+        }
 
     }
 
@@ -579,6 +597,7 @@ class Model
         $stmt = $this->bd->prepare($requete);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
+
 
         if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch();
@@ -598,43 +617,40 @@ class Model
             return false;
         }
 
-         // Démarre la session pour stocker l'ID de l'utilisateur connecté
-         session_start();
-         $_SESSION['user_id'] = $user->id;
- 
-         return $user;
+        //   Démarre la session pour stocker l'ID de l'utilisateur connecté
+        //  session_start();
+        //  $_SESSION['user_id'] = $user->id;
+
+        //  return $user;
     }
 
     public function get_message_visiteur($nom, $prenom, $mail, $objet, $message)
     {
-        $requete = "SELECT * FROM `utilisateur` WHERE mail=:email AND id_roles=:idr";
+        $requete = "SELECT * FROM `utilisateur` WHERE mail=:email ";
         $stmt = $this->bd->prepare($requete);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':idr', $idr);
+        $stmt->bindParam(':email', $mail);
         $stmt->execute();
+        $row = $stmt->fetch();
 
         if ($stmt->rowCount() > 0) {
             // L'adresse mail existe dans la base de données
-            $row = $stmt->fetch();
-
-            if ($row['id_roles'] == 4) {
-                // Récupérer l'id de l'utilisateur
-                $id_utilisateur = $row['id_utilisateur'];
-
-                // Insérer le message dans la table "message" avec la clé étrangère id_utilisateur
-                $requete_insert = "INSERT INTO `message` (id_utilisateur, object, message) VALUES (:idu, :obj, :msg)";
-                $stmt_insert = $this->bd->prepare($requete_insert);
-                $stmt_insert->bindParam(':idu', $id_utilisateur);
-                $stmt_insert->bindParam(':obj', $objet);
-                $stmt_insert->bindParam(':msg', $message);
-                $stmt_insert->execute();
-            } else {
-                echo 'Veuillez saisir un mail valide';
-                exit();
-            }
 
 
-        } else {
+
+            // Récupérer l'id de l'utilisateur
+            $id_utilisateur = $row['id'];
+
+            // Insérer le message dans la table "message" avec la clé étrangère id_utilisateur
+            $requete_insert = "INSERT INTO `message` (id_utilisateur, object, message) VALUES (:idu, :obj, :msg)";
+            $stmt_insert = $this->bd->prepare($requete_insert);
+            $stmt_insert->bindParam(':idu', $id_utilisateur);
+            $stmt_insert->bindParam(':obj', $objet);
+            $stmt_insert->bindParam(':msg', $message);
+            $stmt_insert->execute();
+
+
+
+        } else if ($stmt->rowCount() == 0) {
             // L'adresse mail n'existe pas dans la base de données, il faut l'insérer
             $requete3 = "INSERT INTO `utilisateur` (nom, prenom, mail, id_roles) VALUES (:nom, :prenom, :email, 4)";
             $stmt3 = $this->bd->prepare($requete3);
@@ -656,6 +672,7 @@ class Model
             $stmt2->execute();
         }
     }
+
 
     // RECHERCHE DE DOCUMENT !!! Ici on est au niveau de l'affichage, donc je veut afficher les options qu'il y'a dans mes select
 
