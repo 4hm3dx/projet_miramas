@@ -11,7 +11,8 @@ class Controller_home extends Controller
 	//* L'action "home" affiche la vue "home"
 	public function action_home()
 	{
+
 		$this->render("home");
 	}
-	
+
 }

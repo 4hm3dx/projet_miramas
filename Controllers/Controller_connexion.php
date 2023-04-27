@@ -18,6 +18,7 @@ class Controller_connexion extends Controller
 	}
 	public function action_connexion_utilisateur()
 	{
+
 		if (isset($_POST['submit_formulaire_connexion'])) {
 			$email = filter_input(INPUT_POST, 'mail_utilisateur_connexion', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'mdp_utilisateur_connexion', FILTER_SANITIZE_STRING);
@@ -41,26 +42,26 @@ class Controller_connexion extends Controller
 			}
 
 			$m = Model::get_model();
-			$m->get_connexion_utilisateur($email, $password);
+			$user = $m->get_connexion_utilisateur($email, $password);
 			if ($m->get_connexion_utilisateur($email, $password)) {
 				// L'utilisateur existe dans la base de données
-
 				// Vérifier si l'utilisateur est admin
-				if ($_SESSION['admin'] == 1) {
-					// L'utilisateur est admin
-					// Faites quelque chose ici pour les utilisateurs admin
-					header('Location: admin/?controller=home&action=home ');
-				} else {
-					// L'utilisateur n'est pas admin
-					// Faites quelque chose ici pour les utilisateurs non-admin
-					header('Location: user/?controller=home&action=connexion_user');
-				}
+				$_SESSION['user'] = array(
+					'id' => $user['id'],
+					'nom' => $user['nom'],
+					'prenom' => $user['prenom'],
+					'mail' => $user['mail'],
+					'id_roles' => $user['id_roles']
+				);
 
-			} else {
-				// L'utilisateur n'existe pas dans la base de données
-				// Faites quelque chose ici pour les utilisateurs inexistants
-				header('Location:?controller=home&action=home');
+				$role = $_SESSION['user']['id_roles'];
+				echo $role;
+				echo $user['prenom'];
+				echo $user['id_roles'];
+
+
 			}
+			$this->render("home");
 		}
 	}
 
@@ -134,6 +135,30 @@ class Controller_connexion extends Controller
 
 			$this->render("connexion");
 		}
+	}
+
+	public function action_deconnexion()
+	{
+		// session_start();
+
+
+		// Récupération des informations de cookie actuelles
+		$params = session_get_cookie_params();
+
+		// Expire le cookie en le réglant sur hier
+		setcookie(session_name(), '', strtotime('-1 day'), $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+
+		// Détruit toutes les variables d'une session
+		session_unset();
+
+		// Destruction de la session
+		session_destroy();
+
+		// Redirection vers la page d'accueil
+		// header("Location: ../index.php");
+		header("Location: ?controller=home&action=home");
+		header("Location: ?controller=home&action=home");
+
 	}
 
 

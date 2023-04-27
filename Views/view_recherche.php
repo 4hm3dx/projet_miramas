@@ -36,25 +36,25 @@
   <select name="select_format_fichier" id="select_format_fichier">
     <option value="" disabled selected>Choisissez le format</option>
     <?php foreach ($select_format_fichier as $s): ?>
-      <option value="<?= $s->id ?>"><?= $s->format ?></option>
+      <option value="<?= $s->format ?>"><?= $s->format ?></option>
     <?php endforeach ?>
   </select>
   <input type="submit" id="submit_recherche_format" name="submit_recherche_format">
+  <?php var_dump($select_format_fichier); ?>
   </fieldset>
 </form>
 <br />
 
 
-<?php if ($position !== 1): ?>
+<?php if ($position !== 2): ?>
 
   <table class='table table-bordered table-responsive-md bg_table'>
     <thead>
       <tr>
         <th>Titre</th>
-        <th>Raison sociale</th>
-        <th>Rue</th>
-        <th>Code postal</th>
-        <th>Localité</th>
+        <th>img</th>
+        <th>description</th>
+        <th>date, auteur</th>
 
       </tr>
     </thead>
@@ -66,14 +66,55 @@
             <?= $ac->titre ?>
           </td>
           <td>
+            <img
+              src="data:image/<?php echo pathinfo($ac->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($ac->fichier); ?>" />
+          </td>
+          <td>
             <?= $ac->description ?>
           </td>
           <td>
-            <?= $ac->rue_fournisseur ?>
+            <?= $ac->date_publication ?>,
+            <?= $ac->id_utilisateur ?>
           </td>
 
+        </tr>
+      <?php endforeach; ?>
+    </body>
+  </table>
+<?php endif; ?>
+
+<?php if ($position !== 1): ?>
 
 
+  <table class='table table-bordered table-responsive-md bg_table'>
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>img</th>
+        <th>description</th>
+        <th>date, auteur</th>
+
+      </tr>
+    </thead>
+
+
+    <body>
+      <?php foreach ($recherche_format as $s): ?>
+        <tr>
+          <td>
+            <?= $s->titre ?>
+          </td>
+          <td>
+            <img
+              src="data:image/<?php echo pathinfo($s->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($s->fichier); ?>" />
+          </td>
+          <td>
+            <?= $s->description ?>
+          </td>
+          <td>
+            <?= $s->date_publication ?>,
+            <?= $s->id_utilisateur ?>
+          </td>
         </tr>
       <?php endforeach; ?>
     </body>
