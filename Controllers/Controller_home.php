@@ -15,4 +15,8 @@ class Controller_home extends Controller
 		$this->render("home");
 	}
 
+	public function action_inscription()
+	{
+		$this->render("inscription");
+	}
 }

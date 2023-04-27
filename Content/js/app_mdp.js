@@ -75,14 +75,14 @@ togglePasswordVisibilityIns.addEventListener("click", function() {
 });
 
 // Ajout de l'écouteur d'événement de clic pour le bouton d'œil dans le formulaire de connexion
-togglePasswordVisibilityCon.addEventListener("click", function() {
-  // Si le type de l'input est "password", le changer en "text"
-  if (passwordInputCon.type === "password") {
-    passwordInputCon.type = "text";
-    togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye-slash"></i>';
-  } else { // Sinon, le changer en "password"
-    passwordInputCon.type = "password";
-    togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye"></i>';
-  }
-});
+togglePasswordVisibilityIns.addEventListener("click", function() {
+    // Si le type de l'input est "password", le changer en "text"
+    if (passwordInputCon.type === "password") {
+      passwordInputCon.type = "text";
+      togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye-slash"></i>';
+    } else { // Sinon, le changer en "password"
+      passwordInputCon.type = "password";
+      togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye"></i>';
+    }
+  });
 

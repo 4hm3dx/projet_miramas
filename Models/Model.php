@@ -598,11 +598,6 @@ class Model
             return false;
         }
 
-         // Démarre la session pour stocker l'ID de l'utilisateur connecté
-         session_start();
-         $_SESSION['user_id'] = $user->id;
- 
-         return $user;
     }
 
     public function get_message_visiteur($nom, $prenom, $mail, $objet, $message)

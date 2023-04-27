@@ -1,13 +1,42 @@
-Voir pour l'icone d'affichage du moi de passe ! 
+Voir pour l'icone d'affichage du mot de passe ! 
 
-
-<!--! comment modifier le chemin de l'image sans supprimer l'image (mais je renome le nom de l'image) je ne peux pas modifier en dur le nom de l'image ?????? -->
-
-Position relative sur sup en scss??????????
-
-update document renvoi de view
-
-introspection php renvoyer une erreur 404 si action controller n'existe pas 
+Position relative sur sup en scss?????????
 
 base 64 decode
+
+Affichage des image pas toute sont prise en compte
+
+Erreur message contact renvoi un erreur format objet et message incorrect????
+
+comment ajouter le format d'un fichier en automatique dans la bdd
+
+fait un select pour recherche par titre 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 cordova 

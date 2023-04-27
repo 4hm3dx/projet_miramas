@@ -9,13 +9,14 @@
 #strength_indicator_confirme {
   display: inline-block;
   margin-top: 5px;
-  width: 100%;
+  width: 70%;
   height: 10px;
   border-radius: 5px;
   border: solid 1px black;
 }
 
-#strength_indicator {
+#strength_indicator, 
+#strength_indicator_confirme {
   background-color: #ddd;
 }
 
@@ -40,17 +41,17 @@
 }
 
 #strength_indicator_weak:before {
-  width: 30%;
+  width: 10%;
   background-color: #ff0000;
 }
 
 #strength_indicator_medium:before {
-  width: 60%;
+  width: 40%;
   background-color: #ffa500;
 }
 
 #strength_indicator_strong:before {
-  width: 100%;
+  width: 70%;
   background-color: #00ff00;
 }
 
@@ -61,7 +62,7 @@
   width: 40%;
   margin: auto;
   border-radius: 10px;
-  padding: 10px;
+ 
 }
 
 #legend_inscription,
