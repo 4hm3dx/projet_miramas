@@ -24,7 +24,7 @@ class Controller_recherche extends Controller
 	{
 		if (isset($_POST['recherche_manuel'])) {
 			$m = Model::get_model();
-
+			// ! a faire ou a supprime (recherche par titre)
 		}
 	}
 
@@ -32,7 +32,7 @@ class Controller_recherche extends Controller
 	{
 		if (isset($_POST['select_categorie'])) {
 			$m = Model::get_model();
-			$data = ["recherche_categorie" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "position" => 1];
+			$data = ["recherche_categorie" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "derniers_documents" => $m->get_derniers_documents(),"position" => 1];
 			$this->render("recherche", $data);
 		}
 	}
@@ -42,7 +42,7 @@ class Controller_recherche extends Controller
 	{
 		if (isset($_POST['select_format_fichier'])) {
 			$m = Model::get_model();
-			$data = ["recherche_format" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "position" => 2];
+			$data = ["recherche_format" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "derniers_documents" => $m->get_derniers_documents(), "position" => 2];
 			$this->render("recherche", $data);
 		}
 	}

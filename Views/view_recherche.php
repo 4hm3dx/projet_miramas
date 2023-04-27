@@ -40,7 +40,7 @@
     <?php endforeach ?>
   </select>
   <input type="submit" id="submit_recherche_format" name="submit_recherche_format">
-  <?php var_dump($select_format_fichier); ?>
+  <?php // var_dump($select_format_fichier); ?>
   </fieldset>
 </form>
 <br />
@@ -74,7 +74,7 @@
           </td>
           <td>
             <?= $ac->date_publication ?>,
-            <?= $ac->id_utilisateur ?>
+            <?= $ac->nom  ?>
           </td>
 
         </tr>
@@ -113,7 +113,7 @@
           </td>
           <td>
             <?= $s->date_publication ?>,
-            <?= $s->id_utilisateur ?>
+            <?= $s->nom ?>
           </td>
         </tr>
       <?php endforeach; ?>

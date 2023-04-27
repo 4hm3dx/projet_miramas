@@ -690,14 +690,18 @@ class Model
         } else if (isset($_POST['select_categorie'])) {
 
             $liste = $_POST['select_categorie'];
-            $r = $this->bd->prepare("SELECT titre, format, description, date_publication, fichier FROM document WHERE id_categorie = '$liste'");
+            $r = $this->bd->prepare("SELECT titre, format, description, date_publication, fichier, u.nom FROM document d
+            INNER JOIN utilisateur u ON u.id = d.id_utilisateur
+            WHERE id_categorie = '$liste'");
             $r->execute();
             return $r->fetchAll(PDO::FETCH_OBJ);
 
         } else if (isset($_POST['select_format_fichier'])) {
 
             $liste = $_POST['select_format_fichier'];
-            $r = $this->bd->prepare("SELECT titre, format, description, date_publication, fichier FROM document WHERE format = '$liste'");
+            $r = $this->bd->prepare("SELECT titre, format, description, date_publication, fichier, u.nom  FROM document d 
+            INNER JOIN utilisateur u ON u.id = d.id_utilisateur
+            WHERE format = '$liste'");
             $r->execute();
             return $r->fetchAll(PDO::FETCH_OBJ);
         }

@@ -60,7 +60,7 @@ class Controller_contact extends Controller
 			$m = Model::get_model();
 			$m->get_message_visiteur($nom, $prenom, $mail, $objet, $message);
 
-
+			$this->render("home");
 		}
 	}
 }
