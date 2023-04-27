@@ -27,7 +27,8 @@ class Controller_contact extends Controller
 
 			$nom_regex = '/^[a-zA-Z\s]{2,30}$/';
 			$mail_regex = '/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/';
-			$message_regex = '/^[a-zA-Z0-9.,?!\'"\s]+$/';
+			$message_regex = '/^[a-zA-Z0-9.,?!\'"«»‹›„“”‘’ \\-\\s]+$/';
+
 
 
 			if (empty($nom) || empty($prenom) || empty($mail) || empty($objet) || empty($message)) {
