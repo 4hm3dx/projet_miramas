@@ -17,9 +17,6 @@
                 value="Connexion"><br>
             <span id="inscription">Vous n'êtes pas inscrit? <a href="?controller=home&action=inscription" id="button_inscription">Inscrivez-vous
                     !</a></span>
-            <span id="inscription">Vous n'êtes pas inscrit? <button href="?controller=connexion&action=page_inscription"
-                    id="button_inscription">Inscrivez-vous
-                    !</button></span>
         </fieldset>
     </form>
 </section>

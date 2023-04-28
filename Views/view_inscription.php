@@ -1,10 +1,6 @@
 <form action="?controller=connexion&action=inscription" method="POST" id="formulaire_inscription" name="form1" style="padding: 20px;">
         <fieldset>
             <legend id="legend_inscription">Inscription</legend>
-<!-- <section class="formulaire_inscription_utilisateurs"> -->
-<form action="?controller=connexion&action=inscription" method="POST" id="formulaire_inscription" name="form1">
-    <fieldset>
-        <legend id="legend_inscription">Inscription</legend>
 
         <label class="label_nom" for="nom_utilisateur_inscription">Nom :<sup>*</sup> </label>
         <span id="nom_inscription_erreur" class="erreur"></span>
@@ -17,23 +13,10 @@
         <label class="label_mail" for="mail_utilisateur_inscription">E-mail : <sup>*</sup> </label>
         <span id="mail_inscription_erreur" class="erreur"></span>
         <input type="email" name="mail_utilisateur_inscription" id="mail_utilisateur_inscription">
-
-            <label class="label_mdp" for="mdp_utilisateur_inscription" >Mot De Passe : <sup>*</sup> </label>
-            <i class="fa-regular fa-circle-question" style="margin-bottom: 5px;"
-                title="Votre mot de passe doit contenir au moins 8 caractères, avec des lettres majuscules, des lettres minuscules et des chiffres."></i>
-            <span id="password_inscription_erreur" class="erreur"></span>
         <label class="label_mdp" for="mdp_utilisateur_inscription">Mot De Passe : <sup>*</sup> </label>
         <i class="fa-regular fa-circle-question"
             title="Votre mot de passe doit contenir au moins 8 caractères, avec des lettres majuscules, des lettres minuscules et des chiffres."></i>
         <span id="password_inscription_erreur" class="erreur"></span>
-
-            <div class="input_visibilite_mdp">
-                <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription" >
-                <button type="button" id="toggle-password-visibility-i"><i class="far fa-eye"
-                        id="toggle_password_inscription"></i>
-                    <i class="far fa-eye-slash"></i>
-                </button>
-            </div>
         <div class="input_visibilite_mdp">
             <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription">
             <button type="button" id="toggle-password-visibility-i"><i class="far fa-eye"
@@ -41,13 +24,6 @@
                 <i class="far fa-eye-slash"></i>
             </button>
         </div>
-
-            <div id="strength_indicator" style="width:80%;"></div>
-            <br>
-            <label class="label_confirme" for="confirme_mdp_utilisateur_inscription">Confirmation : <sup>*</sup>
-            </label>
-            <input type="password" name="confirme_mdp_utilisateur_inscription"
-                id="confirme_mdp_utilisateur_inscription">
         <div id="strength_indicator"></div>
         <br>
         <label class="label_confirme" for="confirme_mdp_utilisateur_inscription">Confirmation : <sup>*</sup>

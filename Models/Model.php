@@ -617,14 +617,11 @@ class Model
             return false;
         }
 
-<<<<<<< HEAD
-=======
         //   Démarre la session pour stocker l'ID de l'utilisateur connecté
         //  session_start();
         //  $_SESSION['user_id'] = $user->id;
 
         //  return $user;
->>>>>>> 8351d2abaea1c7210c76542c044872be8f07ba55
     }
 
     public function get_message_visiteur($nom, $prenom, $mail, $objet, $message)
@@ -735,7 +732,6 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
-
     function valid_input($data)
     {
         //todo Supprime les espaces en début et fin de chaîne
@@ -751,4 +747,5 @@ class Model
         //todo Retourne la chaîne de caractères validée
         return $data;
     }
+
 }
