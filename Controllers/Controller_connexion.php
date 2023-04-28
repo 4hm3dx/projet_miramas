@@ -161,5 +161,10 @@ class Controller_connexion extends Controller
 
 	}
 
+	public function action_page_inscription()
+	{
+		$this->render('page_inscription');
+	}
+
 
 }
