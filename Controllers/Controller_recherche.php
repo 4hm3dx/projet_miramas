@@ -15,6 +15,7 @@ class Controller_recherche extends Controller
 	        "select_categorie" => $m->get_recherche(),
 	        "select_format_fichier" => $m->get_liste_format(),
 	        "derniers_documents" => $m->get_derniers_documents(),
+			'select_titre' => $m->get_recherche_titre(),
 	        "position" => 1
 	    ];
 	    $this->render("recherche", $data);
@@ -22,9 +23,15 @@ class Controller_recherche extends Controller
 
 	public function action_recherche_document()
 	{
-		if (isset($_POST['recherche_manuel'])) {
+		if (isset($_POST['select_titre'])) {
 			$m = Model::get_model();
-			// ! a faire ou a supprime (recherche par titre)
+			$data = ["recherche_titre" => $m->get_submit_document(),
+			"select_categorie" => $m->get_recherche(), 
+			"select_format_fichier" => $m->get_liste_format(), 
+			"derniers_documents" => $m->get_derniers_documents(),
+			'select_titre' => $m->get_recherche_titre(),
+			"position" => 4];
+			$this->render("recherche", $data);
 		}
 	}
 
@@ -32,7 +39,12 @@ class Controller_recherche extends Controller
 	{
 		if (isset($_POST['select_categorie'])) {
 			$m = Model::get_model();
-			$data = ["recherche_categorie" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "derniers_documents" => $m->get_derniers_documents(),"position" => 1];
+			$data = ["recherche_categorie" => $m->get_submit_document(), 
+			"select_categorie" => $m->get_recherche(), 
+			"select_format_fichier" => $m->get_liste_format(), 
+			"derniers_documents" => $m->get_derniers_documents(),
+			'select_titre' => $m->get_recherche_titre(),
+			"position" => 2];
 			$this->render("recherche", $data);
 		}
 	}
@@ -42,7 +54,12 @@ class Controller_recherche extends Controller
 	{
 		if (isset($_POST['select_format_fichier'])) {
 			$m = Model::get_model();
-			$data = ["recherche_format" => $m->get_submit_document(), "select_categorie" => $m->get_recherche(), "select_format_fichier" => $m->get_liste_format(), "derniers_documents" => $m->get_derniers_documents(), "position" => 2];
+			$data = ["recherche_format" => $m->get_submit_document(),
+			 "select_categorie" => $m->get_recherche(), 
+			 "select_format_fichier" => $m->get_liste_format(), 
+			 "derniers_documents" => $m->get_derniers_documents(),
+			 'select_titre' => $m->get_recherche_titre(), 
+			 "position" => 3];
 			$this->render("recherche", $data);
 		}
 	}

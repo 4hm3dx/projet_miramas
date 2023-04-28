@@ -1,58 +1,150 @@
- 
-  /* Main section */
-  #section-body-ajout-document {
-    margin: 2rem auto;
-    max-width: 800px;
-  }
-  
-  #titre-ajout-document {
-    margin-bottom: 1rem;
-  }
-  
+#section-body-ajout-document {
+  padding: 20px;
+}
+
+#section-ajout-document {
+  background-color: #d7d4d4;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#titre-ajout-document {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#flex-ajout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#division-ajout-document {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+}
+
+.checkbox-wrapper {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#popup-toggle-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.popup-wrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-wrapper.show {
+  display: block;
+}
+
+.titre_document, .description_document, .date_document {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#input-file-ajout-document {
+  margin-bottom: 10px;
+  width: 52%;
+  background-color: white;
+  padding: 6px;
+}
+
+#select_categorie, #ajout_utilisateur_document {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#input-submit-ajout-document, #input-submit-supprimer {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+input[type="date"] {
+  width: 30%;
+}
+
+/* #input-submit-ajout-document:hover #input-submit-supprimer:hover {
+  background-color: #3e8e41;
+} */
+
+@media screen and (min-width: 768px) {
   #division-ajout-document {
-    display: flex;
-    flex-direction: column;
+    flex-basis: 50%;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  #division-ajout-document {
+    flex-basis: 33.33%;
   }
-  
-  label {
-    margin-bottom: 0.5rem;
-  }
-  
-  input,
-  select {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: none;
-    border-bottom: 2px solid #333;
-  }
-  
-  select {
-    background-color: #fff;
-  }
-  
-  #input-submit-ajout-document,
-  #input-submit-supprimer {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  #input-submit-ajout-document:hover,
-  #input-submit-supprimer:hover {
-    background-color: #fff;
-    color: #333;
-  }
-  
-  /* Popup */
+}
+
+/* Animation hover pour le bouton Ajouter une catégorie */
+#popup-toggle-button:hover {
+  background-color: #3e8e41;
+}
+
+/* Animation hover pour le bouton de soumission */
+#input-submit-ajout-document:hover {
+  background-color: #0080FF;
+  transform: scale(1.05);
+}
+
+/* Animation hover pour le bouton Annuler */
+#input-submit-supprimer:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+}
+
+.ajout_annuler {
+  display: flex;
+}
+
+/* Popup */
   .popup-wrapper {
     position: fixed;
     top: 0;
@@ -71,6 +163,8 @@
     max-width: 500px;
     padding: 2rem;
     background-color: #fff;
+    margin: 0 auto;
+    margin-top: 10%;
   }
   
   .close-button {
@@ -106,20 +200,4 @@
   .fa-circle-question:hover{
     cursor: pointer;
     content: "";
-  }
-
-  input[type="file"] {
-    margin-bottom: 10px;
-    border: solid 1px #ccc;
-    width: 100%;
-    border-radius: 4px;
-    
-  }
-
-  label {
-    margin-top: 10px;
-  }
-
-  #select_categorie {
-    margin: 15px;
   }

@@ -21,14 +21,14 @@
 					<a class="nav-link" href="?controller=recherche&action=recherche">Document</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="?controller=ajout_document&action=ajout_document">Ajouter un document</a>
+					<a class="nav-link" href="?controller=ajout_document&action=ajout_document">Ajout de document</a>
 				</li>
 				<?php
 				if (!isset($_SESSION['user']['id_roles'])) {
 
 					?>
 					<li class="nav-item">
-						<a href="?controller=connexion&action=connexion" class="button_connexion">Connexion</a>
+						<a href="?controller=connexion&action=connexion" class="nav-link button_connexion" >Connexion</a>
 					</li>
 				<?php }
 				if (isset($_SESSION['user']['id_roles'])) {
