@@ -28,6 +28,7 @@
 .checkbox-wrapper {
   margin-bottom: 20px;
   position: relative;
+  text-align: center;
 }
 
 #popup-toggle-button {
@@ -38,6 +39,7 @@
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .popup-wrapper {
@@ -90,6 +92,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 50%;
 }
 
 #input-submit-ajout-document, #input-submit-supprimer {

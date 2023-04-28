@@ -55,6 +55,6 @@
                 <input type="submit" id="submit_formulaire_inscription" value="Inscription">
         </div>
         <span id="se_connecter">Vous êtes déjà inscrit? <a href="?controller=connexion&action=connexion" id="button_connexion">Connexion</a></span><br>
-        <sub style="color:red;text-align:left;">* : Champs obligatoires</sub>
+        <sub class="info_form">* : Champs Obligatoires</sub>
         </fieldset>
     </form>
