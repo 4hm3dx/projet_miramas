@@ -92,7 +92,7 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 50%;
+  width: 100%;
 }
 
 #input-submit-ajout-document, #input-submit-supprimer {
