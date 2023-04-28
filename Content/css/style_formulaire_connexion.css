@@ -12,13 +12,9 @@
   width: 70%;
   height: 10px;
   border-radius: 5px;
-  border: solid 1px black;
 }
 
-#strength_indicator, 
-#strength_indicator_confirme {
-  background-color: #ddd;
-}
+
 
 #strength_indicator:before {
   content: "";
@@ -90,8 +86,7 @@
 /* Style pour les champs de saisie */
 input[type="text"],
 input[type="email"],
-input[type="password"],
-input[type="date"] {
+input[type="password"] {
   padding: 8px 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -199,3 +194,20 @@ input[type="submit"]:hover,
     width: 90%;
   }
 }
+
+.inscription_reset {
+  display: flex;
+  margin: 15px;
+  /* padding: 10px; */
+}
+
+.inscription_reset input {
+  margin: 5px;
+  width: 100px;
+}
+
+
+/* .info_form {
+  color:red;
+  text-align:left;
+} */

@@ -1,124 +1,282 @@
-.suggestion_dernier_post {
-    float: left;
-    width: 35%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background: rgba(0, 0, 0, 0.599);
-    color: white;
+/* Définition des classes */
+#test_affichage_fomr_aside {
+    display: flex;
+    justify-content: space-between;
 }
 
-#formulaire_recherche_document {
-    margin-left: 35%;
-    width: 65%;
+aside img {
+    max-width: 100%;
+    height: auto;
+    max-height: 170px;
+}
+
+.suggestion_dernier_post {
+    background-color: grey;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 5px;
+  }
+/* Pour centrer les formulaires */
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
-}
-
-#fieldset_formulaire_recherche {
-    border: 1px solid black;
-    padding-left: 9%;
-    padding-right: 9%;
-    padding-top: 5%;
-    padding-bottom: 5% ;
-    border-radius: 15px;
-}
-
-.recherche_manuel,
-.select_categorie,
-.select_format {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#recherche_manuel,
-#select_categorie,
-#select_format_fichier {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-#submit_recherche_manuel,
-#submit_recherche_categorie,
-#submit_recherche_format {
-    display: block;
+    flex-direction: column;
+  }
+  
+  /* Pour l'effet hover sur les images */
+  .img-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Pour le fond de la table */
+  .bg-table {
+    background-color: #f2f2f2;
+  }
+  
+  /* Définition des styles */
+  
+  /* Pour l'aside */
+  .suggestion_dernier_post {
+    float: left;
+    width: 400px;
+  }
+  
+  /* Pour les formulaires */
+  #fieldset_formulaire_recherche {
+    /* max-width: 90%; */
     margin: 0 auto;
-    padding: 10px;
+    border: 2px solid black ;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 11%;
+    width: 50vw;
+
+  }
+
+  .titre_dernier_document_ajout {
+    text-align: center;
+  }
+  
+  .dernier_post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#submit_recherche_manuel,
-#submit_recherche_categorie,
-#submit_recherche_format {
-    margin-bottom: 10px;
-}
+  .liste {
+    list-style: none;
+  }
 
-/* CSS pour l'affichage en mode mobile */
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 24px;
+  .titre_dernier_post {
+    text-align: center;
+  }
+
+  .image_dernier_post {
+    margin: 0 auto;
+  }
+
+  hr {
+    margin-right: 30px;
+    background-color: #0080FF !important;
+  }
+  /* Pour la table */
+  .table {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Pour les titres de colonnes de la table */
+  .table thead th {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Pour les cellules de la table */
+  .table tbody td {
+    text-align: center;
+  }
+  
+  /* Pour les images de la table */
+  .table tbody td img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Pour les lignes impaires de la table */
+  .table tbody tr:nth-child(odd) {
+    background-color: #ddd;
+  }
+  
+  /* Pour les effets hover sur les images */
+  .table tbody td img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Pour les formulaires de recherche */
+  #formulaire_recherche_document,
+  #formulaire_recherche_categorie,
+  #formulaire_recherche_format {
+    margin-bottom: 20px;
+  }
+  
+  /* Pour les options des listes déroulantes */
+  .select_titre option,
+  .select_categorie option,
+  .select_format_fichier option {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  /* Application des styles */
+  
+  /* Pour l'aside */
+  .suggestion_dernier_post {
+    width: 30%;
+    background-color: #ddd;
+  }
+  
+  /* Pour les formulaires */
+  .center {
+    width: 70%;
+  }
+  
+  /* Pour la table */
+  .table {
+    clear: both;
+    margin-top: 20px;
+  }
+  
+  /* Pour les images de la table */
+  .table tbody td img {
+    max-width: 150px;
+  }
+  
+  /* Pour les effets hover sur les images */
+  .table tbody td img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Pour les options des listes déroulantes */
+  .select_titre option,
+  .select_categorie option,
+  .select_format_fichier option {
+    background-color: #fff;
+  }
+  
+  /* Pour les effets hover sur les options des listes déroulantes */
+  .select_titre option:hover,
+  .select_categorie option:hover,
+  .select_format_fichier option:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  /* Responsive */
+@media screen and (max-width: 1000px) {
+    #test_affichage_fomr_aside {
+      width: 100%;
+      flex-direction: column;
     }
 
     .suggestion_dernier_post {
-        float: none;
-        width: auto;
-        text-align: center;
-        margin: 20px auto 0;
-    }
-
-    #formulaire_recherche_document {
-        margin-left: 0;
         width: 100%;
+        border-radius: 5px;
+    }
+  
+    fieldset#fieldset_formulaire_recherche {
+      margin: 20px auto;
+      width: 100%;
+    }
+  
+    table.table {
+      margin-top: 20px;
+      
     }
 
-    #recherche_manuel,
-    #select_categorie,
-    #select_format_fichier {
-        margin-bottom: 10px;
-    }
-}
+  }
+  
 
-footer {
-    clear: both;
-}
-
-img.image_dernier_post {
-    max-width: 60%;
-    height: auto;
-    margin-top: 10px;
-}
-
-.dernier_post {
+  /* Résultats de recherche */
+.resulat_recherche_document {
     display: flex;
-    flex-direction: column;
-    align-items: left;
-}
-
-.dernier_post h5 {
-    margin-bottom: 5px;
-}
-
-.dernier_post .image_dernier_post {
-    max-width: 60%;
+    flex-wrap: wrap;
+    margin: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resulat_recherche_document h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 24px;
+    background-color: #ddd;
+    flex: 1 100%;
+  }
+  
+  .affichage_document_recherche {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 100%;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .affichage_document_recherche img {
+    max-width: 50%;
     height: auto;
-}
+    margin-right: 10px;
+  }
+  
+  .affichage_document_recherche p {
+    margin: 0;
+    flex: 1;
+  }
+  
+  .sup_document_recherhe {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    margin: 0 10px 5px auto;
+    font-size: 14px;
+    color: #0080FF;
+  }
+  
+  .sub_document_recherche {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    margin: 0 10px 5px auto;
+    font-size: 14px;
+    color: black;
+  }
+  
+  /* Effets de survol */
+  .resulat_recherche_document:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .resulat_recherche_document:hover h1 {
+    background-color: #aaa;
+    color: #fff;
+  }
+  
+  .resulat_recherche_document:hover .affichage_document_recherche {
+    background-color: #ddd;
+  }
 
-hr {
-    background-color: blue;
-}
-
-.liste {
-    list-style: none;
-    padding: 0;
-    margin: 5px;
-}
-
-.titre_dernier_document_ajout {
-    text-align: center;
-}
-
-.titre_dernier_post {
-    text-align: center;
-}
-
+  #submit_recherche_titre,
+  #submit_recherche_categorie,
+  #submit_recherche_format{
+    width: 100% ;
+    margin-bottom: 15px;
+ 
+  }

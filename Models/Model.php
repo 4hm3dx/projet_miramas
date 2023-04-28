@@ -692,13 +692,23 @@ class Model
         return $r->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function get_recherche_titre()
+    {
+        $r = $this->bd->prepare("SELECT DISTINCT titre FROM document");
+        $r->execute();
+
+        return $r->fetchAll(PDO::FETCH_OBJ);
+    }
     // Submit 
 
     public function get_submit_document()
     {
-        if (isset($_POST['recherche_manuel'])) {
+        if (isset($_POST['select_titre'])) {
 
-            $r = $this->bd->prepare("SELECT titre, image, description FROM document WHERE titre =:titre");
+            $titre = $_POST['select_titre'];
+            $r = $this->bd->prepare("SELECT titre, format, description, date_publication, fichier, u.nom FROM document d
+            INNER JOIN utilisateur u ON u.id = d.id_utilisateur
+             WHERE titre =:titre");
             $r->bindParam(":titre", $titre);
             $r->execute();
 

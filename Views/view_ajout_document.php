@@ -36,12 +36,15 @@
                     <option value="<?= $aud->id ?>"><?= $aud->nom ?></option>
                 <?php endforeach ?>
             </select>   
-                <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
-                <input type="reset" id="input-submit-supprimer" value="Annuler">
+            <div class="ajout_annuler">    
+                <input type="reset" class="input-submit-supprimer" id="input-submit-supprimer" value="Reset">
+            <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
+                </div>
             </form>
         </div>
         <?php // var_dump($ajout_utilisateur_document); ?>
-            </div>
+        <sub class="info_form">* : Champs Obligatoires</sub>
+    </div>
           
         </div>
     </section>

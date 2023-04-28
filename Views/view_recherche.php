@@ -1,24 +1,29 @@
+<section id="test_affichage_fomr_aside">
 <aside class="suggestion_dernier_post">
-    <h2 class="titre_dernier_document_ajout">Derniers documents ajoutés</h2>
+    <h2 class="titre_dernier_document_ajout">Ajout Récent</h2>
     <ul class="liste">
         <?php foreach ($derniers_documents as $d) : ?>
             <li class="liste">
                 <div class="dernier_post">
                     <h5 class="titre_dernier_post"><?php echo $d->titre ?></h5>
-                    <img class="image_dernier_post" src="data:image/jpg;base64,<?php echo base64_encode($d->fichier) ?>" /><hr>
-                </div>
+                    <img class="image_dernier_post" src="data:image/jpg;base64,<?php echo base64_encode($d->fichier) ?>" />
+                </div><hr>
             </li>
         <?php endforeach; ?>
     </ul>
 </aside>
 
-
+<?php// if ($position == 1) : ?>
 <form action="?controller=recherche&action=recherche_document" method="POST" id="formulaire_recherche_document">
   <fieldset id="fieldset_formulaire_recherche">
-    <legend id="legend_recherche_document">Rechercher un document</legend>
-    <label for="recherche_manuel" class="recherche_manuel">Rechercher un document</label>
-    <input type="text" name="recherche_manuel" id="recherche_manuel">
-    <input type="submit" id="submit_recherche_manuel" name="submit_recherche_manuel">
+<label for="select_titre" class="select_titre">Recherche par titre</label>
+<select name="select_titre" id="select_titre">
+  <option value="Choisissez un titre" disabled selected>Choisissez un titre</option>
+  <?php foreach ($select_titre as $st) : ?>
+  <option value="<?= $st->titre ?>"><?= $st->titre ?></option>
+  <?php endforeach ?>
+</select>  
+    <input type="submit" id="submit_recherche_titre" name="submit_recherche_titre">
 </form>
 
 <form action="?controller=recherche&action=recherche_categorie" method="POST" id="formulaire_recherche_categorie">
@@ -44,79 +49,51 @@
   </fieldset>
 </form>
 <br />
+<?php // endif; ?>
+</section>
 
+<?php if ($position == 2): ?>
+  <?php foreach ($recherche_categorie as $ac): ?>
+<div class="resulat_recherche_document">
+  <h1><?= $ac->titre ?></h1>
+  <div class="affichage_document_recherche">
+  <img class="img_document_recherche"src="data:image/<?php echo pathinfo($ac->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($ac->fichier); ?>" />
+  <p> <?= $ac->description ?> </p>
+  <div class="date_nom_recherche"></div>
+  <sup class="sup_document_recherhe"><?= $ac->date_publication ?></sup>
+  <sub class="sub_document_recherche"><?= $ac->nom  ?></sub>
+  </div>
+</div>
+</div>
+  <?php endforeach; ?>
+  <?php endif; ?>
+  
+ 
 
-<?php if ($position !== 2): ?>
-
-  <table class='table table-bordered table-responsive-md bg_table'>
-    <thead>
-      <tr>
-        <th>Titre</th>
-        <th>img</th>
-        <th>description</th>
-        <th>date, auteur</th>
-
-      </tr>
-    </thead>
-
-    <body>
-      <?php foreach ($recherche_categorie as $ac): ?>
-        <tr>
-          <td>
-            <?= $ac->titre ?>
-          </td>
-          <td>
-            <img
-              src="data:image/<?php echo pathinfo($ac->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($ac->fichier); ?>" />
-          </td>
-          <td>
-            <?= $ac->description ?>
-          </td>
-          <td>
-            <?= $ac->date_publication ?>,
-            <?= $ac->nom  ?>
-          </td>
-
-        </tr>
-      <?php endforeach; ?>
-    </body>
-  </table>
+<?php if ($position == 3): ?>
+  <?php foreach ($recherche_format as $s): ?>
+    <div class="resulat_recherche_document">   
+    <h1><?= $s->titre ?></h1>
+    <div class="affichage_document_recherche">
+    <img src="data:image/<?php echo pathinfo($s->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($s->fichier); ?>" />
+    <p><?= $s->description ?></p>
+  </div>
+  <sup class="sup_document_recherhe"><?= $s->date_publication ?></sup>
+  <sub class="sub_document_recherche"><?= $s->nom ?></sub>
+</div>
+  <?php endforeach; ?>
 <?php endif; ?>
 
-<?php if ($position !== 1): ?>
-
-
-  <table class='table table-bordered table-responsive-md bg_table'>
-    <thead>
-      <tr>
-        <th>Titre</th>
-        <th>img</th>
-        <th>description</th>
-        <th>date, auteur</th>
-
-      </tr>
-    </thead>
-
-
-    <body>
-      <?php foreach ($recherche_format as $s): ?>
-        <tr>
-          <td>
-            <?= $s->titre ?>
-          </td>
-          <td>
-            <img
-              src="data:image/<?php echo pathinfo($s->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($s->fichier); ?>" />
-          </td>
-          <td>
-            <?= $s->description ?>
-          </td>
-          <td>
-            <?= $s->date_publication ?>,
-            <?= $s->nom ?>
-          </td>
-        </tr>
-      <?php endforeach; ?>
-    </body>
-  </table>
+<?php if ($position == 4): ?>
+  <?php foreach ($recherche_titre as $rt): ?>
+    <div class="resulat_recherche_document">
+    <h1><?= $rt->titre ?></h1>    
+  <div class="affichage_document_recherche">
+  <img src="data:image/<?php echo pathinfo($rt->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($rt->fichier); ?>" />
+    <p><?= $rt->description ?></p>
+    <sup class="sup_document_recherhe"> <?= $rt->date_publication ?> </sup>     
+    <sub class="sub_document_recherche"><?= $rt->nom ?> </sub>
+</div>  
+</div>
+     <?php endforeach; ?>
 <?php endif; ?>

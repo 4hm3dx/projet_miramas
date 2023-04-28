@@ -2,15 +2,20 @@
 	margin: 0;
 }
 .button_connexion {
-	background-color: rgb(255, 243, 168);
+	background-color: #0080FF;
 	border: solid 2px black;
-	padding: 5px;
+	padding: 8px;
 	border-radius: 10px;
 	text-decoration: none;
-	color: black;
+	color: rgb(255, 255, 255) !important;
+	font-weight: 400;
+	transition: all 0.3s;
 }
 
-
+.button_connexion:hover {
+	background-color: #4CAF50;
+	transform: scale(1.1);
+}
 
 /* ! FOOTER */
 footer {
@@ -100,24 +105,26 @@ footer {
 /* & Coordonnée de l'asso */
 .coordonnee {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
 .nous_contacter {
-	background-color: rgb(149, 149, 149);
+	background-color: #4CAF50;
 	border: solid 2px black;
 	border-radius: 10px;
 	padding: 15px;
 	text-decoration: none;
-	color: black;
-	transition: 0.3s;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	transition: all 0.5s;
 }
 
 .nous_contacter:hover {
 	text-decoration: none;
-	color: #0080FF;
+	color: #000000;
 	transform: scale(1.05);
+	background-color: #429b45;
 }
 
 .createur_parent {
@@ -128,7 +135,7 @@ footer {
 	width:110px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 993px) {
 	footer {
 		margin: 5px;
 	}
@@ -167,10 +174,25 @@ footer {
 		font-size: 14px;
 		padding: 5px;
 	}
+
+	.button_connexion{
+		text-align: center;
+		transition: all 0.5s;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.button_connexion:hover {
+		transform: scale(0.9);
+	}
 }
 
 .container-fluid {
 	background: #000000d6;
 	color: rgb(255, 244, 244);
-	padding: 5px;
+	padding: 15px;
+}
+
+.titre_div_footer {
+	font-size: large;
 }

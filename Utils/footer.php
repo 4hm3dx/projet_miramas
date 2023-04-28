@@ -23,15 +23,15 @@
 	<div class="coordonnee">
 		<div class="adresse">
 			<p>
-				Les Amis du Vieux Miramas <br>
-				Adresse : <br>
-				Rue Mireille <br>
+				<b class="titre_div_footer">Les Amis du Vieux Miramas</b> <br>
+				Adresse : 
+				Rue Mireille 
 				13140 MIRAMAS
 			</p>
 		</div>
 		<div class="numero_mail">
 			<p>
-				Contact : <br>
+				<b class="titre_div_footer">Contact :</b> <br>
 				Tél : 06 14 31 62 64 <br>
 				Fax: 09 85 74 93 04 <br>
 				Miramas@Miramas.fr</p>

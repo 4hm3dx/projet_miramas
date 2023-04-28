@@ -29,27 +29,6 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Link css -->
-    <link rel="stylesheet" href="Content/css/style.css">
-    <link rel="stylesheet" href="Content/css/style_newsletter.css">
-    <link rel="stylesheet" href="Content/css/style_ajout_document.css">
-
-    <!-- Link font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
-    <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
-    <link rel="stylesheet" href="Content/css/style_condition.css">
-    <link rel="stylesheet" href="Content/css/style_partenaire.css">
-    <link rel="stylesheet" href="Content/css/style_accueil.css">
-    <link rel="stylesheet" href="Content/css/style_table.css">
-    <link rel="stylesheet" href="Content/css/style_presentation.css">
-    <link rel="stylesheet" href="Content/css/style_recherche.css">
-
-
     <!-- link boostrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -66,8 +45,29 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <!-- Link Js -->
     <script src="Content/js/app_formulaire_contact.js" defer></script>
     <script src="Content/js/app_mdp.js" defer></script>
-    <!-- Link js -->
     <script src="Content/js/app_ajout_document.js" defer></script>
+
+
+    <!-- Link font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Link css -->
+    <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/css/style_newsletter.css">
+    <link rel="stylesheet" href="Content/css/style_ajout_document.css">
+    <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
+    <link rel="stylesheet" href="Content/css/style_formulaire_contact.css">
+    <link rel="stylesheet" href="Content/css/style_condition.css">
+    <link rel="stylesheet" href="Content/css/style_partenaire.css">
+    <link rel="stylesheet" href="Content/css/style_accueil.css">
+    <link rel="stylesheet" href="Content/css/style_table.css">
+    <link rel="stylesheet" href="Content/css/style_presentation.css">
+    <link rel="stylesheet" href="Content/css/style_recherche.css">
+
+
 
     <!-- Titre -->
     <title>Les amis du vieux miramas</title>
