@@ -31,17 +31,19 @@
                     <option value="<?= $sc->id ?>"><?= $sc->libelle ?></option>
                 <?php endforeach ?>
             </select>
-            <select name="ajout_utilisateur_document" id="ajout_utilisateur_document">
-                <?php foreach ($ajout_utilisateur_document as $aud) : ?>
+            <!-- <select name="ajout_utilisateur_document" id="ajout_utilisateur_document">
+                <?php //foreach ($ajout_utilisateur_document as $aud) : ?>
                     <option value="<?= $aud->id ?>"><?= $aud->nom ?></option>
-                <?php endforeach ?>
-            </select>   
+                <?php// endforeach ?>
+            </select>    -->
+            <label for="ajout_utilisateur_document"></label>
+            <input type="hidden" value="<?= $_SESSION['user']['id'] ?>" name="ajout_utilisateur_document" id="ajout_utilisateur_document" readonly>
             <div class="ajout_annuler">    
                 <input type="reset" class="input-submit-supprimer" id="input-submit-supprimer" value="Reset">
-            <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
-                </div>
-            </form>
-        </div>
+                <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
+            </div>
+        </form>
+    </div>
         <?php // var_dump($ajout_utilisateur_document); ?>
         <sub class="info_form">* : Champs Obligatoires</sub>
     </div>

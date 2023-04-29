@@ -1,5 +1,5 @@
 <section id="image_text_presnetation_asso">
-    <img src="Content/img/prototype_accueil.png" alt="#" id="image_accueil_prototype">
+    <img src="Content/img/img_accueil.jpg" alt="#" id="image_accueil_prototype">
         <p class="text_accueil">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

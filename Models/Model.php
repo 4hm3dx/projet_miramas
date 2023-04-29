@@ -518,10 +518,12 @@ class Model
         $fichier = $_FILES['input-file-ajout-document']['name'];
         $id_categorie = $this->valid_input($_POST['select_categorie']);
         $ajout_utilisateur_document = $this->valid_input($_POST['ajout_utilisateur_document']);
-        // $fichier = $this->valid_input($_POST['fichier']);
+        // Récupérer l'extension du fichier
+        $extension = pathinfo($fichier, PATHINFO_EXTENSION);
 
-        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`, `fichier`) 
-        VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur, :fichier)");
+        // Stocker l'extension dans la base de données
+        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`, `fichier`, `format`) 
+                VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur, :fichier, :format)");
 
         $r->bindParam(':titre', $titre);
         $r->bindParam(':fichier', $fichier);
@@ -529,7 +531,7 @@ class Model
         $r->bindParam(':date_publication', $date_publication);
         $r->bindParam(':id_categorie', $id_categorie);
         $r->bindParam(':id_utilisateur', $ajout_utilisateur_document);
-        // $r->bindParam(':fichier', $fichier);
+        $r->bindParam(':format', $extension);
 
         $r->execute();
     }

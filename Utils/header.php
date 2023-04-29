@@ -28,14 +28,14 @@
 
 					?>
 					<li class="nav-item">
-						<a href="?controller=connexion&action=connexion" class="nav-link button_connexion" >Connexion</a>
+						<a  href="?controller=connexion&action=connexion" class="nav-link button_connexion" >Connexion</a>
 					</li>
 				<?php }
 				if (isset($_SESSION['user']['id_roles'])) {
 
 					?>
 					<li class="nav-item">
-						<a href="?controller=connexion&action=deconnexion" id="deco"
+						<a class="nav-link" href="?controller=connexion&action=deconnexion" id="deco"
 							onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">Déconnexion</a>
 					</li>
 				<?php } ?>
