@@ -14,27 +14,28 @@ const conditions = document.getElementById('condition_general');
 
 const formulaire = document.getElementById('formulaire_inscription');
 
+function estRempli() {
+    if (nom.value === '' || prenom.value === '' || mail.value === '' || mdp.value === '' || confirmMdp.value === '' || !conditions.checked) {
+        return false;
+    }
+    return true;
+}
 
-
-
-
-
-
-function valideNom() {
-
-
-
-    if (nom.length == 0) {
+function valideNom(e) {
+    if (nom.value.length == 0) {
+        e.preventDefault();
         erreurNom.innerHTML = "Le nom est requis";
         return false;
     }
 
-    if (nom.length < 2) {
+    if (nom.value.length < 2) {
+        e.preventDefault();
         erreurNom.innerHTML = "Nom trop court";
         return false;
     }
 
-    if (!nom.match(/^[A-Za-z'-]/)) {
+    if (!nom.value.match(/^[A-Za-z'-]+$/)) {
+        e.preventDefault();
         erreurNom.innerHTML = "Nom invalide";
         return false;
     }
@@ -44,21 +45,18 @@ function valideNom() {
 
 }
 
-function validePrenom() {
-
-
-
-    if (prenom.length == 0) {
+function validePrenom(e) {
+    if (prenom.value.length == 0) {
         erreurPrenom.innerHTML = "Le prénom est requis";
         return false;
     }
 
-    if (prenom.length < 2) {
+    if (prenom.value.length < 2) {
         erreurPrenom.innerHTML = "Prénom trop court";
         return false;
     }
 
-    if (!prenom.match(/^[A-Za-z'-]/)) {
+    if (!prenom.value.match(/^[A-Za-z'-]+$/)) {
         erreurPrenom.innerHTML = "Prenom invalide";
         return false;
     }
@@ -67,22 +65,19 @@ function validePrenom() {
     return true;
 }
 
-function valideMail() {
-
-
-
-    if (mail.length == 0) {
+function valideMail(e) {
+    if (mail.value.length == 0) {
         erreurMail.innerHTML = "Email manquant";
         return false;
     }
 
-    if (mail.length < 5) {
+    if (mail.value.length < 5) {
         erreurMail.innerHTML = "Veuillez saisir un mail valide";
         return false;
     }
 
-    if (!mail.match(/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/)) {
-        mailError.innerHTML = "Mail invalide";
+    if (!mail.value.match(/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/)) {
+        erreurMail.innerHTML = "Mail invalide";
         return false;
     }
 
@@ -90,22 +85,19 @@ function valideMail() {
     return true;
 }
 
-function valideMdp() {
-
-
-
-    if (mdp.length == 0) {
+function valideMdp(e) {
+    if (mdp.value.length == 0) {
         erreurMdp.innerHTML = "Mot de passe requis";
         return false;
     }
 
-    if (mdp.length < 8) {
+    if (mdp.value.length < 8) {
         erreurMdp.innerHTML = "Veuillez saisir au moins 8 caractères";
         return false;
     }
 
-    if (!mdp.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)) {
-        passwordError.innerHTML = "Le mot de passe doit contenir au moins une lettre majuscule et un chiffre";
+    if (!mdp.value.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)) {
+        erreurMdp.innerHTML = "e mot de passe doit contenir au moins une lettre majuscule et un chiffre";
         return false;
     }
 
@@ -113,34 +105,48 @@ function valideMdp() {
     return true;
 }
 
-function confirmationMdp() {
+function confirmationMdp(e) {
 
-    const confirmMdp = document.getElementById('confirme_mdp_utilisateur_inscription').value;
-    const mdp = document.getElementById('mdp_utilisateur_inscription').value;
-
-    if (confirmMdp !== mdp) {
+    if (confirmMdp.value !== mdp.value) {
         confirmeMdp.innerHTML = "Les mots de passe ne correspondent pas";
+        e.preventDefault();
+        return false;
+    } else {
+        confirmeMdp.innerHTML = "";
+        return true;
     }
-
 }
 
-function valideConditions() {
-
+function valideConditions(e) {
 
     if (!conditions.checked) {
         erreurConditions.innerHTML = "Veuillez accepter les conditions générales";
+        e.preventDefault();
         return false;
+    } else {
+        erreurConditions.innerHTML = "";
+        return true;
     }
-
-    erreurConditions.innerHTML = "";
-    return true;
 }
-
 
 formulaire.addEventListener('submit', function (e) {
 
+    // Appel de toutes les fonctions de validation
+    const conditionsValides = [estRempli(e), valideNom(e), validePrenom(e), valideMail(e), valideMdp(e), confirmationMdp(e), valideConditions(e)];
+
+    // Vérification si toutes les conditions sont valides
+    const conditionsRespectees = conditionsValides.every(function (condition) {
+        return condition === true;
+    });
+
+    // Si toutes les conditions sont respectées, la soumission du formulaire est autorisée
+    if (conditionsRespectees) {
+        return true;
+    }
+
+    // Sinon, on empêche la soumission du formulaire
     e.preventDefault();
-    erreurMessage.innerHTML = "Le formulaire contient des erreurs.";
-    return false;
 
 });
+
+
