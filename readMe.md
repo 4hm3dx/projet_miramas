@@ -1,19 +1,15 @@
 base 64 decode
 
-Position relative sur sup en scss?????????
+Position relative sur sup en scss????????? <!--! OK -->
 <!-- ! BACK END  -->
-<!--^ regler le probleme a la connexion et deconnexion  -->
+<!--^ regler le probleme a la connexion et deconnexion  --> <!--! OK PARTIEL -->
 <!-- ! FONRT END  -->
 cordova 
-enlever le liens ajouter si tes pas connecté 
-render deconnexion 
+crud annonce modifier marche pas 
+
 bloquer l'acces au crud par url 
-
-ajouter alert news letter 
-
-
-Voir pour l'icone d'affichage du mot de passe ! 
-ajout document modifier le render !  OK
-crud annonce modifier marche pas
+pb affichage de certains image 
+voir pour la date et l'uteur du document 
 
 ESSAYER DE SOUMETTRE TOUT LE FORMULAIRE VIDE 
+gestion base de données 

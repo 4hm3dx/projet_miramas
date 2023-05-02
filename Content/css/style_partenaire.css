@@ -20,3 +20,14 @@
     margin: 20px;
     text-align: center;
 }
+
+#presntation_partenaire {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; /* Permettre aux images de passer en colonne lorsqu'elles n'ont plus assez d'espace en ligne */
+  }
+  
+  #presntation_partenaire img {
+    max-width: 100%; /* Empêcher les images de dépasser leur conteneur */
+    margin: 20px 100px; 
+  }

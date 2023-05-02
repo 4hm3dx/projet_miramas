@@ -8,12 +8,16 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
   
   /* Centre le texte du paragraphe */
   .texte_presentation p, 
-  .presentation_colab_asso p {
+   #presentation_colab_asso {
     text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: large;
 }
 
 /* Centre le titre h1 */
@@ -21,22 +25,17 @@ h1 {
     text-align: center;
 }
 
-/* Applique un espacement uniforme entre les deux éléments enfants */
-#texte_image_presentation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 #img_presentation {
     border-radius: 10px;
-    width: 100%;
-    height: 100%
+    width: auto;
+    /* height: 100% */
 }
 
   /* Centre le texte du paragraphe sur les écrans plus grands */
   .texte_presentation p {
     text-align: center;
+    
   }
   
   /* Rend le contenu en colonne sur les petits écrans */

@@ -34,18 +34,7 @@
       <td class="td"><?= $tdl->prenom ?></td>
       <td class="td"><?= $tdl->titre ?></td>
       <td class="td"><?= $tdl->format ?></td>
-      <td class="td"><?php
-                      // On décode les données en base64 stockées dans $tdl->fichier
-                      $data = base64_decode($tdl->fichier);
-                      // On crée une instance de finfo pour obtenir le type MIME du fichier
-                      $finfo = new finfo(FILEINFO_MIME_TYPE);
-                      $type = $finfo->buffer($data);
-                      // On affiche l'image en utilisant les données décodées et le type MIME obtenu
-                      echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
-                      ?>
-                    <!--  <img
-            src="data:image/ --><?php // echo pathinfo($ac->fichier, PATHINFO_EXTENSION); ?><!--;base64,--><?php // echo base64_encode($ac->fichier); ?><!-- " />-->
-            </td>
+      <td class="td"><img src="data:image/<?php echo pathinfo($tdl->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($tdl->fichier); ?>" /></td>
       <td class="td"><?= $tdl->description ?></td>
       <td class="td"><?= $tdl->libelle ?></td>
       <td class="td"><?= $tdl->affichage ?></td>

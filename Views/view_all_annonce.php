@@ -16,12 +16,7 @@
       <td class="td"><?= $a->nom ?></td>
       <td class="td"><?= $a->prenom ?></td>
       <td class="td"><?= $a->texte ?></td>
-      <td class="td"><?php
-                      $data = base64_decode($a->image);
-                      $finfo = new finfo(FILEINFO_MIME_TYPE);
-                      $type = $finfo->buffer($data);
-                      echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
-                      ?></td>
+      <td class="td"><img src="data:image/<?php echo pathinfo($a->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($a->fichier); ?>" /></td>
       <td class="td"><a href="?controller=annonce&action=update_annonce&id=<?= $a->id ?>"><i class="fa-solid fa-pen"></i></a></td>
       <td class="trash td">
     <a href="?controller=annonce&action=delete_annonce&id=<?= $a->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">

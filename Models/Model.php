@@ -419,7 +419,7 @@ class Model
     public function get_update_annonce($id)
     {
         // $id = $_GET['id'];
-        $r = $this->bd->prepare("SELECT u.nom, u.prenom, a.texte, a.image FROM annonce a 
+        $r = $this->bd->prepare("SELECT u.nom, u.prenom, a.texte, a.image, a.id FROM annonce a 
         INNER JOIN utilisateur u ON u.id = a.id_utilisateur
         WHERE a.id = $id");
 
@@ -433,18 +433,14 @@ class Model
         // Récupérer les données du formulaire
         $id = $this->valid_input($_POST['id']);
         $nom = $this->valid_input($_POST['nom']);
-        $prenom = $this->valid_input($_POST['prenom']);
-        $mail = $this->valid_input($_POST['mail']);
-        $id_roles = $this->valid_input($_POST['id_roles']);
-
+        $texte = $this->valid_input($_POST['texte']);
+        $image = $this->valid_input($_POST['image']);
 
         $r = $this->bd->prepare("UPDATE annonce  
-        SET texte = :texte, image = :image, logo = :logo
+        SET texte = :texte, image = :image
         WHERE id = :id;");
-        $r->bindParam(':nom', $nom);
-        $r->bindParam(':prenom', $prenom);
-        $r->bindParam(':mail', $mail);
-        $r->bindParam(':id_roles', $id_roles);
+        $r->bindParam(':texte', $texte);
+        $r->bindParam(':image', $image);
         $r->bindParam(':id', $id);
         $r->execute();
     }

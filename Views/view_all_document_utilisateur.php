@@ -34,12 +34,7 @@
                     <td class="td"> <?= $udl->prenom ?> </td>
                     <td class="td"> <?= $udl->titre ?> </td>
                     <td class="td"> <?= $udl->format ?> </td>
-                    <td class="td"><?php
-                      $data = base64_decode($udl->fichier);
-                      $finfo = new finfo(FILEINFO_MIME_TYPE);
-                      $type = $finfo->buffer($data);
-                      echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
-                      ?></td>
+                    <td class="td"><img src="data:image/<?php echo pathinfo($udl->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($udl->fichier); ?>" /></td>
                     <td class="td"> <?= $udl->description ?> </td>
                     <td class="td"> <?= $udl->date_publication ?></td>
                     <td class="td"><?= $udl->libelle ?></td>

@@ -132,7 +132,7 @@ footer {
 }
 
 .logo {
-	width:110px;
+	width:60%;
 }
 
 @media only screen and (max-width: 993px) {
@@ -149,7 +149,7 @@ footer {
 	}
 	
 	.logo {
-		width:70px;
+		width: 60%;
 	}
 
 	.inscription_contact {
@@ -195,4 +195,12 @@ footer {
 
 .titre_div_footer {
 	font-size: large;
+}
+
+.mention {
+	margin: 50px;
+}
+
+.mention h1 {
+	margin-bottom: 50px;
 }

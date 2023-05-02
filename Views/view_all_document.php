@@ -21,12 +21,7 @@
       <td class="td"><?= $d->prenom ?></td>
       <td class="td"><?= $d->titre ?></td>
       <td class="td"><?= $d->format ?></td>
-      <td class="td"><?php
-                      $data = base64_decode($d->fichier);
-                      $finfo = new finfo(FILEINFO_MIME_TYPE);
-                      $type = $finfo->buffer($data);
-                      echo "<img src='data:$type;base64," . base64_encode($data) . "' />";
-                      ?></td>
+      <td class="td"><img src="data:image/<?php echo pathinfo($d->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($d->fichier); ?>" /></td>
       <td class="td"><?= $d->description ?></td>
       <td class="td"><?= $d->libelle ?></td>
       <td class="td"><?= $d->affichage ?></td>

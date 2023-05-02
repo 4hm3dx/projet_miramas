@@ -48,6 +48,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="Content/js/app_ajout_document.js" defer></script>
     <script src="Content/js/app_inscription.js" defer></script>
     <!-- <script src="Content/js/app_newsletter.js" defer></script> -->
+    <script src="https://cdn.lordicon.com/bhenfmcm.js" defer></script>
 
 
     <!-- Link font awesome -->
@@ -85,7 +86,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     require_once 'Models/Model.php';
     // die("page index");
     require_once 'Utils/header.php';
-
+   
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition", "crud", "utilisateur", "document", "annonce", "message"];
 

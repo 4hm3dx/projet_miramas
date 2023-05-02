@@ -23,22 +23,28 @@
 	<div class="coordonnee">
 		<div class="adresse">
 			<p>
-				<b class="titre_div_footer">Les Amis du Vieux Miramas</b> <br>
-				Adresse : 
-				Rue Mireille 
-				13140 MIRAMAS
+				<b class="titre_div_footer">Les Amis du Vieux Miramas, Office de tourisme</b> <br>
+				Adresse : avenue Falabrègues <br>
+				Tél. : 04 90 58 08 24 <br>
+				Horaires d’ouverture : <br>
+				du lundi au vendredi de 8h30 à 12h et de 13h30 à 17h
 			</p>
 		</div>
 		<div class="numero_mail">
 			<p>
 				<b class="titre_div_footer">Contact :</b> <br>
 				Tél : 06 14 31 62 64 <br>
-				Fax: 09 85 74 93 04 <br>
-				Miramas@Miramas.fr</p>
+				<b>Point d’accueil saisonnier</b> <br>
+				Adresse : <br>
+				Rue Mistral – Miramas-le-Vieux <br>
+				Horaires d’ouverture : <br>
+				du mardi au dimanche de 16h à 20h30 (juillet et août)	
+			</p>
 		</div>
 	</div>
 
 	<div class="createur_parent">
+		<a href="?controller=home&action=mentions_legals">Mentions legals</a>
 		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
 	</div>
 </footer>

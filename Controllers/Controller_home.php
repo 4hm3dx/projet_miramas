@@ -19,4 +19,9 @@ class Controller_home extends Controller
 	{
 		$this->render("inscription");
 	}
+
+	public function action_mentions_legals()
+	{
+		$this->render("mentions_legals");
+	}
 }

@@ -1,47 +1,60 @@
 <section id="image_text_presnetation_asso">
     <img src="Content/img/img_accueil.jpg" alt="#" id="image_accueil_prototype">
+    <h1> MIRAMAS-LE-VIEUX</h1>
         <p class="text_accueil">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. 
-             <br>
-             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            Section 1.10.32 du "De Finibus Bonorum et Malorum" de Ciceron (45 av. J.-C.)
-            <br>
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam 
-            rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-             Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-             qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-             adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat 
-            voluptatem. 
-            <br>
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        Miramas-le-Vieux est un charmant petit village situé dans les Bouches-du-Rhône, en Provence. 
+        Il est perché sur une colline qui offre une vue imprenable sur la plaine de la Crau et les Alpilles. 
+        Ce village médiéval est connu pour son château, datant du XIIIe siècle, ainsi que pour ses ruelles pittoresques et 
+        ses maisons en pierre. 
         </p>
+        <p class="text_accueil">
+        Le village est également le foyer de l'association Les Amis du Vieux Miramas, qui œuvre pour la préservation et 
+        la promotion du patrimoine culturel et historique de la région. 
+        Les activités de l'association comprennent des visites guidées du village, des conférences et des événements culturels. 
+        </p>
+        <p class="text_accueil" id="last_text">
+        Miramas-le-Vieux est un lieu de promenade idéal pour les amateurs d'histoire et de culture. 
+        Les visiteurs peuvent flâner dans les rues étroites et sinueuses du village, visiter le château et explorer 
+        les environs à pied ou à vélo. Avec ses panoramas époustouflants, 
+        son architecture pittoresque et son ambiance paisible, Miramas-le-Vieux est un véritable joyau de la Provence. 
+        </p>
+        </div>
 </section>
 <section class="mignature_image">
     <div class="image_mini">
         <div class="mignature1">
-            <img src="Content/img/prototype_mignature.png" alt="#" id="prototype_mignature1">
-            <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            </p>
+            <img src="Content/img/carte-postale-miramas-23134.jpg" alt="#" id="prototype_mignature1">
+            <p class="acces_au_village">MIRAMAS-LE-VIEUX</p>
+            <p class="text_accueil">
+            Village perché, Miramas-le-Vieux, dit le « Quillé » offre un panorama d’exception sur une côte sauvage
+            insoupçonnée bordée par le parc de la Poudrerie. <br>
+            La diversité des paysages qui entourent le village, source de
+            nombreuses balades, ne peut laisser personne indifférent. <br><br>
+            ➜ Visite recommandée par <a href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux">Michelin Voyage</a>
+        </p>
         </div>
         <div class="mignature2">
-            <img src="Content/img/prototype_mignature.png" alt="#" id="prototype_mignature2">
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            </p>
+            <img src="Content/img/arbre_cedre.jpg" alt="#" id="prototype_mignature2">
+            <p class="acces_au_village">ACCÈS AU VILLAGE</p>
+        <p>
+        Miramas-le-Vieux est un village médiéval authentique qui regorge d’atouts typiques des villages provençaux : pierres,
+        placette, glaciers, etc. <br>
+        L’accès se fait par : <br>
+        <ul >
+        <li class="liste_acces_village">Saint-Chamas en venant de l'est.</li>
+        <li class="liste_acces_village">Miramas-Gare en venant de l'ouest.</li>
+        </ul>
+        Ces deux routes convergent au bout d’une allée de pins, au pied du village.
+        </p>
         </div>
     </div>
 </section>
 <section id="video_accueil">
-    <h2 class="titre_video">Histoire de la ville</h2>
-    <img src="Content/img/prtotype_video.png" alt="#" id="prototype_video">
+    <h2 class="titre_video">Découvrire la ville</h2>
+    <video width="940" height="660" controls id="prototype_video">
+  <source src="Content/video/Découvrez_Miramas.mp4" type="video/mp4">
+  
+  Votre navigateur ne supporte pas la lecture de vidéos.
+</video>
 </section>
 
