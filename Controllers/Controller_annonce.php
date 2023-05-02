@@ -2,17 +2,17 @@
 
 class Controller_annonce extends Controller
 {
-	//* L'action par défaut redirige vers l'action "home"
-	public function action_default()
-	{
-		$this->action_home();
-	}
+    //* L'action par défaut redirige vers l'action "home"
+    public function action_default()
+    {
+        $this->action_home();
+    }
 
-	//* L'action "home" affiche la vue "home"
-	public function action_home()
-	{
-		$this->render("home");
-	}
+    //* L'action "home" affiche la vue "home"
+    public function action_home()
+    {
+        $this->render("home");
+    }
 
     public function action_all_annonce()
     {
@@ -21,18 +21,18 @@ class Controller_annonce extends Controller
         $this->render("all_annonce", $date);
     }
 
-	    // ^ Delete 
-		public function action_delete_annonce()
-		{
-			if (isset($_GET['id'])) {
-				$id = $_GET['id'];
-				$m = Model::get_model();
-				$m->get_delete_annonce($id);
-				$this->action_all_annonce();
-			}
-		}
+    // ^ Delete 
+    public function action_delete_annonce()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $m = Model::get_model();
+            $m->get_delete_annonce($id);
+            $this->action_all_annonce();
+        }
+    }
 
-		public function action_update_annonce()
+    public function action_update_annonce()
     {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -48,5 +48,5 @@ class Controller_annonce extends Controller
             header('Location: ?controller=annonce&action=all_annonce');
         }
     }
-	
+
 }
