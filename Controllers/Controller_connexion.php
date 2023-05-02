@@ -54,13 +54,9 @@ class Controller_connexion extends Controller
 					'id_roles' => $user['id_roles']
 				);
 
-				$role = $_SESSION['user']['id_roles'];
-				echo $role;
-				echo $user['prenom'];
-				echo $user['id_roles'];
-
 
 			}
+
 			$this->render("home");
 		}
 	}
@@ -139,8 +135,8 @@ class Controller_connexion extends Controller
 
 	public function action_deconnexion()
 	{
-		// session_start();
-
+		// Démarre la mise en mémoire tampon
+		ob_start();
 
 		// Récupération des informations de cookie actuelles
 		$params = session_get_cookie_params();
@@ -155,11 +151,12 @@ class Controller_connexion extends Controller
 		session_destroy();
 
 		// Redirection vers la page d'accueil
-		// header("Location: ../index.php");
-		header("Location: ?controller=home&action=home");
 		header("Location: ?controller=home&action=home");
 
+		// Vide la sortie mise en mémoire tampon sans l'envoyer au navigateur
+		ob_end_clean();
 	}
+
 
 	public function action_page_inscription()
 	{

@@ -29,8 +29,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <!-- link boostrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    <!-- link boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -43,18 +43,18 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
 
     <!-- Link Js -->
-    <script src="Content/js/app_formulaire_ins_conn.js" defer></script>
     <script src="Content/js/app_formulaire_contact.js" defer></script>
     <script src="Content/js/app_mdp.js" defer></script>
     <script src="Content/js/app_ajout_document.js" defer></script>
+    <script src="Content/js/app_inscription.js" defer></script>
 
 
     <!-- Link font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- Link css -->
     <link rel="stylesheet" href="Content/css/style.css">
     <link rel="stylesheet" href="Content/css/style_newsletter.css">
@@ -118,9 +118,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     }
 
     //* Inclure le fichier de pied de page
-
-    // echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>" ;
+    
+    echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
 
     require_once 'Utils/footer.php';
     ?>
