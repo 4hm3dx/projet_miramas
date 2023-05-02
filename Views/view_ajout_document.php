@@ -13,18 +13,15 @@
                                 method="POST">
                                 <label for="popup-input">Saisissez votre nom :</label>
                                 <input type="text" id="popup-input" name="input_ajout_categorie">
-                                <span id="spanpop"></span>
                                 <input type="submit" value="Ajouter">
                             </form>
                         </div>
                     </div>
                     <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST"
-                        enctype="multipart/form-data" id="ajout_doc_form">
+                        enctype="multipart/form-data">
                         <label for="titre_document">Titre du document : <sup>*</sup></label>
-                        <span id="span_titre"></span>
                         <input type="text" name="titre_document" class="titre_document">
                         <label for="description_document">Description du document : <sup>*</sup></label>
-                        <span id="span_description"></span>
                         <input type="text" name="description_document" class="description_document">
                         <label for="input-file-ajout-document">Ajouter un fichier : <sup>*</sup> <i
                                 class="fa-regular fa-circle-question"
@@ -38,19 +35,16 @@
                                 <option value="<?= $sc->id ?>"><?= $sc->libelle ?></option>
                             <?php endforeach ?>
                         </select>
-                        <select name="ajout_utilisateur_document" id="ajout_utilisateur_document">
-                            <?php foreach ($ajout_utilisateur_document as $aud): ?>
-                                <option value="<?= $aud->id ?>"><?= $aud->nom ?></option>
-                            <?php endforeach ?>
-                        </select>
+                        <label for="ajout_utilisateur_document"></label>
+                        <input type="hidden" value="<?= $_SESSION['user']['id'] ?>" name="ajout_utilisateur_document"
+                            id="ajout_utilisateur_document" readonly>
                         <div class="ajout_annuler">
                             <input type="reset" class="input-submit-supprimer" id="input-submit-supprimer"
-                                value="Annuler">
+                                value="Reset">
                             <input type="submit" name="submit" id="input-submit-ajout-document" value="Ajouter">
                         </div>
                     </form>
                 </div>
-                <?php // var_dump($ajout_utilisateur_document); ?>
                 <sub class="info_form">* : Champs Obligatoires</sub>
             </div>
 
