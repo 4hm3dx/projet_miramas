@@ -14,12 +14,7 @@ const conditions = document.getElementById('condition_general');
 
 const formulaire = document.getElementById('formulaire_inscription');
 
-function estRempli() {
-    if (nom.value === '' || prenom.value === '' || mail.value === '' || mdp.value === '' || confirmMdp.value === '' || !conditions.checked) {
-        return false;
-    }
-    return true;
-}
+
 
 function valideNom(e) {
     if (nom.value.length == 0) {
@@ -132,7 +127,7 @@ function valideConditions(e) {
 formulaire.addEventListener('submit', function (e) {
 
     // Appel de toutes les fonctions de validation
-    const conditionsValides = [estRempli(e), valideNom(e), validePrenom(e), valideMail(e), valideMdp(e), confirmationMdp(e), valideConditions(e)];
+    const conditionsValides = [valideNom(e), validePrenom(e), valideMail(e), valideMdp(e), confirmationMdp(e), valideConditions(e)];
 
     // Vérification si toutes les conditions sont valides
     const conditionsRespectees = conditionsValides.every(function (condition) {
