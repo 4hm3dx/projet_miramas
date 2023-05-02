@@ -6,3 +6,4 @@ Position relative sur sup en scss?????????
 <!-- ! FONRT END  -->
 Voir pour l'icone d'affichage du mot de passe ! 
 cordova 
+enlever le liens ajouter si tes pas connecté 
