@@ -11,7 +11,7 @@
         <label for="id_roles">Roles Abonnée : </label>
         <input type="text" name="id_roles" id="id_roles" value="<?= filter_var($utilisateur['id_roles'], FILTER_SANITIZE_NUMBER_INT) ?>">
         <input type="submit" value="Modifier" name="submit" id="submit">
-        <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
+        <p class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
     </fieldset>
 </form>
 

@@ -42,3 +42,13 @@
 		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
 	</div>
 </footer>
+<script>
+	// Récupérer le bouton
+const suscribeButton = document.querySelector('.button_suscribe');
+
+// Ajouter un événement 'click' au bouton
+suscribeButton.addEventListener('click', () => {
+  // Afficher une alerte avec le message "Cette fonctionnalité est en cours de développement"
+  alert("Cette fonctionnalité est en cours de développement");
+});
+</script>

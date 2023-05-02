@@ -438,9 +438,8 @@ class Model
         $id_roles = $this->valid_input($_POST['id_roles']);
 
 
-        $r = $this->bd->prepare("UPDATE annonce a , utilisateur u 
-        INNER JOIN annonce ON a.id_utilisateur = u.id
-        SET a.texte = :texte, a.image = :image, a.logo = :logo,s u.nom = :nom 
+        $r = $this->bd->prepare("UPDATE annonce  
+        SET texte = :texte, image = :image, logo = :logo
         WHERE id = :id;");
         $r->bindParam(':nom', $nom);
         $r->bindParam(':prenom', $prenom);
@@ -561,8 +560,8 @@ class Model
         $stmt->bindParam(':Mail', $Mail);
         $stmt->execute();
         $row = $stmt->fetch();
-        echo $row['id_roles'];
-        $idr = $row['id_roles'];
+        // echo $row['id_roles'];
+        // $idr = $row['id_roles'];
 
         if ($stmt->rowCount() > 0 && $idr == 4) {
 

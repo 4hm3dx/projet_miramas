@@ -21,7 +21,6 @@
             <input type="password" name="mdp_utilisateur_inscription" id="mdp_utilisateur_inscription">
             <button type="button" id="toggle-password-visibility-i"><i class="far fa-eye"
                     id="toggle_password_inscription"></i>
-                <i class="far fa-eye-slash"></i>
             </button>
         </div>
         <div id="strength_indicator"></div>

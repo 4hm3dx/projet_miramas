@@ -47,6 +47,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="Content/js/app_mdp.js" defer></script>
     <script src="Content/js/app_ajout_document.js" defer></script>
     <script src="Content/js/app_inscription.js" defer></script>
+    <!-- <script src="Content/js/app_newsletter.js" defer></script> -->
 
 
     <!-- Link font awesome -->
@@ -119,8 +120,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
     //* Inclure le fichier de pied de page
     
-    echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
-    echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
+    // echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
+    // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
 
     require_once 'Utils/footer.php';
     ?>

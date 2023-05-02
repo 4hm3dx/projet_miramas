@@ -85,4 +85,3 @@ togglePasswordVisibilityIns.addEventListener("click", function() {
       togglePasswordVisibilityCon.innerHTML = '<i class="far fa-eye"></i>';
     }
   });
-

@@ -37,5 +37,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <sup class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné</sup>
+    <p class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
 <?php endif; ?>

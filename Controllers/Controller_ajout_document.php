@@ -57,25 +57,15 @@ class Controller_ajout_document extends Controller
         return;
     }
 
-    $data = ["ajout_document_bdd" => $m->get_ajouter_document_bdd($titre, $description, $date, $categorie, $fichier), "document" => $m->get_all_document()];
-    $this->render("all_document", $data);
+    $data = ["ajout_document_bdd" => $m->get_ajouter_document_bdd($titre, $description, $date, $categorie, $fichier),
+     "document" => $m->get_all_document(),
+     "select_categorie" => $m->get_recherche(),
+     "select_format_fichier" => $m->get_liste_format(),
+     "derniers_documents" => $m->get_derniers_documents(),
+     'select_titre' => $m->get_recherche_titre(),
+     "position" => 1
+    ];
+    $this->render("recherche", $data);
 
-    // Traitement du fichier
-    // $nom_fichier = '';
-    // if (isset($fichier['tmp_name']) && $fichier['tmp_name'] != '') {
-    //     $nom_fichier = uniqid() . '.' . pathinfo($fichier['name'], PATHINFO_EXTENSION);
-    //     $destination = __DIR__ . '/../uploads/' . $nom_fichier;
-    //     move_uploaded_file($fichier['tmp_name'], $destination);
-    // }
-    // // Insertion du document dans la base de données
-    // $requete = $model->get_ajouter_document_bdd()->prepare("INSERT INTO document (titre, description, date_publication, id_categorie, fichier) VALUES (:titre, :description, :date_publication, :id_categorie, :fichier)");
-    // $requete->bindParam(':titre', $titre);
-    // $requete->bindParam(':description', $description);
-    // $requete->bindParam(':date_publication', $date);
-    // $requete->bindParam(':id_categorie', $categorie);
-    // $requete->bindParam(':fichier', $destination);
-    // $requete->execute();
-    // // Redirection vers la page d'accueil avec un message de succès
-    // $this->redirect('?success=1');
     }
 }
