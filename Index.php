@@ -47,8 +47,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="Content/js/app_mdp.js" defer></script>
     <script src="Content/js/app_ajout_document.js" defer></script>
     <script src="Content/js/app_inscription.js" defer></script>
-    <!-- <script src="Content/js/app_newsletter.js" defer></script> -->
-    <script src="https://cdn.lordicon.com/bhenfmcm.js" defer></script>
+
+    
 
 
     <!-- Link font awesome -->

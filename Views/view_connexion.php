@@ -4,6 +4,7 @@
         <fieldset>
             <legend id="legend_connexion">Connexion</legend>
             <label class="label_mail_connexion" for="mail_utilisateur_connexion">E-mail : <sup></sup> </label>
+            <span id="span-mail-connexion"></span>
             <input type="email" name="mail_utilisateur_connexion" id="mail_utilisateur_connexion">
             <label class="label_mdp_connexion" for="mdp_utilisateur_connexion">Mot De Passe : <sup></sup> </label>
                 <i class="fa-regular fa-circle-question" style="margin-bottom:5px;"
@@ -18,14 +19,15 @@
                 </div>
             <input type="submit" id="submit_formulaire_connexion" name="submit_formulaire_connexion"
                 value="Connexion"><br>
-            <span id="inscription">Vous n'êtes pas inscrit? <a href="?controller=home&action=inscription" id="button_inscription">Inscrivez-vous
+            <span id="inscription">Vous n'êtes pas inscrit? <a href="?controller=home&action=inscription"
+                    id="button_inscription">Inscrivez-vous
                     !</a></span>
         </fieldset>
     </form>
 </section>
 
 <!-- <section class="formulaire_inscription_utilisateur"> -->
-    <!-- <form action="?controller=connexion&action=inscription" method="POST" id="formulaire_inscription" name="form1">
+<!-- <form action="?controller=connexion&action=inscription" method="POST" id="formulaire_inscription" name="form1">
         <fieldset>
             <legend id="legend_inscription">Inscription</legend>
 

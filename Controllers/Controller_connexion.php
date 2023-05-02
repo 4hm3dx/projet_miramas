@@ -155,6 +155,8 @@ class Controller_connexion extends Controller
 
 		// Vide la sortie mise en mémoire tampon sans l'envoyer au navigateur
 		ob_end_clean();
+
+		$this->render("home");
 	}
 
 

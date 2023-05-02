@@ -1,7 +1,7 @@
 <header>
 	<!-- Barre de navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="?controller=home&ation=home">
+		<a class="navbar-brand" href="?controller=home&action=home">
 			<img src="Content/img/Logo_Amis_vieux_Miramas.jpg" alt="Logo" class="logo" />
 			<!-- <span class="navbar-title">Les amis du vieux Miramas</span> -->
 		</a>
@@ -20,15 +20,19 @@
 				<li class="nav-item">
 					<a class="nav-link" href="?controller=recherche&action=recherche">Document</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="?controller=ajout_document&action=ajout_document">Ajout de document</a>
-				</li>
+				<?php
+				if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] !== 4) { ?>
+					<li class="nav-item">
+						<a class="nav-link" href="?controller=ajout_document&action=ajout_document">Ajout de document</a>
+					</li>
+				<?php }
+				?>
 				<?php
 				if (!isset($_SESSION['user']['id_roles'])) {
 
 					?>
 					<li class="nav-item">
-						<a  href="?controller=connexion&action=connexion" class="nav-link button_connexion" >Connexion</a>
+						<a href="?controller=connexion&action=connexion" class="nav-link button_connexion">Connexion</a>
 					</li>
 				<?php }
 				if (isset($_SESSION['user']['id_roles'])) {

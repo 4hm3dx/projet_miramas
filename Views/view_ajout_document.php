@@ -13,15 +13,18 @@
                                 method="POST">
                                 <label for="popup-input">Saisissez votre nom :</label>
                                 <input type="text" id="popup-input" name="input_ajout_categorie">
+                                <span id="spanpop"></span>
                                 <input type="submit" value="Ajouter">
                             </form>
                         </div>
                     </div>
                     <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST"
-                        enctype="multipart/form-data">
+                        enctype="multipart/form-data" id="ajout_doc_form">
                         <label for="titre_document">Titre du document : <sup>*</sup></label>
+                        <span id="span_titre"></span>
                         <input type="text" name="titre_document" class="titre_document">
                         <label for="description_document">Description du document : <sup>*</sup></label>
+                        <span id="span_description"></span>
                         <input type="text" name="description_document" class="description_document">
                         <label for="input-file-ajout-document">Ajouter un fichier : <sup>*</sup> <i
                                 class="fa-regular fa-circle-question"
