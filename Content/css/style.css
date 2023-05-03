@@ -251,3 +251,6 @@ video {
 .mention h1 {
 	margin-bottom: 50px;
 }
+.text-lg-start {
+	background-color: transparent !important;
+}
