@@ -1,5 +1,5 @@
 <footer>
-	<hr class="hr_footer">
+	<!-- <hr class="hr_footer"> -->
 	<div class="inscription_contact">
 		<a href="?controller=newsLetters&action=newsLetters">
 			<div class="button_suscribe">
@@ -12,13 +12,13 @@
 				</button>
 			</div>
 		</a>
-	<a href="?controller=contact&action=contact" class="nous_contacter">Contact</a>
+	<a href="?controller=contact&action=contact" class="nous_contacter">Nous Contacter</a>
 	</div>
-
-	<p>
+<img src="Content/img/blason.png" alt="" class="image_footer_blason">
+	<!-- <p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
 		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
+	</p> -->
 
 	<div class="coordonnee">
 		<div class="adresse">

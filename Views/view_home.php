@@ -2,21 +2,23 @@
     <img src="Content/img/img_accueil.jpg" alt="#" id="image_accueil_prototype">
     <h1> MIRAMAS-LE-VIEUX</h1>
         <p class="text_accueil">
-        Miramas-le-Vieux est un charmant petit village situé dans les Bouches-du-Rhône, en Provence. 
-        Il est perché sur une colline qui offre une vue imprenable sur la plaine de la Crau et les Alpilles. 
-        Ce village médiéval est connu pour son château, datant du XIIIe siècle, ainsi que pour ses ruelles pittoresques et 
-        ses maisons en pierre. 
+        Miramas-le-Vieux est un village charmant et pittoresque situé dans les Bouches-du-Rhône, en Provence. Perché sur une colline, 
+        il offre une vue imprenable sur la plaine de la Crau et les Alpilles. La cité médiévale, nommée pour la première fois dans une 
+        charte médiévale datée de 1118, était autrefois une place forte défensive et a été longtemps une possession des moines de l’abbaye
+         de Montmajour jusqu’à la Révolution.
         </p>
         <p class="text_accueil">
-        Le village est également le foyer de l'association Les Amis du Vieux Miramas, qui œuvre pour la préservation et 
-        la promotion du patrimoine culturel et historique de la région. 
-        Les activités de l'association comprennent des visites guidées du village, des conférences et des événements culturels. 
+        Avec ses ruelles sinueuses et ses maisons en pierre, le village médiéval est célèbre pour son château datant du XIIIe siècle, 
+        les vestiges de rempart, les ruines du château, la porte Notre-Dame et la chapelle Saint-Julien. Le village est également le 
+        foyer de l'association Les Amis du Vieux Miramas, qui s'engage pour la préservation et la promotion du patrimoine culturel et 
+        historique de la région. Les activités de l'association comprennent des visites guidées du village, des conférences et des événements 
+        culturels.
         </p>
         <p class="text_accueil" id="last_text">
-        Miramas-le-Vieux est un lieu de promenade idéal pour les amateurs d'histoire et de culture. 
-        Les visiteurs peuvent flâner dans les rues étroites et sinueuses du village, visiter le château et explorer 
-        les environs à pied ou à vélo. Avec ses panoramas époustouflants, 
-        son architecture pittoresque et son ambiance paisible, Miramas-le-Vieux est un véritable joyau de la Provence. 
+        Avec sa centaine d'habitants, Miramas-le-Vieux est un lieu de promenade idéal pour les amateurs d'histoire et de culture. 
+        Les visiteurs peuvent flâner dans les rues étroites et explorer les environs à pied ou à vélo. Avec ses panoramas époustouflants, 
+        son architecture pittoresque et son ambiance paisible, Miramas-le-Vieux est un véritable joyau médiéval provençal qui pourrait être 
+        classé comme l’un des plus beaux villages de France.
         </p>
         </div>
 </section>

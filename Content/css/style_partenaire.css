@@ -17,8 +17,11 @@
 .text_partenaire1, 
 .text_partenaire2, 
 .text_partenaire3 {
-    margin: 20px;
+    margin: 50px;
     text-align: center;
+    font-size: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 #presntation_partenaire {
@@ -29,5 +32,11 @@
   
   #presntation_partenaire img {
     max-width: 100%; /* Empêcher les images de dépasser leur conteneur */
-    margin: 20px 100px; 
+    margin: 85px 40px; 
+  }
+
+  #img_couverture_partenaire1,
+  #img_couverture_partenaire2,
+  #img_couverture_partenaire3 {
+    width: 100%;
   }

@@ -13,11 +13,16 @@ h1 {
   
   /* Centre le texte du paragraphe */
   .texte_presentation p, 
-   #presentation_colab_asso {
+   .presentation_colab_asso {
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
     font-size: large;
+}
+
+.presentation_colab_asso {
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 /* Centre le titre h1 */
