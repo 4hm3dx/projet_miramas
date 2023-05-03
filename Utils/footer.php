@@ -12,7 +12,7 @@
 				</button>
 			</div>
 		</a>
-		<a href="?controller=contact&action=contact" class="nous_contacter">Nous Contacter</a>
+	<a href="?controller=contact&action=contact" class="nous_contacter">Contact</a>
 	</div>
 
 	<p>

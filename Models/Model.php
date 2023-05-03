@@ -435,12 +435,14 @@ class Model
         $nom = $this->valid_input($_POST['nom']);
         $texte = $this->valid_input($_POST['texte']);
         $image = $this->valid_input($_POST['image']);
+        $logo = $this->valid_input($_POST['logo']);
 
         $r = $this->bd->prepare("UPDATE annonce  
-        SET texte = :texte, image = :image
+        SET texte = :texte, image = :image, logo = :logo
         WHERE id = :id;");
         $r->bindParam(':texte', $texte);
         $r->bindParam(':image', $image);
+        $r->bindParam(':logo', $logo);
         $r->bindParam(':id', $id);
         $r->execute();
     }

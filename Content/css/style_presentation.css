@@ -27,7 +27,8 @@ h1 {
 
 
 #img_presentation {
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     width: auto;
     /* height: 100% */
 }
@@ -68,6 +69,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 100px;
   }
   
   #mebre_equipe > div {
@@ -87,3 +89,10 @@ h1 {
       width: 90%;
     }
   }
+
+#equipe_asso {
+  margin-top: 60px;
+  margin-bottom: 60px ;
+  text-align: center;
+  text-decoration: underline;
+}
