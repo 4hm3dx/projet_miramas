@@ -60,6 +60,10 @@ video {
 	border-radius: 10px;
 }
 
+.titre {
+	color: #60b663dd;
+}
+
 .hr_footer {
 	background-color: black;
 }

@@ -1,6 +1,6 @@
 <section id="image_text_presnetation_asso">
     <img src="Content/img/img_accueil.jpg" alt="#" id="image_accueil_prototype">
-    <h1> MIRAMAS-LE-VIEUX</h1>
+    <h1 class="titre"> MIRAMAS-LE-VIEUX</h1>
         <p class="text_accueil">
         Miramas-le-Vieux est un village charmant et pittoresque situé dans les Bouches-du-Rhône, en Provence. Perché sur une colline, 
         il offre une vue imprenable sur la plaine de la Crau et les Alpilles. La cité médiévale, nommée pour la première fois dans une 

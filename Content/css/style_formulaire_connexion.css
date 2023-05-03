@@ -54,10 +54,12 @@
 /* & Gestion de l'affichage formulaire */
 #formulaire_connexion,
 #formulaire_inscription {
-  background-color: #8e8e8e;
+  background-color: #f6ed45b6;
   width: 40%;
   margin: auto;
   border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
  
 }
 

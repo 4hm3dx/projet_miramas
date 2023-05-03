@@ -1,4 +1,4 @@
-<form action="?controller=document&action=all_titre_document_list" method="POST">
+<form action="?controller=document&action=all_titre_document_list" method="POST" class="form_crud">
     <fieldset>
       <legend>Recherche des documents par Titre</legend>
         <select name="titre_document" id="titre_document">
@@ -21,7 +21,7 @@
       <th>Format</th>
       <th>Fichier</th>
       <th>Description</th>
-      <th>Libellés</th>
+      <th>Catégorie</th>
       <th>Affichage <sup>*</sup></th>
       <th></th>
       <th></th>

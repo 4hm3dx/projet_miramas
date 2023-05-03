@@ -1,4 +1,4 @@
-<form action="?controller=utilisateur&action=all_utilisateur_mail_list" method="POST">
+<form action="?controller=utilisateur&action=all_utilisateur_mail_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche par Nom d'utilisateur</legend>
         <select name="mail_utilisateur" id="mail_utilisateur">

@@ -8,7 +8,7 @@
     margin: auto;
     padding: 20px;
     border-radius: 10px;
-    background-color: #f5f5f5;
+    background-color: #4caf4fdd;
 }
 
 .field-group {
@@ -52,6 +52,13 @@ textarea {
 	font-size: 18px;
 	padding: 5px;
 	border-radius: 5px;
+	transition: all 0.4s;
+}
+
+#envoyer_formulaire_contact:hover {
+	background-color: #4caf4f00;
+	color: black;
+	transform: scale(1.1);
 }
 
 sup{
