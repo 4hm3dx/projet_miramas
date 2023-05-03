@@ -27,10 +27,6 @@ class Controller_connexion extends Controller
 
 			if (empty($email) || empty($password)) {
 				$this->render("connexion");
-				var_dump($email);
-				var_dump($password);
-				echo 'empty';
-				exit();
 			}
 
 			$email = trim($email);

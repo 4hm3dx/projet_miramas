@@ -2,8 +2,8 @@ const formConnexion = document.getElementById('formulaire_connexion');
 const inpEmail = document.getElementById('mail_utilisateur_connexion');
 const inpPass = document.getElementById('mdp_utilisateur_connexion');
 
-const erMail = document.getElementById('span-mail-connexion');
-const erMdp = document.getElementById('span-mdp-connexion');
+const erMail = document.getElementById('span_mail_connexion');
+const erMdp = document.getElementById('span_mdp_connexion');
 erMail.style.color = 'red';
 erMdp.style.color = 'red';
 
@@ -43,7 +43,7 @@ function connexionMdp(e) {
         return false;
     }
 
-    erreurMdp.innerHTML = '';
+    erMdp.innerHTML = '';
     return true;
 }
 

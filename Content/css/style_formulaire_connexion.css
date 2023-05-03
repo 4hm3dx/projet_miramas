@@ -5,6 +5,10 @@
   color: seagreen;
 }
 
+#formulaire_connexion {
+  padding: 20px;
+}
+
 #strength_indicator,
 #strength_indicator_confirme {
   display: inline-block;
@@ -58,7 +62,7 @@
   width: 40%;
   margin: auto;
   border-radius: 10px;
- 
+
 }
 
 #legend_inscription,
@@ -100,7 +104,7 @@ input[type="file"] {
   border: solid 1px #ccc;
   width: 100%;
   border-radius: 4px;
-  
+
 }
 
 /* Style pour les boutons */
