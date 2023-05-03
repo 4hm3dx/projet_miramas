@@ -70,7 +70,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <link rel="stylesheet" href="Content/css/style_presentation.css">
     <link rel="stylesheet" href="Content/css/style_recherche.css">
 
-
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
+    </style>
 
     <!-- Titre -->
     <title>Les amis du vieux miramas</title>

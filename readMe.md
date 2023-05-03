@@ -9,7 +9,7 @@ crud annonce modifier marche pas
 
 bloquer l'acces au crud par url <!--! OK -->
 pb affichage de certains image 
-voir pour la date et l'auteur du document 
+voir pour la date et l'auteur du document <!--! OK -->
 
 ESSAYER DE SOUMETTRE TOUT LE FORMULAIRE VIDE 
 gestion base de données 

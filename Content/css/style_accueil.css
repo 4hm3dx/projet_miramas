@@ -8,7 +8,13 @@
 }
 
 .mignature_image{
-    background: gray;
+    background-color: #0080FF;
+    /* color: #fff; */
+}
+
+.link_michelin{
+  text-decoration: none;
+  color:#fff200 !important;
 }
 
 .image_mini {
@@ -103,7 +109,7 @@ p {
     border-radius: 50%;
   }
 
-  h4 {
+  h4, h2 {
     text-align: center;
   }
 

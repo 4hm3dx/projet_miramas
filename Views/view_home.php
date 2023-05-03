@@ -30,7 +30,7 @@
             insoupçonnée bordée par le parc de la Poudrerie. <br>
             La diversité des paysages qui entourent le village, source de
             nombreuses balades, ne peut laisser personne indifférent. <br><br>
-            ➜ Visite recommandée par <a href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux">Michelin Voyage</a>
+            ➜ Visite recommandée par <a class="link_michelin" href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux">Michelin Voyage</a>
         </p>
         </div>
         <div class="mignature2">
