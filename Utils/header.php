@@ -2,7 +2,7 @@
 	<!-- Barre de navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="?controller=home&action=home">
-			<img src="Content/img/Logo_Amis_vieux_Miramas.jpg" alt="Logo" class="logo" />
+			<img src="Content/img/Logo_Amis_vieux_Miramas.jpg" alt="Logo" class="logo" id="logo_asso"/>
 			<!-- <span class="navbar-title">Les amis du vieux Miramas</span> -->
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"

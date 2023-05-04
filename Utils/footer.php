@@ -1,4 +1,4 @@
-<!-- <footer>
+<footer>
 	<hr class="hr_footer">
 	<div class="inscription_contact">
 		<a href="?controller=newsLetters&action=newsLetters">
@@ -15,10 +15,10 @@
 	<a href="?controller=contact&action=contact" class="nous_contacter">Nous Contacter</a>
 	</div>
 <img src="Content/img/blason.png" alt="" class="image_footer_blason">
-	<p>
+	<!-- <p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
 		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
+	</p> -->
 
 	 <div class="coordonnee">
 		<div class="adresse">
@@ -47,10 +47,10 @@
 		<a href="?controller=home&action=mentions_legals">Mentions legals</a>
 		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
 	</div>
-</footer> -->
+</footer>
 
 
-<footer class="bg-light text-center text-lg-start">
+<!-- <footer class="bg-light text-center text-lg-start">
 <div class="inscription_contact">
 		<a href="?controller=newsLetters&action=newsLetters">
 			<div class="button_suscribe">
@@ -97,8 +97,8 @@
     © 2023 Copyright: Alexis Serbelloni || Ahmed Madani
 	<a href="?controller=home&action=mentions_legals">Mentions legals</a>
   </div>
-  <!-- Copyright -->
-</footer>
+   Copyright -->
+<!-- </footer> -->
 
 <script>
 	// Récupérer le bouton

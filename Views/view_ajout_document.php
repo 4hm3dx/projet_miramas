@@ -1,5 +1,5 @@
-<section id="section-body-ajout-document">
-    <section id="section-ajout-document">
+
+<section id="section-ajout-document">
         <h2 id="titre-ajout-document">Ajouter des ressources</h2>
         <div id="flex-ajout">
             <div id="division-ajout-document">
@@ -21,10 +21,10 @@
                     <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST"
                         enctype="multipart/form-data" id="ajout_doc_form">
                         <label for="titre_document">Titre du document : <sup>*</sup></label>
-                        <span id="span_titre"></span>
+                        <span id="span_titre" class="texte-important"></span>
                         <input type="text" name="titre_document" class="titre_document">
                         <label for="description_document">Description du document : <sup>*</sup></label>
-                        <span id="span_description"></span>
+                        <span id="span_description" class="texte-important"></span>
                         <input type="text" name="description_document" class="description_document">
                         <label for="input-file-ajout-document">Ajouter un fichier : <sup>*</sup> <i
                                 class="fa-regular fa-circle-question"
@@ -53,4 +53,49 @@
 
         </div>
     </section>
-</section>
+<script>
+      const ajout_doc_form = document.querySelector('#ajout_doc_form');
+
+ajout_doc_form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const titre_document = document.querySelector('.titre_document');
+    const description_document = document.querySelector('.description_document');
+    const input_file_ajout_document = document.querySelector('#input-file-ajout-document');
+
+    let isFormValid = true;
+
+    if (titre_document.value.trim() === '') {
+        isFormValid = false;
+        document.querySelector('#span_titre').textContent = 'Le titre est obligatoire.';
+    } else {
+        document.querySelector('#span_titre').textContent = '';
+    }
+
+    if (description_document.value.trim() === '') {
+        isFormValid = false;
+        document.querySelector('#span_description').textContent = 'La description est obligatoire.';
+    } else {
+        document.querySelector('#span_description').textContent = '';
+    }
+
+    if (input_file_ajout_document.value.trim() === '') {
+        isFormValid = false;
+        document.querySelector('#input-file-ajout-document').value = '';
+        document.querySelector('#input-file-ajout-document').setCustomValidity('Le fichier est obligatoire.');
+    } else {
+        const allowedExtensions = /(\.png|\.jpg|\.jpeg|\.mp3|\.mp4)$/i;
+        if (!allowedExtensions.exec(input_file_ajout_document.value)) {
+            isFormValid = false;
+            document.querySelector('#input-file-ajout-document').value = '';
+            document.querySelector('#input-file-ajout-document').setCustomValidity('Le fichier doit être au format : .png, .jpg, .jpeg, .mp3, .mp4.');
+        } else {
+            document.querySelector('#input-file-ajout-document').setCustomValidity('');
+        }
+    }
+
+    if (isFormValid) {
+        ajout_doc_form.submit();
+    }
+});
+</script>

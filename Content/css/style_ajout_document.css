@@ -204,3 +204,8 @@ input[type="date"] {
     cursor: pointer;
     content: "";
   }
+
+  .texte-important {
+    font-weight: bold;
+    color: red;
+  }
