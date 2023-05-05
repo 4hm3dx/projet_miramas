@@ -1,5 +1,5 @@
 <section id="image_text_presnetation_asso">
-    <img src="Content/img/img_accueil.jpg" alt="#" id="image_accueil_prototype">
+    <img src="Content/img/img_accueil1.jpg" alt="#" id="image_accueil_prototype">
     <h1 class="titre"> MIRAMAS-LE-VIEUX</h1>
         <p class="text_accueil">
         Miramas-le-Vieux est un village charmant et pittoresque situé dans les Bouches-du-Rhône, en Provence. Perché sur une colline, 
@@ -52,7 +52,7 @@
     </div>
 </section>
 <section id="video_accueil">
-    <h2 class="titre_video">Découvrire la ville</h2>
+    <h2 class="titre_video">Découvrir la ville</h2>
     <video width="940" height="660" controls id="prototype_video">
   <source src="Content/video/Découvrez_Miramas.mp4" type="video/mp4">
   

@@ -5,42 +5,59 @@
 }
 
 body {
-	background-color: #fff0f4 !important;
+	background-color: #edeeff !important;
 	font-family: Arial, sans-serif !important;
     margin: 0;
     padding: 0;
 }
 
 .bg-light{
-	background: linear-gradient(45deg, #0080FF, #FFF259);
-	/* background-color: #0080FF!important; */
+	/* background: linear-gradient(45deg, #0080FF, #FFF259); */
+	background-color: #0080FF!important;
 }
 
 .navbar-light .navbar-nav .nav-link {
 	color: #000000 !important;
 	transition: all 0.3s;
 	font-size: 18px;
+	margin: 5px;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-	color: #767676 !important;
+	color: #ffffff !important;
 	/* margin-top: 10px; */
 }
 
 .button_connexion {
-	background-color: #0080FF;
-	border: solid 2px black;
+	background-color:  #4CAF50;
+	border: solid 2px rgb(255, 255, 255);
 	padding: 8px;
 	border-radius: 10px;
 	text-decoration: none;
-	color: rgb(255, 255, 255) !important;
 	font-weight: 400;
-	transition: all 0.3s;
+	transition: all 0.4s;
+}
+
+#deco {
+	background-color:  #c93737;
+	border: solid 2px rgb(255, 255, 255);
+	padding: 8px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 400;
+	transition: all 0.4s;
 }
 
 .button_connexion:hover {
-	background-color: #4CAF50;
+	background-color:#0080FF;
 	transform: scale(1.1);
+	box-shadow: 0px 0px 15px 2px #FFFFFF;
+}
+
+#deco:hover {
+	background-color:#0080FF;
+	transform: scale(1.1);
+	box-shadow: 0px 0px 15px 2px #FFFFFF;
 }
 
 /* ! FOOTER */
@@ -63,6 +80,7 @@ video {
 
 .titre {
 	color: #60b663dd;
+	margin-top: 2vh;
 }
 
 .hr_footer {
@@ -274,3 +292,21 @@ video {
 .nav-link:hover {
 	color: #267129 !important;
 }
+
+/* Personnalisation de la barre de défilement verticale */
+::-webkit-scrollbar {
+	width: 12px;
+	border-radius: 10%;
+  }
+  
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background: #4ebd52e0; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background: #fff200a2; 
+  }

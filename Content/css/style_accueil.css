@@ -39,11 +39,14 @@
   margin: 0 20px;
   width: 50%;
   height: 50%;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
 }
 
 #prototype_mignature1,
 #prototype_mignature2 {
-  width: 50%;
+  width: 25vw;
   height: auto;
   object-fit: cover;
   text-align: center;

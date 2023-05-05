@@ -3,6 +3,16 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     session_start();
 }
 ?>
+<?php
+//   // Récupérer l'URL de la page
+//   $url = $_SERVER['REQUEST_URI'];
+
+//   // Vérifier si l'URL contient la chaîne de requête
+//   if (strpos($url, "?controller=home&action=home") !== false) {
+//     // Ajouter une balise link pour charger le fichier de style
+//     echo '<link rel="stylesheet" href="Content/css/style_recherche.css">';
+//   }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -69,10 +79,16 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <link rel="stylesheet" href="Content/css/style_table.css">
     <link rel="stylesheet" href="Content/css/style_presentation.css">
     <link rel="stylesheet" href="Content/css/style_recherche.css">
+<script>
+    if (window.location.href.indexOf('?controller=home&action=home') > -1) {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = 'Content/css/style_nav.css';
+  document.head.appendChild(link);
+} 
+</script>
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
-    </style>
 
     <!-- Titre -->
     <title>Les amis du vieux miramas</title>

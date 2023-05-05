@@ -6,6 +6,9 @@
   background-color: #fff200a2;
   border-radius: 5px;
   padding: 20px;
+  margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
 #titre-ajout-document {

@@ -39,7 +39,7 @@
 
 					?>
 					<li class="nav-item">
-						<a class="nav-link" href="?controller=connexion&action=deconnexion" id="deco"
+						<a class="nav-link" href="?controller=connexion&action=deconnexion" id="deco" class="button_deconnexion"
 							onclick="return confirm('Êtes-vous sûr de vouloir vous déconnecter ?');">Déconnexion</a>
 					</li>
 				<?php } ?>
