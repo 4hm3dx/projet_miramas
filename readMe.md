@@ -7,9 +7,10 @@ Position relative sur sup en scss????????? <!--! OK -->
 cordova 
 crud annonce modifier marche pas 
 
-bloquer l'acces au crud par url <!--! OK -->
+input ajout doc prend du js en compte
 pb affichage de certains image 
-voir pour la date et l'auteur du document <!--! OK -->
+pb envoi de message 
+
 
 ESSAYER DE SOUMETTRE TOUT LE FORMULAIRE VIDE 
 gestion base de données 

@@ -3,3 +3,7 @@
 	position: absolute;
 	width: 100%;
 }
+
+.navbar-toggler:not(:disabled):not(.disabled) { 
+	background-color: white;
+}

@@ -1,7 +1,7 @@
 
 <section id="texte_image_presentation">
 <div class="image_presentation">
-        <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation"><sub>Croix jubilé de 1874 | Situé a l'entre du village</sub>
+        <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation"><sub class="legend_img_presentation">Croix jubilé de 1874 | Situé a l'entre du village</sub>
     </div>
     <div class="texte_presentation">
         <h2>L'association</h2>

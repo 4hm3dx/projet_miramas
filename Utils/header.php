@@ -7,7 +7,7 @@
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
 			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon" id="menu_hamburger"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
@@ -56,7 +56,8 @@ if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 
 	?>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row">			
+			</div>
 			<div class="col-12 text-center" id="titre">
 				Consultation de données enregistré dans la base de données
 			</div>

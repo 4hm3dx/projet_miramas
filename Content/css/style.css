@@ -17,10 +17,11 @@ body {
 }
 
 .navbar-light .navbar-nav .nav-link {
-	color: #ffffff !important;
+	color: #b5b5b5 !important;
 	transition: all 0.3s;
 	font-size: 20px;
 	margin: 5px;
+	font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -257,6 +258,8 @@ video {
 	background: #000000d6;
 	color: rgb(255, 244, 244);
 	padding: 15px;
+	position: relative;
+    top: 94px;
 }
 
 .titre_div_footer {

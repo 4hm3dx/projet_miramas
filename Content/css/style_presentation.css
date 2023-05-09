@@ -20,10 +20,10 @@ h1 {
     font-size: large;
 }
 
-.presentation_colab_asso {
+/* .presentation_colab_asso {
   padding-left: 200px;
   padding-right: 200px;
-}
+} */
 
 /* Centre le titre h1 */
 h1 {
@@ -35,7 +35,7 @@ h1 {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: auto;
-    /* height: 100% */
+    margin-bottom: 12px;
 }
 
   /* Centre le texte du paragraphe sur les écrans plus grands */
@@ -100,4 +100,15 @@ h1 {
   margin-bottom: 60px ;
   text-align: center;
   text-decoration: underline;
+}
+
+.legend_img_presentation {
+  font-size: 15px;
+  margin-left: 10px;
+  color: #008c05;
+  background: #fff200a2;
+  font-weight: bold;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 5px;
 }
