@@ -6,4 +6,7 @@
 
 .navbar-toggler:not(:disabled):not(.disabled) { 
 	background-color: white;
+	position: absolute;
+    right: 0;
+    margin-right: 10px;
 }
