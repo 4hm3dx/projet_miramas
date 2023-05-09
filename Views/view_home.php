@@ -29,7 +29,7 @@
             <p class="acces_au_village">MIRAMAS-LE-VIEUX</p>
             <p class="text_accueil">
             Village perché, Miramas-le-Vieux, dit le « Quillé » offre un panorama d’exception sur une côte sauvage
-            insoupçonnée bordée par le parc de la Poudrerie. <br>
+            insoupçonnée bordée par le parc de la Poudrerie. <br> <br>
             La diversité des paysages qui entourent le village, source de
             nombreuses balades, ne peut laisser personne indifférent. <br><br>
             ➜ Visite recommandée par <a class="link_michelin" href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux">Michelin Voyage</a>
@@ -38,16 +38,15 @@
         <div class="mignature2">
             <img src="Content/img/arbre_cedre.jpg" alt="#" id="prototype_mignature2">
             <p class="acces_au_village">ACCÈS AU VILLAGE</p>
-        <p>
+        <p class="text_accueil">
         Miramas-le-Vieux est un village médiéval authentique qui regorge d’atouts typiques des villages provençaux : pierres,
         placette, glaciers, etc. <br>
-        L’accès se fait par : <br>
+        L’accès se fait par : <br></p>
         <ul >
         <li class="liste_acces_village">Saint-Chamas en venant de l'est.</li>
         <li class="liste_acces_village">Miramas-Gare en venant de l'ouest.</li>
         </ul>
-        Ces deux routes convergent au bout d’une allée de pins, au pied du village.
-        </p>
+        <p class="text_accueil">Ces deux routes convergent au bout d’une allée de pins, au pied du village.</p>
         </div>
     </div>
 </section>

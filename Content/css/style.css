@@ -13,13 +13,13 @@ body {
 
 .bg-light{
 	/* background: linear-gradient(45deg, #0080FF, #FFF259); */
-	background-color: #0080FF!important;
+	background-color: #000000a8!important;
 }
 
 .navbar-light .navbar-nav .nav-link {
-	color: #000000 !important;
+	color: #ffffff !important;
 	transition: all 0.3s;
-	font-size: 18px;
+	font-size: 20px;
 	margin: 5px;
 }
 

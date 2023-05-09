@@ -8,8 +8,11 @@
 }
 
 .link_michelin{
-  text-decoration: none;
-  color:#fff200 !important;
+  text-decoration: underline;
+  color:#4CAF50 !important;
+  font-weight: bolder;
+  font-size: 20px;
+  
 }
 
 .image_mini {
@@ -93,6 +96,7 @@ p {
 
   .liste_acces_village {
     list-style: none;
+    font-size: 18px;
   }
 
   .acces_au_village, h1 {
