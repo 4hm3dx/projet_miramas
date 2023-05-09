@@ -255,16 +255,18 @@ aside img {
     bottom: 5px;
     right: 0;
     margin: 0 10px 5px auto;
-    font-size: 14px;
+    font-size: 16px;
     color: #ff0000;
+    font-weight: bold;
   }
   
   .sub_document_recherche_format {
     bottom: 5px;
     right: 0;
     margin: 0 10px 5px auto;
-    font-size: 14px;
-    color: #0080FF;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0040ff;
   }
   
   .sub_document_recherche {
@@ -272,8 +274,9 @@ aside img {
     bottom: 5px;
     right: 0;
     margin: 0 10px 5px auto;
-    font-size: 14px;
-    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0040ff;
   }
 
   .sup_document_recherhe_format {
