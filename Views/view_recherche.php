@@ -78,7 +78,7 @@
     <img src="data:image/<?php echo pathinfo($s->fichier, PATHINFO_EXTENSION); ?>;base64,<?php echo base64_encode($s->fichier); ?>" />
     <p><?= $s->description ?></p>
   </div>
-  <sup class="sup_document_recherhe_formart"><?= $s->date_publication ?></sup>
+  <sup class="sup_document_recherhe_formart" id="sup_document"><?= $s->date_publication ?></sup>
   <sub class="sub_document_recherche_format"><?= $s->nom ?></sub>
 </div>
   <?php endforeach; ?>
