@@ -1,4 +1,4 @@
-<form action="?controller=annonce&action=update_annonce" method="post" id="addForm">
+<form action="?controller=utilisateur&action=update_annonce" method="post" id="addForm">
     <fieldset>
         <legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
         <input type="text" name="id" value="<?= $annonce['id'] ?>">
@@ -8,12 +8,10 @@
         <input type="text" name="texte" id="texte" value="<?= filter_var($annonce['texte'], FILTER_SANITIZE_STRING ) ?>">
         <label for="image">Image : <sup>*</sup> <i class="fa-regular fa-circle-question" title="Votre fichier ne doit pas depasser les 5Mo et etre au format suivant : .png, .jpg, .jpeg, .mp3, .mp4."></i></label>
         <input type="file" name="image" id="image" value="<?= valid_input($annonces['image']) ?>">
-        <label for="logo">Logo : <sup>*</sup> <i class="fa-regular fa-circle-question" title="Votre fichier ne doit pas depasser les 5Mo et etre au format suivant : .png, .jpg, .jpeg, .mp3, .mp4."></i></label>
-        <input type="file" name="logo" id="logo" value="<?= valid_input($annonces['logo']) ?>">
         <input type="submit" value="Modifier" name="submit" id="submit_update">
         <p class="information_boolean" >Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
     </fieldset>
-</form>
+</form><?php var_dump($annonce) ?>
 
 
 <?php function valid_input($data)

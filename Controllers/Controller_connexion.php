@@ -26,7 +26,9 @@ class Controller_connexion extends Controller
 			$email_regex = '/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/';
 
 			if (empty($email) || empty($password)) {
-				$this->render("connexion");
+				// $this->render("connexion");
+				echo "certains champs sont vides";
+				exit;
 			}
 
 			$email = trim($email);
@@ -39,9 +41,10 @@ class Controller_connexion extends Controller
 
 			$m = Model::get_model();
 			$user = $m->get_connexion_utilisateur($email, $password);
+
 			if ($m->get_connexion_utilisateur($email, $password)) {
 				// L'utilisateur existe dans la base de données
-				// Vérifier si l'utilisateur est admin
+				// Vérifier si l'utilisateur est admin*
 				$_SESSION['user'] = array(
 					'id' => $user['id'],
 					'nom' => $user['nom'],

@@ -435,14 +435,12 @@ class Model
         $nom = $this->valid_input($_POST['nom']);
         $texte = $this->valid_input($_POST['texte']);
         $image = $this->valid_input($_POST['image']);
-        $logo = $this->valid_input($_POST['logo']);
 
         $r = $this->bd->prepare("UPDATE annonce  
-        SET texte = :texte, image = :image, logo = :logo
+        SET texte = :texte, image = :image
         WHERE id = :id;");
         $r->bindParam(':texte', $texte);
         $r->bindParam(':image', $image);
-        $r->bindParam(':logo', $logo);
         $r->bindParam(':id', $id);
         $r->execute();
     }
@@ -605,16 +603,16 @@ class Model
                 return $user;
 
             } else {
-                echo 'mot de passe incorrect';
-                echo $password;
+                header('Location : ?controller=connexion&action=connexion');
                 // Le mot de passe est incorrect
                 return false;
             }
         } else {
-            echo 'l\'utilisateur n\'existe pas';
+            header('Location : ?controller=connexion&action=connexion');
             // L'utilisateur n'existe pas dans la base de données
             return false;
         }
+
 
         //   Démarre la session pour stocker l'ID de l'utilisateur connecté
         //  session_start();

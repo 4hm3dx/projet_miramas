@@ -4,13 +4,14 @@
         <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation">
     </div>
     <div class="texte_presentation">
-        <h2>L'association</h2>
         <p>
             C'est en 1976 que l'association des Amis du vieux Miramas voit le jour. <br>
             "Les anciens avaient bien travaillé pour animer le village avec de belles manifestations dont beaucoup se souviennent.
             Mais l'association est mise en sommeil en 1987 et en 2011, avec quelques bénévoles nous avons relancé son activité". 
              <br>
-            Dans les années 80, Miramas le Vieux était surtout réputé pour ses glaciers d'où la venue d'un public nombreux. <br> </p>
+            Parmi les bénévoles, Gabriella Galland qui réside au village depuis 1996 précise que "dans les années 80, <br>
+            Miramas le Vieux était surtout réputé pour ses glaciers d'où la venue d'un public nombreux et la multiplication de 
+            nuisances pour les habitants. <br> L'association devenait un lieu de revendications, loin de l'objectif initial. <br></p>
         <p>
             Nous partageons avec d'autres l'envie de sauvegarder ce petit 
             bijou qu'est notre village et de valoriser son patrimoine. <br>
@@ -22,10 +23,10 @@
             L'église Notre Dame de Beauvezer et la chapelle Saint Julien servent d'écrin pour diverses manifestations, 
             soirées contes, concerts, lectures, soirée lyrique, chorale... <br> <br>
             Actuellement l'association compte une trentaine d'adhérents. <br>
-            Nous entretenons de bonnes relations avec l'office de tourisme qui depuis quelques années a 
+            "Nous entretenons de bonnes relations avec l'office de tourisme qui depuis quelques années a 
             ouvert un point d'accueil sur le village pendant l'été. <br>
             Nous avons ainsi réalisé une exposition qui a eu un réel succès, sur la vie du village avec des photos et 
-            des cartes postales anciennes que nous ont confié les habitants.</p>
+            des cartes postales anciennes que nous ont confié les habitants".</p>
     </div>
  
 </section>
@@ -56,7 +57,6 @@
             Section 1.10.32 du "De Finibus Bonorum et Malorum" de Ciceron (45 av. J.-C.) <br>
     </div>
 </section>
-<h2 id="equipe_asso">Les membres de l'association</h2>
 <section id="mebre_equipe">
     <div class="membre1">
         <img src="Content/img/MichelGalland-President.jpg" alt="Presntation du President" class="presentation_equipe">
@@ -99,5 +99,5 @@
             John Doe <br>
             President
         </p> -->
-<!-- </div> -->
+</div>
 </section>

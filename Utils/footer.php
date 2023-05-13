@@ -12,7 +12,7 @@
 				</button>
 			</div>
 		</a>
-	<a href="?controller=contact&action=contact" class="nous_contacter">Contact</a>
+		<a href="?controller=contact&action=contact" class="nous_contacter">Nous Contacter</a>
 	</div>
 
 	<p>
@@ -38,23 +38,23 @@
 				Adresse : <br>
 				Rue Mistral – Miramas-le-Vieux <br>
 				Horaires d’ouverture : <br>
-				du mardi au dimanche de 16h à 20h30 (juillet et août)	
+				du mardi au dimanche de 16h à 20h30 (juillet et août)
 			</p>
 		</div>
 	</div>
 
 	<div class="createur_parent">
-		<a href="?controller=home&action=mentions_legals">Mentions legals</a>
+		<a href="?controller=home&action=mentions_legals">Mentions légales</a>
 		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
 	</div>
 </footer>
 <script>
 	// Récupérer le bouton
-const suscribeButton = document.querySelector('.button_suscribe');
+	const suscribeButton = document.querySelector('.button_suscribe');
 
-// Ajouter un événement 'click' au bouton
-suscribeButton.addEventListener('click', () => {
-  // Afficher une alerte avec le message "Cette fonctionnalité est en cours de développement"
-  alert("Cette fonctionnalité est en cours de développement");
-});
+	// Ajouter un événement 'click' au bouton
+	suscribeButton.addEventListener('click', () => {
+		// Afficher une alerte avec le message "Cette fonctionnalité est en cours de développement"
+		alert("Cette fonctionnalité est en cours de développement");
+	});
 </script>

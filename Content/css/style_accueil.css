@@ -1,32 +1,26 @@
 #image_accueil_prototype {
-    width: 100%;
+  width: 100%;
 }
 
 .text_accueil {
-    text-align: center;
-    margin: 20px;
-}
-
-.mignature_image{
-    background-color: #0080FF;
-    /* color: #fff; */
-}
-
-.link_michelin{
-  text-decoration: none;
-  color:#fff200 !important;
-}
-
-.image_mini {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  text-align: center;
+  margin: 20px;
 }
 
 .mignature_image {
-    /* height: 400px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: gray;
+}
+
+.image_mini {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mignature_image {
+  /* height: 400px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image_mini {
@@ -59,65 +53,77 @@ p {
 }
 
 #video_accueil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .titre_video {
-    text-align: center;
-  }
-  
-  #prototype_video {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.titre_video {
+  text-align: center;
+}
+
+#prototype_video {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.mignature1,
+.mignature2 {
+  background-color: white;
+  height: 35rem;
+  border-radius: 15px;
+}
 
 /* & Responsive */
 /* Style pour les écrans de taille inférieure ou égale à 768 pixels */
 @media screen and (max-width: 768px) {
-    .mignature1, .mignature2 {
-      width: 100%;
-    }
-    #prototype_mignature1, #prototype_mignature2 {
-      width: 100%;
-    }
-  }
-  
-  .acces_village {
-    text-align: center;
+
+  .mignature1,
+  .mignature2 {
+    width: 100%;
   }
 
-  .liste_acces_village {
-    list-style: none;
+  #prototype_mignature1,
+  #prototype_mignature2 {
+    width: 100%;
   }
+}
 
-  .acces_au_village, h1 {
-    text-decoration: underline;
-    font-weight: bold;
-  }
+.acces_village {
+  text-align: center;
+}
 
-  .acces_au_village {
-    font-size: 25px;
-  }
+.liste_acces_village {
+  list-style: none;
+}
 
-  .presentation_equipe {
-    border-radius: 50%;
-  }
+.acces_au_village,
+h1 {
+  text-decoration: underline;
+  font-weight: bold;
+}
 
-  h4, h2 {
-    text-align: center;
-  }
+.acces_au_village {
+  font-size: 25px;
+}
 
-  .text_accueil {
-    font-size: large;
-    margin-bottom: 10px;
-  }
+.presentation_equipe {
+  border-radius: 50%;
+}
 
-  #last_text {
-    margin-bottom: 30px;
-  }
+h4 {
+  text-align: center;
+}
+
+.text_accueil {
+  font-size: large;
+  margin-bottom: 10px;
+}
+
+#last_text {
+  margin-bottom: 30px;
+}

@@ -47,8 +47,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <script src="Content/js/app_mdp.js" defer></script>
     <script src="Content/js/app_ajout_document.js" defer></script>
     <script src="Content/js/app_inscription.js" defer></script>
+    <script src="Content/js/app_connexion.js" defer></script>
 
-    
+
 
 
     <!-- Link font awesome -->
@@ -58,7 +59,13 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
 
     <!-- Link css -->
-    <link rel="stylesheet" href="Content/css/style.css">
+
+    <?php $uri = $_SERVER['REQUEST_URI'];
+    if ($uri !== '/?controller=home&action=home' && $uri !== '/?controller=home&action=default') { ?>
+        <link rel="stylesheet" href="Content/css/style.css">
+    <?php } else if ($uri == '/?controller=home&action=home' || $uri == '/?controller=home&action=default') { ?>
+            <link rel="stylesheet" href="Content/css/style_header_home.css">
+    <?php } ?>
     <link rel="stylesheet" href="Content/css/style_newsletter.css">
     <link rel="stylesheet" href="Content/css/style_ajout_document.css">
     <link rel="stylesheet" href="Content/css/style_formulaire_connexion.css">
@@ -70,9 +77,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <link rel="stylesheet" href="Content/css/style_presentation.css">
     <link rel="stylesheet" href="Content/css/style_recherche.css">
 
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
-    </style>
+
+
 
     <!-- Titre -->
     <title>Les amis du vieux miramas</title>
@@ -86,9 +92,11 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     //* Inclure les fichiers nécessaires
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
-    // die("page index");
+    //  condition if ($uri !== '/?controller=home&action=home') {
+    //     require_once 'Utils/header.php';
+    // }
     require_once 'Utils/header.php';
-   
+
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition", "crud", "utilisateur", "document", "annonce", "message"];
 
@@ -125,7 +133,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     
     // echo '<br>' . "<b id='controller'>" . "Controller : " . $_GET['controller'] . "<br>" . "</b>";
     // echo "<b id='action'>" . "action : " . $_GET['action'] . "<br>" . "</b>";
-
+    
     require_once 'Utils/footer.php';
     ?>
 </body>

@@ -9,16 +9,19 @@ erMdp.style.color = 'red';
 
 function connexionMail(e) {
     if (inpEmail.value.length == 0) {
+        e.preventDefault();
         erMail.innerHTML = "Email manquant";
         return false;
     }
 
     if (inpEmail.value.length < 5) {
+        e.preventDefault();
         erMail.innerHTML = "Veuillez saisir un mail valide";
         return false;
     }
 
     if (!inpEmail.value.match(/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/)) {
+        e.preventDefault();
         erMail.innerHTML = "Mail invalide";
         return false;
     }
@@ -29,16 +32,19 @@ function connexionMail(e) {
 
 function connexionMdp(e) {
     if (inpPass.value.length == 0) {
+        e.preventDefault();
         erMdp.innerHTML = "Mot de passe requis";
         return false;
     }
 
     if (inpPass.value.length < 8) {
+        e.preventDefault();
         erMdp.innerHTML = "Veuillez saisir au moins 8 caractères";
         return false;
     }
 
     if (!inpPass.value.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)) {
+        e.preventDefault();
         erMdp.innerHTML = "Format de mot de passe incorrect";
         return false;
     }
