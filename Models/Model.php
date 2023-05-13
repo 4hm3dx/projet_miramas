@@ -598,17 +598,25 @@ class Model
 
         if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch();
+
             if (password_verify($password, $user['mot_de_passe'])) {
                 // Le mot de passe est correct, renvoie l'utilisateur
+                $_SESSION['user'] = array(
+                    'id' => $user['id'],
+                    'nom' => $user['nom'],
+                    'prenom' => $user['prenom'],
+                    'mail' => $user['mail'],
+                    'id_roles' => $user['id_roles']
+                );
                 return $user;
 
             } else {
-                header('Location : ?controller=connexion&action=connexion');
+                // header('Location: ?controller=connexion&action=connexion');
                 // Le mot de passe est incorrect
                 return false;
             }
         } else {
-            header('Location : ?controller=connexion&action=connexion');
+            // header('Location: ?controller=connexion&action=connexion');
             // L'utilisateur n'existe pas dans la base de données
             return false;
         }

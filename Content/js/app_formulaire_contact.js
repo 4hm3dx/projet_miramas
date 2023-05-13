@@ -15,48 +15,122 @@ const messageErreur = document.querySelector('#message_erreur');
 const regexNomPrenom = /^[a-zA-Z]{2,30}$/;
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-function validerFormulaire(event) {
-  event.preventDefault();
-  let erreurs = 0;
+function contactnom(e) {
 
-  if (!regexNomPrenom.test(nomUtilisateur.value)) {
-    nomErreur.textContent = 'Le nom doit contenir entre 2 et 30 caractères.';
-    erreurs++;
-  } else {
-    nomErreur.textContent = '';
+  if (nomUtilisateur.value.length == 0) {
+    e.preventDefault();
+    nomErreur.innerHTML = "Le nom doit contenir entre 2 et 30 caractères.";
+    return false;
   }
 
-  if (!regexNomPrenom.test(prenomUtilisateur.value)) {
-    prenomErreur.textContent = 'Le prénom doit contenir entre 2 et 30 caractères.';
-    erreurs++;
-  } else {
-    prenomErreur.textContent = '';
+  if (nomUtilisateur.value.length < 2) {
+    e.preventDefault();
+    nomErreur.innerHTML = "Le nom doit contenir entre 2 et 30 caractères.";
+    return false;
   }
 
-  if (!regexMail.test(mailUtilisateur.value)) {
-    mailErreur.textContent = 'L\'adresse mail doit être au format "xxxx@xxxx.xx".';
-    erreurs++;
-  } else {
-    mailErreur.textContent = '';
+  if (!nomUtilisateur.value.match(/^[A-Za-z'-]+$/)) {
+    e.preventDefault();
+    nomErreur.innerHTML = "Nom invalide";
+    return false;
   }
 
-  if (objectUtilisateur.value.trim() === '') {
-    objectErreur.textContent = 'Le champ "Objet" ne peut pas être vide.';
-    erreurs++;
-  } else {
-    objectErreur.textContent = '';
-  }
-
-  if (contenueMessageFormContact.value.trim() === '') {
-    messageErreur.textContent = 'Le champ "Message" ne peut pas être vide.';
-    erreurs++;
-  } else {
-    messageErreur.textContent = '';
-  }
-
-  if (erreurs === 0) {
-    formulaireContact.submit();
-  }
+  nomErreur.innerHTML = '';
+  return true;
 }
 
-formulaireContact.addEventListener('submit', validerFormulaire);
+
+
+function contactprenom(e) {
+  if (prenomUtilisateur.value.length == 0) {
+    prenomErreur.innerHTML = "Le prénom est requis";
+    return false;
+  }
+
+  if (prenomUtilisateur.value.length < 2) {
+    prenomErreur.innerHTML = "Prénom trop court";
+    return false;
+  }
+
+  if (!prenomUtilisateur.value.match(/^[A-Za-z'-]+$/)) {
+    prenomErreur.innerHTML = "Prenom invalide";
+    return false;
+  }
+
+  prenomErreur.innerHTML = '';
+  return true;
+}
+
+function contactmail(e) {
+
+  if (mailUtilisateur.value.length == 0) {
+    mailErreur.innerHTML = "Email manquant";
+    return false;
+  }
+
+  if (mailUtilisateur.value.length < 5) {
+    mailErreur.innerHTML = "Veuillez saisir un mail valide";
+    return false;
+  }
+
+  if (!mailUtilisateur.value.match(/^[A-Za-z0-9._-]+[@][A-Za-z]+[\.][a-z]{2,4}$/)) {
+    mailErreur.innerHTML = "Mail invalide";
+    return false;
+  }
+
+  mailErreur.innerHTML = '';
+  return true;
+
+}
+
+function contactobject(e) {
+
+  if (objectUtilisateur.value.length == 0) {
+    objectErreur.innerHTML = "Le champ 'Objet' ne peut pas être vide.";
+    return false;
+  }
+
+  if (!objectUtilisateur.value.match(/^[a-zA-Z0-9.,?!'"«»‹›„“”‘’ éàèùêâôûëïüç]+$/)) {
+    objectErreur.innerHTML = "Veuillez saisir un 'Objet' valide.";
+    return false;
+  }
+
+  objectErreur.innerHTML = '';
+  return true;
+}
+
+function contactmessage(e) {
+  if (contenueMessageFormContact.value.trim() === '') {
+    messageErreur.innerHTML = "Le champ 'Message' ne peut pas être vide.";
+    return false;
+  }
+  if (!contenueMessageFormContact.value.match(/^[a-zA-Z0-9.,?!'"«»‹›„“”‘’ éàèùêâôûëïüç]+$/)) {
+    messageErreur.innerHTML = "Le champ 'Message' est incorrect";
+    return false;
+  }
+
+  messageErreur.innerHTML = '';
+  return true;
+}
+
+
+
+formulaireContact.addEventListener('submit', function (e) {
+
+  // Appel de toutes les fonctions de validation
+  const conditionsValidesContact = [contactnom(e), contactprenom(e), contactmail(e), contactobject(e), contactmessage(e)];
+
+  // Vérification si toutes les conditions sont valides
+  const conditionsRespecteesContact = conditionsValidesContact.every(function (condition) {
+    return condition === true;
+  });
+
+  // Si toutes les conditions sont respectées, la soumission du formulaire est autorisée
+  if (conditionsRespecteesContact) {
+    return true;
+  }
+
+  // Sinon, on empêche la soumission du formulaire
+  e.preventDefault();
+
+});

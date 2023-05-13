@@ -40,23 +40,28 @@ class Controller_connexion extends Controller
 			}
 
 			$m = Model::get_model();
-			$user = $m->get_connexion_utilisateur($email, $password);
-
-			if ($m->get_connexion_utilisateur($email, $password)) {
-				// L'utilisateur existe dans la base de données
-				// Vérifier si l'utilisateur est admin*
-				$_SESSION['user'] = array(
-					'id' => $user['id'],
-					'nom' => $user['nom'],
-					'prenom' => $user['prenom'],
-					'mail' => $user['mail'],
-					'id_roles' => $user['id_roles']
-				);
+			$m->get_connexion_utilisateur($email, $password);
 
 
+			// if ($m->get_connexion_utilisateur($email, $password)) {
+			// 	// L'utilisateur existe dans la base de données
+			// 	// Vérifier si l'utilisateur est admin*
+			if (isset($_SESSION['user'])) {
+				$this->render("home");
+			} else {
+				$this->render("connexion");
 			}
+			// 	$_SESSION['user'] = array(
+			// 		'id' => $user['id'],
+			// 		'nom' => $user['nom'],
+			// 		'prenom' => $user['prenom'],
+			// 		'mail' => $user['mail'],
+			// 		'id_roles' => $user['id_roles']
+			// 	);
 
-			$this->render("home");
+
+			// }
+
 		}
 	}
 
