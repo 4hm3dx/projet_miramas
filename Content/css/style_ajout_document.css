@@ -3,9 +3,12 @@
 }
 
 #section-ajout-document {
-  background-color: #d7d4d4;
+  background-color: #fff200a2;
   border-radius: 5px;
   padding: 20px;
+  margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
 #titre-ajout-document {
@@ -203,4 +206,9 @@ input[type="date"] {
   .fa-circle-question:hover{
     cursor: pointer;
     content: "";
+  }
+
+  .texte-important {
+    font-weight: bold;
+    color: red;
   }

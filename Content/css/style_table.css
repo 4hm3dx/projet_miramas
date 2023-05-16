@@ -22,6 +22,30 @@
     align-items: center;
   }
   
+.form_crud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fef65fe0 ;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 25px;
+}
+
+#format_document:focus, 
+#titre_document:focus, 
+#utilisateur_document:focus, 
+#nom_message:focus, 
+#objet_message:focus, 
+#mail_utilisateur:focus, 
+#nom_utilisateur:focus, 
+#prenom_utilisateur:focus {
+  border: 2px solid black ;
+  box-shadow: 0px 0px 19px 1px #4caf4ff0;
+}
+
   fieldset {
     border: none;
     margin: 0;
@@ -38,6 +62,11 @@
     border: 2px solid #ccc;
     border-radius: 5px;
     width: 100%;
+  }
+
+  select:focus, 
+  #select_categorie:focus {
+    border: solid 2px #4caf4f;
   }
   
   input[type="submit"] {

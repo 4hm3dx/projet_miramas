@@ -7,8 +7,12 @@
   margin: 20px;
 }
 
-.mignature_image {
-  background: gray;
+.link_michelin {
+  text-decoration: underline;
+  color: #4CAF50 !important;
+  font-weight: bolder;
+  font-size: 20px;
+
 }
 
 .image_mini {
@@ -21,6 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #429b45f0;
 }
 
 .image_mini {
@@ -37,11 +42,14 @@
   margin: 0 20px;
   width: 50%;
   height: 50%;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
 }
 
 #prototype_mignature1,
 #prototype_mignature2 {
-  width: 50%;
+  width: 25vw;
   height: auto;
   object-fit: cover;
   text-align: center;
@@ -87,43 +95,48 @@ p {
     width: 100%;
   }
 
-  #prototype_mignature1,
+  <<<<<<< HEAD #prototype_mignature1,
   #prototype_mignature2 {
     width: 100%;
+
+    =======.liste_acces_village {
+      list-style: none;
+      font-size: 18px;
+      >>>>>>>1e2eaceb0c33660faa964ed0b3ac3cea90987cb1
+    }
   }
-}
 
-.acces_village {
-  text-align: center;
-}
+  .acces_village {
+    text-align: center;
+  }
 
-.liste_acces_village {
-  list-style: none;
-}
+  .liste_acces_village {
+    list-style: none;
+  }
 
-.acces_au_village,
-h1 {
-  text-decoration: underline;
-  font-weight: bold;
-}
+  .acces_au_village,
+  h1 {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 
-.acces_au_village {
-  font-size: 25px;
-}
+  .acces_au_village {
+    font-size: 25px;
+  }
 
-.presentation_equipe {
-  border-radius: 50%;
-}
+  .presentation_equipe {
+    border-radius: 50%;
+  }
 
-h4 {
-  text-align: center;
-}
+  h4 {
+    text-align: center;
+  }
 
-.text_accueil {
-  font-size: large;
-  margin-bottom: 10px;
-}
+  .text_accueil {
+    font-size: large;
+    margin-bottom: 10px;
+  }
 
-#last_text {
-  margin-bottom: 30px;
-}
+  #last_text {
+    margin-bottom: 30px;
+  }

@@ -1,4 +1,4 @@
-<form action="?controller=document&action=all_utilisateur_document_list" method="POST">
+<form action="?controller=document&action=all_utilisateur_document_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche de documents par Utilisateurs</legend>
         <select name="utilisateur_document" id="utilisateur_document">
@@ -21,7 +21,7 @@
                 <th>Fichier</th>
                 <th>Description</th>
                 <th>Date de publication</th>
-                <th>Libellés</th>
+                <th>Catégorie</th>
                 <th>Affichage <sup>*</sup></th>
                 <th></th>
                 <th></th>

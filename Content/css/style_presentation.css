@@ -1,89 +1,112 @@
 /* Centre le titre h1 */
 h1 {
-    text-align: center;
-  }
-  
-  /* Applique un espacement uniforme entre les deux éléments enfants */
-  #texte_image_presentation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  }
-  
-  /* Centre le texte du paragraphe */
-  .texte_presentation p, 
-   #presentation_colab_asso {
-    text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    font-size: large;
+  text-align: center;
 }
+
+/* Applique un espacement uniforme entre les deux éléments enfants */
+#texte_image_presentation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* Centre le texte du paragraphe */
+.texte_presentation p,
+.presentation_colab_asso {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: large;
+}
+
+/* .presentation_colab_asso {
+  padding-left: 200px;
+  padding-right: 200px;
+} */
 
 /* Centre le titre h1 */
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 
 #img_presentation {
-    border-radius: 10px;
-    width: auto;
-    /* height: 100% */
+  border-radius: 10px;
+  width: auto;
+  margin-bottom: 12px;
 }
 
-  /* Centre le texte du paragraphe sur les écrans plus grands */
+/* Centre le texte du paragraphe sur les écrans plus grands */
+.texte_presentation p {
+  text-align: center;
+
+}
+
+/* Rend le contenu en colonne sur les petits écrans */
+@media screen and (max-width: 767px) {
+  #texte_image_presentation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Centre le texte du paragraphe sur les petits écrans */
   .texte_presentation p {
     text-align: center;
-    
-  }
-  
-  /* Rend le contenu en colonne sur les petits écrans */
-  @media screen and (max-width: 767px) {
-    #texte_image_presentation {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    /* Centre le texte du paragraphe sur les petits écrans */
-    .texte_presentation p {
-      text-align: center;
-    }
-  
-    /* Centre l'image sur les petits écrans */
-    .image_presentation img {
-      display: block;
-      margin: 0 auto;
-    }
   }
 
-  #img_couveture {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  /* Centre l'image sur les petits écrans */
+  .image_presentation img {
+    display: block;
+    margin: 0 auto;
   }
+}
 
-  #mebre_equipe {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#img_couveture {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#mebre_equipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#mebre_equipe>div {
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+}
+
+@media (max-width: 1035px) {
+  #mebre_equipe>div {
+    width: 45%;
   }
-  
-  #mebre_equipe > div {
-    width: 30%;
-    margin: 10px;
-    text-align: center;
+}
+
+@media (max-width: 696px) {
+  #mebre_equipe>div {
+    width: 90%;
   }
-  
-  @media (max-width: 1035px) {
-    #mebre_equipe > div {
-      width: 45%;
-    }
-  }
-  
-  @media (max-width: 696px) {
-    #mebre_equipe > div {
-      width: 90%;
-    }
-  }
+}
+
+#equipe_asso {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.legend_img_presentation {
+  font-size: 15px;
+  margin-left: 10px;
+  color: #008c05;
+  background: #fff200a2;
+  font-weight: bold;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 5px;
+}

@@ -1,0 +1,12 @@
+.bg-light{
+	background: transparent !important;
+	position: absolute;
+	width: 100%;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) { 
+	background-color: white;
+	position: absolute;
+    right: 0;
+    margin-right: 10px;
+}

@@ -1,7 +1,7 @@
 
 <section id="texte_image_presentation">
 <div class="image_presentation">
-        <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation">
+        <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation"><sub class="legend_img_presentation">Croix jubilé de 1874 | Situé a l'entre du village</sub>
     </div>
     <div class="texte_presentation">
         <p>
@@ -33,28 +33,48 @@
 <img src="Content/img/eglise.jpg" alt="Image de couverture de miramas le vieux" id="img_couveture">
 <section id="presentation_collab_asso">
     <div class="texte_presentation_asso">
-        <p id="presentation_colab_asso">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            Section 1.10.32 du "De Finibus Bonorum et Malorum" de Ciceron (45 av. J.-C.) <br><br>
+        <p class="presentation_colab_asso">
+        <b>L'association des amis du Vieux Miramas</b> est une association Loi 1901 
+        dont le but est d'agir pour la protection et la sauvegarde d'un lieu 
+        architectural reconnu: le village de Miramas-le-Vieux, classé monument 
+        historique.
+        </p>
+        <br>
+        <p class="presentation_colab_asso">
+        Pour cela, notre association, outre le fait de permettre à toute 
+        personne désireuse de faire connaitre ce village et sa richesse 
+        patrimoniale en assurant un lien régulier, organise des activités en 
+        lien avec la mise en valeur, la préservation du site: exposition, 
+        concert, rencontres, éditiions de documents, etc.
+        </p>
+        <br>
+        <p class="presentation_colab_asso">
+        Cette association a été créée le 1° décembre 1976. Son siège social est 
+        maintenant situé à Miramas-le-Vieux dans le local de l'ancienne mairie, 
+        place des Cigales. <br>
+        Son adhésion est ouverte à toute personne désireuse d'oeuvrer pour la 
+        sauvegarde de ce patrimoine historique pittoresque et son rayonnement.
 
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam 
-            rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-             Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-             qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, <br><br>
+        </p>
 
-             adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat 
-            voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid 
-            ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?" <br><br>
-
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            Section 1.10.32 du "De Finibus Bonorum et Malorum" de Ciceron (45 av. J.-C.) <br>
+        <!-- L'association <b>Les Amis du Vieux Miramas</b> a été fondée pour préserver et promouvoir le patrimoine culturel et historique de la région 
+        de Miramas-le-Vieux, en Provence. <br>
+        Nous organisons des visites guidées du village médiéval, des conférences et des événements culturels pour permettre aux visiteurs 
+        de découvrir les richesses de notre patrimoine.
+        </p>
+        <br>
+        <p class="presentation_colab_asso">
+        Notre équipe est composée de bénévoles passionnés par l'histoire et la culture provençale, 
+        qui mettent tout en œuvre pour offrir des expériences authentiques et mémorables aux visiteurs. <br>
+        Nous sommes fiers de travailler main dans la main avec les habitants de Miramas-le-Vieux pour préserver ce joyau 
+        de la Provence pour les générations futures.
+        </p>
+        <br>
+        <p class="presentation_colab_asso">
+        Si vous êtes intéressé par l'histoire et la culture provençale, nous vous invitons à nous rejoindre lors
+         de nos prochaines visites guidées ou événements culturels. Vous pouvez également soutenir notre association en devenant 
+         membre ou en faisant un don pour nous aider à continuer notre travail important de préservation du patrimoine de Miramas-le-Vieux.
+        </p> -->
     </div>
 </section>
 <section id="mebre_equipe">

@@ -8,7 +8,7 @@
       <th>Format</th>
       <th>Fichier</th>
       <th>Description</th>
-      <th>Libellés</th>
+      <th>Catégorie</th>
       <th>Affichage <sup>*</sup></th>
       <th></th>
       <th></th>

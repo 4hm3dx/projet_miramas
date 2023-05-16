@@ -14,11 +14,11 @@
 		</a>
 		<a href="?controller=contact&action=contact" class="nous_contacter">Nous Contacter</a>
 	</div>
-
-	<p>
+	<img src="Content/img/blason.png" alt="" class="image_footer_blason">
+	<!-- <p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
 		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-	</p>
+	</p> -->
 
 	<div class="coordonnee">
 		<div class="adresse">
@@ -48,6 +48,10 @@
 		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
 	</div>
 </footer>
+
+
+
+
 <script>
 	// Récupérer le bouton
 	const suscribeButton = document.querySelector('.button_suscribe');

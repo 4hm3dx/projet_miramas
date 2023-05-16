@@ -50,12 +50,12 @@
                 e-mail de la newsletter.
             </p>
         </div>
+        <sub class="info_form" style="color:red;">* : Champs Obligatoires</sub>
         <div class="inscription_reset">
             <input type="reset" id="reset_formulaire_inscription" value="Reset">
             <input type="submit" id="submit_formulaire_inscription" value="Inscription">
         </div>
         <span id="se_connecter">Vous êtes déjà inscrit? <a href="?controller=connexion&action=connexion"
                 id="button_connexion">Connexion</a></span><br>
-        <sub class="info_form">* : Champs Obligatoires</sub>
     </fieldset>
 </form>
