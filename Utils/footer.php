@@ -45,7 +45,11 @@
 
 	<div class="createur_parent">
 		<a href="?controller=home&action=mentions_legals">Mentions légales</a>
-		<p class="createur">Alexis Serbelloni || Ahmed Madani</p>
+	</div>
+	<div class="createur">
+		<a class="createur-link" href="https://www.linkedin.com/in/alexis-s-9b080a252/" target="_blank">Alexis
+			Serbelloni
+		</a>||<a href="https://www.linkedin.com/in/4hm3dx/" class="createur-link" target="_blank"> Ahmed Madani</a>
 	</div>
 </footer>
 
