@@ -103,7 +103,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
     // die("page index");
-    require_once 'Utils/header.php';
+    // require_once 'Utils/header.php';
    
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition", "crud", "utilisateur", "document", "annonce", "message"];

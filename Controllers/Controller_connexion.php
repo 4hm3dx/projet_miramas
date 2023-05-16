@@ -58,6 +58,7 @@ class Controller_connexion extends Controller
 			}
 
 			$this->render("home");
+			// header("Location: ?controller=home&action=home");
 		}
 	}
 

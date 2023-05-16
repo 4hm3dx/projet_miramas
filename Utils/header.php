@@ -21,6 +21,7 @@
 					<a class="nav-link" href="?controller=recherche&action=recherche">Document</a>
 				</li>
 				<?php
+				// var_dump($_SESSION);
 				if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] !== 4) { ?>
 					<li class="nav-item">
 						<a class="nav-link" href="?controller=ajout_document&action=ajout_document">Ajout de document</a>
