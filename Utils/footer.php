@@ -4,7 +4,7 @@
 		<a href="?controller=newsLetters&action=newsLetters">
 			<div class="button_suscribe">
 				<button class="button_suscribe">
-					<p>S'inscrire/Se désinscrire a notre News Letters</p>
+					<p>S'inscrire/Se désinscrire de notre Newsletter</p>
 					<svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6"
 						xmlns="http://www.w3.org/2000/svg">
 						<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -23,11 +23,11 @@
 	<div class="coordonnee">
 		<div class="adresse">
 			<p>
-				<b class="titre_div_footer">Les Amis du Vieux Miramas, Office de tourisme</b> <br>
-				Adresse : avenue Falabrègues <br>
+				<b class="titre_div_footer">Les Amis du Vieux Miramas, Office de Tourisme</b> <br>
+				Adresse : Avenue Falabrègues, Miramas <br>
 				Tél. : 04 90 58 08 24 <br>
 				Horaires d’ouverture : <br>
-				du lundi au vendredi de 8h30 à 12h et de 13h30 à 17h
+				Lundi au Vendredi : 8h30 - 12h & 13h30 - 17h
 			</p>
 		</div>
 		<div class="numero_mail">
@@ -36,9 +36,9 @@
 				Tél : 06 14 31 62 64 <br>
 				<b>Point d’accueil saisonnier</b> <br>
 				Adresse : <br>
-				Rue Mistral – Miramas-le-Vieux <br>
+				Rue Frédéric Mistral – Miramas-le-Vieux <br>
 				Horaires d’ouverture : <br>
-				du mardi au dimanche de 16h à 20h30 (juillet et août)
+				Mardi au dimanche : 16h - 20h30 (Juillet et Août)
 			</p>
 		</div>
 	</div>

@@ -95,7 +95,8 @@
                 La diversité des paysages qui entourent le village, source de
                 nombreuses balades, <br> ne peut laisser personne indifférent. <br><br>
                 ➜ Visite recommandée par <a class="link_michelin"
-                    href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux">Michelin
+                    href="https://voyages.michelin.fr/europe/france/provence-alpes-cote-dazur/bouches-du-rhone/miramas/miramas-le-vieux"
+                    target="_blank">Michelin
                     Voyage</a>
             </p>
         </div>
