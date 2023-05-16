@@ -95,14 +95,13 @@ p {
     width: 100%;
   }
 
-  <<<<<<< HEAD #prototype_mignature1,
+  #prototype_mignature1,
   #prototype_mignature2 {
     width: 100%;
 
-    =======.liste_acces_village {
+    .liste_acces_village {
       list-style: none;
       font-size: 18px;
-      >>>>>>>1e2eaceb0c33660faa964ed0b3ac3cea90987cb1
     }
   }
 
@@ -140,3 +139,4 @@ p {
   #last_text {
     margin-bottom: 30px;
   }
+}

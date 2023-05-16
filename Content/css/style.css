@@ -267,11 +267,9 @@ video {
 
 .mention h1 {
 	margin-bottom: 50px;
-	<<<<<<< HEAD
 }
 
-=======
-}
+
 
 .text-lg-start {
 	background-color: transparent !important;
@@ -314,5 +312,3 @@ video {
 ::-webkit-scrollbar-thumb:hover {
 	background: #fff200a2;
 }
-
->>>>>>>1e2eaceb0c33660faa964ed0b3ac3cea90987cb1
