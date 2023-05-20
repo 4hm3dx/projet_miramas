@@ -90,14 +90,33 @@ p {
 /* Style pour les écrans de taille inférieure ou égale à 768 pixels */
 @media screen and (max-width: 768px) {
 
-  .mignature1,
-  .mignature2 {
+  .mignature_image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
+  .image_mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mignature1,
+  .mignature2 {
+    /* width: 100%; */
+    margin-top: 1.5rem;
+    width: 25rem;
+  }
+
+
+
   #prototype_mignature1,
   #prototype_mignature2 {
-    width: 100%;
+    width: 15rem;
 
     .liste_acces_village {
       list-style: none;
@@ -105,6 +124,7 @@ p {
     }
   }
 
+  /*
   .acces_village {
     text-align: center;
   }
@@ -138,5 +158,21 @@ p {
 
   #last_text {
     margin-bottom: 30px;
+  } */
+}
+
+@media screen and (max-width: 430px) {
+
+  .mignature1,
+  .mignature2 {
+    /* width: 100%; */
+    margin-top: 1.5rem;
+    width: 19rem;
+  }
+
+  #prototype_mignature1,
+  #prototype_mignature2 {
+    width: 9rem;
+
   }
 }

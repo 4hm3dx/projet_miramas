@@ -192,6 +192,14 @@ video {
 	text-align: center;
 }
 
+.createur {
+	text-align: center;
+}
+
+.createur-link {
+	text-decoration: none;
+}
+
 .logo {
 	width: 60%;
 }
