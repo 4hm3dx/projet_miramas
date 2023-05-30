@@ -19,3 +19,4 @@ regle le responsive page de presentation
 regler la nav 
 regler les alertes de soumission doc 
 crud 
+voir le seo, ainsi que les balises semantiques sur chaque page
