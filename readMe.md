@@ -13,3 +13,9 @@ voir pour la date et l'auteur du document <!--! OK -->
 
 ESSAYER DE SOUMETTRE TOUT LE FORMULAIRE VIDE 
 gestion base de données 
+
+
+regle le responsive page de presentation 
+regler la nav 
+regler les alertes de soumission doc 
+crud 
