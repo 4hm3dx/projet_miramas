@@ -4,13 +4,13 @@
 if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 
 	?>
-	<div class="container-fluid">
+	<!-- <div class="container-fluid">
 		<div class="row">
 		</div>
 		<div class="col-12 text-center" id="titre">
 			Consultation de données enregistré dans la base de données
 		</div>
-	</div>
+	</div> -->
 	<ul class="nav justify-content-center nav-pills" id="menu">
 		<li class="nav-item dropdown">
 			<a class="nav-link" href="?controller=home&action=home">Accueil</a>

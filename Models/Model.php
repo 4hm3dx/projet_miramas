@@ -509,7 +509,6 @@ class Model
     {
         $titre = $this->valid_input($_POST['titre_document']);
         $description = $this->valid_input($_POST['description_document']);
-        $date_publication = $this->valid_input($_POST['date_document']);
         $fichier = $_FILES['input-file-ajout-document']['name'];
         $id_categorie = $this->valid_input($_POST['select_categorie']);
         $ajout_utilisateur_document = $this->valid_input($_POST['ajout_utilisateur_document']);
@@ -517,13 +516,12 @@ class Model
         $extension = pathinfo($fichier, PATHINFO_EXTENSION);
 
         // Stocker l'extension dans la base de données
-        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `date_publication`, `id_utilisateur`, `fichier`, `format`) 
-                VALUES (:titre, :id_categorie, :description, :date_publication, :id_utilisateur, :fichier, :format)");
+        $r = $this->bd->prepare("INSERT INTO `document`(`titre`, `id_categorie`, `description`, `id_utilisateur`, `fichier`, `format`) 
+                VALUES (:titre, :id_categorie, :description, :id_utilisateur, :fichier, :format)");
 
         $r->bindParam(':titre', $titre);
         $r->bindParam(':fichier', $fichier);
         $r->bindParam(':description', $description);
-        $r->bindParam(':date_publication', $date_publication);
         $r->bindParam(':id_categorie', $id_categorie);
         $r->bindParam(':id_utilisateur', $ajout_utilisateur_document);
         $r->bindParam(':format', $extension);
@@ -755,11 +753,11 @@ class Model
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         //todo Supprime les balises et les caractères spéciaux
-        $data = filter_var($data, FILTER_SANITIZE_STRING);
+        // $data = filter_var($data, FILTER_SANITIZE_STRING);
         //todo Convertit les caractères spéciaux en entités HTML
-        $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        // $data = filter_var($data, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
         //todo Encode les caractères spéciaux en UTF-8
-        $data = filter_var($data, FILTER_SANITIZE_ENCODED);
+        // $data = filter_var($data, FILTER_SANITIZE_ENCODED);
         //todo Retourne la chaîne de caractères validée
         return $data;
     }

@@ -14,7 +14,7 @@ const conditions = document.getElementById('condition_general');
 
 const formulaire = document.getElementById('formulaire_inscription');
 
-
+if (formulaire){
 
 function valideNom(e) {
     if (nom.value.length == 0) {
@@ -143,5 +143,4 @@ formulaire.addEventListener('submit', function (e) {
     e.preventDefault();
 
 });
-
-
+}

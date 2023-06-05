@@ -1,10 +1,10 @@
 // & Controle de la longueur et de la robutesse du mot de passe 
 $(document).ready(function() {
     $('#mdp_utilisateur_inscription').on('input', function() {
-        var password = $(this).val();
-        var strength = 0;
-        var progressBar = $('#strength_indicator');
-        var passwordLength = password.length;
+        let password = $(this).val();
+        let strength = 0;
+        let progressBar = $('#strength_indicator');
+        let passwordLength = password.length;
 
         // Vérification de la longueur du mot de passe
         if (passwordLength < 8) {

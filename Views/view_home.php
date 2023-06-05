@@ -1,6 +1,6 @@
 <header>
     <!-- Barre de navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: transparent !important; position: absolute; width: 100%;">
         <a class="navbar-brand" href="?controller=home&action=home">
             <img src="Content/img/Logo_Amis_vieux_Miramas.jpg" alt="Logo" class="logo" id="logo_asso" />
             <!-- <span class="navbar-title">Les amis du vieux Miramas</span> -->
@@ -50,6 +50,7 @@
         </div>
     </nav>
 </header>
+<main>
 <section id="image_text_presnetation_asso">
     <img src="Content/img/img_accueil1.jpg" alt="#" id="image_accueil_prototype">
     <h1 class="titre"> MIRAMAS-LE-VIEUX</h1>
@@ -124,3 +125,4 @@
         Votre navigateur ne supporte pas la lecture de vidéos.
     </video>
 </section>
+                </main>

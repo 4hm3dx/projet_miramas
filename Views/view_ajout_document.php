@@ -68,7 +68,7 @@
                             </form>
                         </div>
                     </div>
-                    <form action="?controller=ajout_document&action=ajout_document_bdd" method="POST"
+                    <form id="ajout_doc_form" action="?controller=ajout_document&action=ajout_document_bdd" method="POST"
                         enctype="multipart/form-data" id="ajout_doc_form">
                         <label for="titre_document">Titre du document : <sup>*</sup></label>
                         <span id="span_titre" class="texte-important"></span>
@@ -80,8 +80,28 @@
                                 class="fa-regular fa-circle-question"
                                 title="Votre fichier ne doit pas depasser les 5Mo et etre au format suivant : .png, .jpg, .jpeg, .mp3, .mp4."></i></label>
                         <input type="file" id="input-file-ajout-document" name="input-file-ajout-document">
-                        <label for="date_document">Date de publication : <sup>*</sup></label>
-                        <input type="date" name="date_document" class="date_document">
+                        <div id="error-messages">
+                            <?php
+                            // var_dump($type_error);
+                            if (isset($type_error)){
+                                switch ($type_error) {
+                                    case '1':
+                                        echo '<span class="error-message">Veuillez remplir tous les champs obligatoires.</span>';
+                                        break;
+                                    
+                                    case '2':
+                                        echo '<span class="error-message">Le type de fichier n\'est pas autorisé.</span>';
+                                        break;
+                                    
+                                    case '3':
+                                        echo '<span class="error-message">La taille du fichier dépasse la limite autorisée.</span>';
+                                        break;
+                                    
+                                    default:
+                                        break;
+                                }}
+                            ?>
+                        </div>
                         <label for="select_categorie">Catégorie : <sup>*</sup></label>
                         <select name="select_categorie" id="select_categorie">
                             <?php foreach ($select_document as $sc): ?>
@@ -103,49 +123,3 @@
 
         </div>
     </section>
-<script>
-      const ajout_doc_form = document.querySelector('#ajout_doc_form');
-
-ajout_doc_form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const titre_document = document.querySelector('.titre_document');
-    const description_document = document.querySelector('.description_document');
-    const input_file_ajout_document = document.querySelector('#input-file-ajout-document');
-
-    let isFormValid = true;
-
-    if (titre_document.value.trim() === '') {
-        isFormValid = false;
-        document.querySelector('#span_titre').textContent = 'Le titre est obligatoire.';
-    } else {
-        document.querySelector('#span_titre').textContent = '';
-    }
-
-    if (description_document.value.trim() === '') {
-        isFormValid = false;
-        document.querySelector('#span_description').textContent = 'La description est obligatoire.';
-    } else {
-        document.querySelector('#span_description').textContent = '';
-    }
-
-    if (input_file_ajout_document.value.trim() === '') {
-        isFormValid = false;
-        document.querySelector('#input-file-ajout-document').value = '';
-        document.querySelector('#input-file-ajout-document').setCustomValidity('Le fichier est obligatoire.');
-    } else {
-        const allowedExtensions = /(\.png|\.jpg|\.jpeg|\.mp3|\.mp4)$/i;
-        if (!allowedExtensions.exec(input_file_ajout_document.value)) {
-            isFormValid = false;
-            document.querySelector('#input-file-ajout-document').value = '';
-            document.querySelector('#input-file-ajout-document').setCustomValidity('Le fichier doit être au format : .png, .jpg, .jpeg, .mp3, .mp4.');
-        } else {
-            document.querySelector('#input-file-ajout-document').setCustomValidity('');
-        }
-    }
-
-    if (isFormValid) {
-        ajout_doc_form.submit();
-    }
-});
-</script>

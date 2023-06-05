@@ -15,6 +15,8 @@ const messageErreur = document.querySelector('#message_erreur');
 const regexNomPrenom = /^[a-zA-Z]{2,30}$/;
 const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+if(formulaireContact){
+
 function contactnom(e) {
 
   if (nomUtilisateur.value.length == 0) {
@@ -134,3 +136,4 @@ formulaireContact.addEventListener('submit', function (e) {
   e.preventDefault();
 
 });
+}

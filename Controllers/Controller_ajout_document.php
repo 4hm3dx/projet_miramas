@@ -51,23 +51,50 @@ if (isset($_SESSION['user']['id_roles'])) {
             $date = filter_input(INPUT_POST, 'date_document', FILTER_SANITIZE_STRING);
             $categorie = filter_input(INPUT_POST, 'select_categorie', FILTER_SANITIZE_NUMBER_INT);
             $fichier = $_FILES['input-file-ajout-document'];
-
+        
             // Vérification des champs obligatoires
-            if (!isset($titre) || !isset($description) || !isset($date) || !isset($categorie)) {
+            if (!isset($titre) || !isset($description) || !isset($categorie)) {
                 // Redirection vers la page d'ajout de document avec un message d'erreur
-                $this->render('?controller=ajout_document&action=ajout_document&error=1');
+                $data = ["type_error" => "1", 
+                'select_document' => $m->get_ajout_libelle()];
+                $this->render("ajout_document", $data);
+                return;
+            }
+        
+            // Vérification du mimetype du document
+            $allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg', 'audio/mpeg', 'video/mp4'];
+            $fileMimeType = mime_content_type($fichier['tmp_name']);
+            // var_dump(mime_content_type($fichier['tmp_name']));
+            if (!in_array($fileMimeType, $allowedMimeTypes)) {
+                // Redirection vers la page d'ajout de document avec un message d'erreur
+                $data = ["type_error" => "2", 
+                'select_document' => $m->get_ajout_libelle()];
+                $this->render("ajout_document", $data);
+                return;
+            }
+        
+            // Vérification de la taille du document
+            $maxFileSize = 64 * 1024; // 64 Ko en octets
+            $fileSize = $fichier['size'];
+        
+            if ($fileSize > $maxFileSize) {
+                // Redirection vers la page d'ajout de document avec un message d'erreur
+                $data = ["type_error" => "3", 
+                'select_document' => $m->get_ajout_libelle()];
+                $this->render("ajout_document", $data);
                 return;
             }
 
+
             $data = ["ajout_document_bdd" => $m->get_ajouter_document_bdd($titre, $description, $date, $categorie, $fichier),
-     "document" => $m->get_all_document(),
-             "select_categorie" => $m->get_recherche(),
-     "select_format_fichier" => $m->get_liste_format(),
-     "derniers_documents" => $m->get_derniers_documents(),
-     'select_titre' => $m->get_recherche_titre(),
-     "position" => 1
-    ];
-    $this->render("recherche", $data);
+            "document" => $m->get_all_document(),
+            "select_categorie" => $m->get_recherche(),
+            "select_format_fichier" => $m->get_liste_format(),
+            "derniers_documents" => $m->get_derniers_documents(),
+            'select_titre' => $m->get_recherche_titre(),
+            "position" => 1
+            ];
+            $this->render("recherche", $data);
+            }
     }
-}
 }

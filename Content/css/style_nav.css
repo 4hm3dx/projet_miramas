@@ -1,14 +1,23 @@
-.bg-light {
-	background: transparent !important;
-	position: absolute;
-	width: 100%;
-}
+/* .bg-light { */
+	/* background: transparent !important; */
+	/* position: absolute; */
+	/* width: 100%; */
+/* } */
 
 .navbar-toggler:not(:disabled):not(.disabled) {
 	background-color: white;
 	position: absolute;
 	right: 0;
 	margin-right: 10px;
+}
+
+
+ /* ! probleme de positionnement */
+#menu-hamburger {
+	background-color: white;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 450px) {
@@ -27,4 +36,11 @@
 	.logo {
 		width: 220px;
 	}
+}
+
+#menu {
+	background: black;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
 }

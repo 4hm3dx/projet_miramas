@@ -7,6 +7,8 @@ const erMdp = document.getElementById('span_mdp_connexion');
 erMail.style.color = 'red';
 erMdp.style.color = 'red';
 
+if (formConnexion){
+
 function connexionMail(e) {
     if (inpEmail.value.length == 0) {
         e.preventDefault();
@@ -72,3 +74,4 @@ formConnexion.addEventListener('submit', function (e) {
     e.preventDefault();
 
 });
+}

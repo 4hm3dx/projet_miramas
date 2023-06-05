@@ -129,7 +129,7 @@ class Controller_connexion extends Controller
 			$m = Model::get_model();
 			$m->get_inscription($Nom, $Prenom, $Mail, $hashedPassword);
 
-			$this->render("home");
+			$this->render("connexion");
 
 		} else {
 

@@ -20,7 +20,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <title>Les Amis du Vieux Miramas</title>
     <meta name="description"
         content="Les Amis du Vieux Miramas est une association qui représente un petit village pittoresque et historique situé dans la ville de Miramas, dans la région Provence-Alpes-Côte d'Azur, en France.">
-    <meta name="keywords" content="village, vieux miramas, histoire, patrimoine, évènements">
+    <!-- <meta name="keywords" content="village, vieux miramas, histoire, patrimoine, évènements"> -->
     <meta name="robots" content="index, follow">
     <meta name="author" content="Les Amis du Vieux Miramas">
     <meta charset="UTF-8">
@@ -80,6 +80,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     <link rel="stylesheet" href="Content/css/style_table.css">
     <link rel="stylesheet" href="Content/css/style_presentation.css">
     <link rel="stylesheet" href="Content/css/style_recherche.css">
+    <link rel="stylesheet" href="Content/css/style_nav.css">
     <script>
         if (window.location.href.indexOf('?controller=home&action=home') > -1) {
             var link = document.createElement('link');
@@ -104,8 +105,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
     require_once 'Controllers/Controller.php';
     require_once 'Models/Model.php';
     // die("page index");
-    // require_once 'Utils/header.php';
-    
+    require_once 'Utils/header.php';
+
     //* Tableau des contrôleurs disponibles
     $controllers = ["home", "contact", "connexion", "ajout_document", "newsletters", "partenaires", "presentation", "recherche", "condition", "crud", "utilisateur", "document", "annonce", "message"];
 

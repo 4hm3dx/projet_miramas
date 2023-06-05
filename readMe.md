@@ -5,18 +5,11 @@ Position relative sur sup en scss????????? <!--! OK -->
 <!--^ regler le probleme a la connexion et deconnexion  --> <!--! OK PARTIEL -->
 <!-- ! FONRT END  -->
 cordova 
-crud annonce modifier marche pas 
 
-bloquer l'acces au crud par url <!--! OK -->
-pb affichage de certains image 
-voir pour la date et l'auteur du document <!--! OK -->
+<!-- ! 
+! erreur size undefined 
+erreur pas de vue apres sousmision new doc date ? 
+! cahier de test 
+maquette serve de reel suport ou ne seront pas presenté ? -->
 
-ESSAYER DE SOUMETTRE TOUT LE FORMULAIRE VIDE 
-gestion base de données 
-
-
-regle le responsive page de presentation 
-regler la nav 
-regler les alertes de soumission doc 
-crud 
-voir le seo, ainsi que les balises semantiques sur chaque page
+http://localhost/proto_miramas2/projet_miramas/?controller=utilisateur&action=all_utilisateur_prenom_list
