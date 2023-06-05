@@ -49,7 +49,9 @@
 			</ul>
 		</div>
 	</nav>
-</header><form action="?controller=message&action=all_nom_message_list" method="POST" class="form_crud">
+</header>
+<main>
+<form action="?controller=message&action=all_nom_message_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche d'un message par Nom</legend>
         <select name="nom_message" id="nom_message">
@@ -90,3 +92,4 @@
         </tbody>
     </table>
 <?php endif; ?>
+</main>

@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <section id="texte_image_presentation">
 <div class="image_presentation">
         <img src="Content/img/croix_jubilé.jpg" alt="Image de presentation du site" id="img_presentation"><sub class="legend_img_presentation">Croix jubilé de 1874 | Situé a l'entre du village</sub>
@@ -149,25 +150,6 @@
         Trésorière
     </p>
 </div>
-    <!-- <div class="membre4">
-        <img src="Content/img/membre_equipe.png" alt="Presntation du ...">
-        <p>
-            John Doe <br>
-            President
-        </p>
-</div>
-    <div class="membre5">
-        <img src="Content/img/" alt="Presntation du ...">
-        <p>
-            John Doe <br>
-            President
-        </p>
-</div>
-    <div class="membre6">
-        <img src="Content/img/membre_equipe.png" alt="Presntation du ...">
-        <p>
-            John Doe <br>
-            President
-        </p> -->
 </div>
 </section>
+</main>

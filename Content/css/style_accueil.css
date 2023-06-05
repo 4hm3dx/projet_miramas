@@ -50,7 +50,7 @@
 #prototype_mignature1,
 #prototype_mignature2 {
   width: 25vw;
-  height: auto;
+  height: 50%;
   object-fit: cover;
   text-align: center;
 }

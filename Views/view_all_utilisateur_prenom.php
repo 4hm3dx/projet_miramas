@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=utilisateur&action=all_utilisateur_prenom_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche par Prénom utilisateur</legend>
@@ -91,3 +92,4 @@
 </table>
 <p class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
 <?php endif; ?>
+</main>

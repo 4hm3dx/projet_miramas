@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <section id="section-ajout-document">
         <h2 id="titre-ajout-document">Ajouter des ressources</h2>
         <div id="flex-ajout">
@@ -123,3 +124,4 @@
 
         </div>
     </section>
+    </main>

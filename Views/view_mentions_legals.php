@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <div class="mention">
     <h1>Mentions Légales </h1>
     <p>
@@ -78,3 +79,4 @@
         En application de la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, le visiteur dispose d'un droit d'accès, de rectification et de suppression des données qui le concerne (cf CGU).
     </p>
 </div>
+</main>

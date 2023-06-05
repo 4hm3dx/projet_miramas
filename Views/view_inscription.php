@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=connexion&action=inscription" method="POST" id="formulaire_inscription" name="form1"
     style="padding: 20px;">
     <fieldset>
@@ -91,7 +92,7 @@
                 à l'utilisation du site, la protection des données personnelles, les droits d'auteur et la propriété
                 intellectuelle. J'ai lu attentivement ces conditions et je m'engage à les respecter.
             </p>
-            <p>
+            <!-- <p>
                 <label class="label_checkbox_newsletter" for="souscription_newsletter"></label>
                 <input type="checkbox" name="souscription_newsletter" id="souscription_newsletter">
                 En cochant cette case, j'accepte de recevoir la newsletter de ce site web. Celle-ci contient des
@@ -99,7 +100,7 @@
                 comprends que je peux me désabonner à tout moment en cliquant sur le <a
                     href="?controller=newsletters&action=newsletter">lien de désabonnement</a> présent dans chaque
                 e-mail de la newsletter.
-            </p>
+            </p> -->
         </div>
         <sub class="info_form" style="color:red;">* : Champs Obligatoires</sub>
         <div class="inscription_reset">
@@ -110,3 +111,4 @@
                 id="button_connexion">Connexion</a></span><br>
     </fieldset>
 </form>
+</main>

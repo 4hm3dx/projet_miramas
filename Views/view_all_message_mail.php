@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=message&action=all_message_mail_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche d'un message E-mail</legend>
@@ -94,3 +95,4 @@ if ($position !== 1) : ?>
 <?php 
 endif;
  ?>
+ </main>

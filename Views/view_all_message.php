@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <legend style="text-align:center;">Afficher tout les Message</legend>
 <table class='table'>
   <thead>
@@ -79,3 +80,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+</main>

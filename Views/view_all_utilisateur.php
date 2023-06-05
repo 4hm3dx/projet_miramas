@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <legend style="text-align:center;">Afficher tout les Utilisateurs</legend>
 <table class='table'>
   <thead>
@@ -81,4 +82,4 @@
  
 
 
-  
+</main>

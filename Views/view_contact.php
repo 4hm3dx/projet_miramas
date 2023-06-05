@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=contact&action=message_visiteur" method="POST" class="formulaire_contact">
   <fieldset class="fieldset_formulaire_contact">
     <legend>Nous Contacter</legend>
@@ -75,3 +76,4 @@
     <input type="submit" name="envoyer_formulaire_contact" id="envoyer_formulaire_contact" value="Envoyer le message">
   </fieldset>
 </form>
+</main>

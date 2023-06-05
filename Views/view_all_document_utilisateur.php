@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=document&action=all_utilisateur_document_list" method="POST" class="form_crud">
     <fieldset>
         <legend>Recherche de documents par Utilisateurs</legend>
@@ -99,3 +100,4 @@
     </table>
     <sup class="information_boolean">Affichage des documents : 1 = Affiché, 0 = Masqué</sup>
 <?php endif; ?>
+</main>

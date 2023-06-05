@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <legend style="text-align:center;">Afficher tout les Documents</legend>
 <table class='table'>
   <thead>
@@ -85,3 +86,4 @@
   </tbody>
 </table>
 <sup class="information_boolean">Affichage des documents : 1 = Affiché, 0 = Masqué</sup>
+</main>

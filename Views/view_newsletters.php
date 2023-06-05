@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <h1 id="titrenews">Inscrivez-vous à notre newsletter</h1>
 <p id="paragraphnews"> Vous êtes fasciné par le patrimoine de notre belle ville de Miramas ? Alors notre newsletter est
     faite pour vous !
@@ -66,3 +67,4 @@
         <input type="submit">
     </div>
 </form>
+</main>

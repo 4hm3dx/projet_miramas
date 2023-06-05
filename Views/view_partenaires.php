@@ -50,6 +50,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <div id="presntation_partenaire">
 	<img src="Content/img/gille.png" alt="#" id="partenaire_1">
 	<img src="Content/img/lemiramar.png" alt="#" id="partenaire_2">
@@ -116,3 +117,4 @@
 		</p>
 	</div>
 </section>
+</main>

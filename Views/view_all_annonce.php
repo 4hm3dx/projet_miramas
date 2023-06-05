@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <legend style="text-align:center;">Afficher tout les Annonceurs</legend>
 <table class='table'>
   <thead>
@@ -76,3 +77,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+</main>

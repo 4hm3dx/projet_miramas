@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <section class="formulaire_connexion_utilisateur">
     <form action="?controller=connexion&action=connexion_utilisateur" method="POST" id="formulaire_connexion"
         name="form2">
@@ -76,3 +77,4 @@
         </fieldset>
     </form>
 </section>
+</main>

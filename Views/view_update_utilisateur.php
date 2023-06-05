@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=utilisateur&action=update_utilisateur" method="post" id="addForm">
     <fieldset>
         <legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
@@ -65,6 +66,4 @@
         <p class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
     </fieldset>
 </form>
-
-
-
+</main>

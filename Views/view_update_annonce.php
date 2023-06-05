@@ -50,6 +50,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <form action="?controller=annonce&action=update_annonce" method="post" id="addForm">
 	<fieldset>
 		<legend id="legend"><b>Modifier les informations d'un utilisateur</b></legend>
@@ -67,8 +68,8 @@
 			Visiteur qui a envoyé un message</p>
 	</fieldset>
 </form>
-<?php var_dump($annonce) ?>
 
+</main>
 
 <?php function valid_input($data)
 {

@@ -49,6 +49,7 @@
 		</div>
 	</nav>
 </header>
+<main>
 <section id="test_affichage_fomr_aside">
 <aside class="suggestion_dernier_post">
     <h2 class="titre_dernier_document_ajout">Ajout Récent</h2>
@@ -148,3 +149,4 @@
 </div>
      <?php endforeach; ?>
 <?php endif; ?>
+</main>
