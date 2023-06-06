@@ -137,3 +137,32 @@ formulaireContact.addEventListener('submit', function (e) {
 
 });
 }
+
+
+const contactForm = document.querySelector("#formulaire_contact");
+const contactMessage = document.querySelector("#contact_message");
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs
+    .sendForm("service_abqwplr", "template_gngdx9s", "#formulaire_contact", "nOiKEskodYeiN2fE8")
+    .then(
+      () => {
+        //* Message de succès
+        contactMessage.textContent = "Message envoyé avec succès ✅";
+        //? Suppression du message après 5secondes
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+        //? Suppréssion des inputs
+        contactForm.reset();
+      },
+      () => {
+        //! Message d'erreur
+        contactMessage.textContent = "Erreur lors de l'envoie du message ❌";
+      }
+    );
+}
+
+contactForm.addEventListener("submit", sendEmail);
