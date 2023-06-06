@@ -149,17 +149,5 @@ if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 </div>
 
 <style>
-    .texte_crud_explicatif {
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  width: 80%;
-}
 
-@media screen and (max-width: 768px) {
-  .texte_crud_explicatif {
-    font-size: 14px;
-    width: 95%;
-  }
-}
 </style>
