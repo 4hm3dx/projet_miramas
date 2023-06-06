@@ -149,7 +149,7 @@ function sendEmail(e) {
     .sendForm("service_abqwplr", "template_gngdx9s", "#formulaire_contact", "nOiKEskodYeiN2fE8")
     .then(
       () => {
-        //* Message de succès
+    //     //* Message de succès
         contactMessage.textContent = "Message envoyé avec succès ✅";
         //? Suppression du message après 5secondes
         setTimeout(() => {

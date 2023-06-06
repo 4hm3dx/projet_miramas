@@ -21,7 +21,7 @@ class Controller_contact extends Controller
 			// Validation des données d'entrée
 			$nom = filter_input(INPUT_POST, 'nom_utilisateur', FILTER_SANITIZE_STRING);
 			$prenom = filter_input(INPUT_POST, 'prenom_utilisateur', FILTER_SANITIZE_STRING);
-			$mail = filter_input(INPUT_POST, 'mail_utilisateur', FILTER_VALIDATE_EMAIL);
+			$mail = filter_input(INPUT_POST, 'email_utilisateur', FILTER_VALIDATE_EMAIL);
 			$objet = filter_input(INPUT_POST, 'object_utilisateur', FILTER_SANITIZE_STRING);
 			$message = filter_input(INPUT_POST, 'contenue_message_form_contact', FILTER_SANITIZE_SPECIAL_CHARS);
 
