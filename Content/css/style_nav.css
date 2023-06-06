@@ -39,8 +39,8 @@
 }
 
 #menu {
-	background: black;
-    padding: 20px;
+	background: hsla(0, 0%, 0%, 0.025);
+    padding: 50px;
     font-size: 20px;
     text-transform: uppercase;
 }

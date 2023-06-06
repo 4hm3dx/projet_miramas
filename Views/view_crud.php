@@ -1,7 +1,7 @@
 <header>
     <!-- Barre de navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" style=" width: 100%;">
-	        <a class="navbar-brand" href="?controller=home&action=home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="  width: 100%;">
+        <a class="navbar-brand" href="?controller=home&action=home">
             <img src="Content/img/Logo_Amis_vieux_Miramas.jpg" alt="Logo" class="logo" id="logo_asso" />
             <!-- <span class="navbar-title">Les amis du vieux Miramas</span> -->
         </a>
@@ -117,46 +117,49 @@ if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 	</div>
 <?php } ?>
 
-<main>
-<form action="?controller=utilisateur&action=all_utilisateur_nom_list" method="POST" class="form_crud">
-    <fieldset>
-        <legend>Recherche par Nom d'utilisateur</legend>
-        <select name="nom_utilisateur" id="nom_utilisateur">
-            <?php foreach ($utilisateur_nom as $un) : ?>
-                <option value="<?= $un->nom ?>"><?= $un->nom ?></option>
-            <?php endforeach ?>
-        </select>
-        <input type="submit" value="Rechercher" name="utilisateur_nom" id="utilisateur_nom">
-    </fieldset>
-</form>
+<!-- <img src="../Content/img/img_crud.jpg" class="img_crud" alt=""> -->
+<div class="texte_crud_explicatif">
+<h2>Recherche dans la base de données</h2>
 
-<?php if ($position !== 1) : ?>
-    <table class='table'>
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>E-mail</th>
-                <th>Roles <sup>*</sup></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($utilisateur_nom_list as $unl) : ?>
-                <tr>
-                    <td class="td"> <?= $unl->nom ?> </td>
-                    <td class="td"> <?= $unl->prenom ?> </td>
-                    <td class="td"> <?= $unl->mail ?> </td>
-                    <td class="td"> <?= $unl->id_roles ?> </td>
-                    <td class="td"><a href="?controller=utilisateur&action=update_utilisateur&id=<?= $unl->id ?>"><i class="fa-solid fa-pen"></i></a></td>
-                    <td class="trash td">
-                    <a href="?controller=utilisateur&action=delete_utilisateur&id=<?= $unl->id ?>" style="color: red;" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')">
-                    <i class="fa fa-trash"></i>
-                    </a></tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <p class="information_boolean">Roles utilisateurs : 1 => Administrateur | 2 => Annonceur | 3 => Abonné | 4 => Visiteur qui a envoyé un message</p>
-<?php endif; ?>
-</main>
+<p>En tant qu'administrateur, vous avez la possibilité d'effectuer des recherches dans la base de données pour trouver des 
+    informations spécifiques sur les utilisateurs, les annonceurs, les documents et les messages envoyés par les 
+    utilisateurs. 
+    Cette fonctionnalité de recherche vous permet de filtrer et de trouver rapidement les données dont vous avez besoin.</p>
+
+<h3>Recherche des utilisateurs</h3>
+<p>Vous pouvez rechercher des utilisateurs en fonction de leur nom, prénom, adresse e-mail et tout les utilisateur. 
+    Il vous suffit de saisir les informations pertinentes dans le champ de recherche approprié et de cliquer sur le bouton "Rechercher". Les résultats de la recherche afficheront les utilisateurs correspondants à vos critères de recherche.</p>
+ 
+<h3>Recherche des annonceurs</h3>
+<p>Si vous souhaitez trouver des annonceurs spécifiques, vous pouvez effectuer une recherche de tout les utilisateur.
+     Utilisez le champ de recherche dédié aux annonceurs, saisissez les détails souhaités, puis cliquez sur "Rechercher" pour obtenir les résultats correspondants.</p>
+
+<h3>Recherche des documents</h3>
+<p>La recherche de documents vous permet de trouver des fichiers spécifiques dans la base de données.
+     Vous pouvez rechercher des documents en fonction de leur titre, de le format de fichier, par utilisateur ayant publié le ou les documents.
+     Il vous suffit d'entrer les détails souhaités dans le champ de recherche des documents et de cliquer sur "Rechercher" 
+     pour afficher les résultats correspondants.</p>
+
+<h3>Recherche des messages des utilisateurs</h3>
+<p>Si vous souhaitez rechercher des messages envoyés par les utilisateurs, vous pouvez utiliser la fonction de recherche dédiée. 
+    Vous pouvez rechercher des messages en fonction de leur contenu, du nom de l'expéditeur, et de son mail.
+    . Saisissez les informations appropriées dans le champ de recherche des messages et cliquez sur "Rechercher" pour afficher les résultats correspondants.</p>
+
+<p>La fonction de recherche dans la base de données vous permet de trouver rapidement des informations spécifiques et d'accéder aux données pertinentes pour gérer votre application de manière efficace. Utilisez ces fonctionnalités de recherche pour optimiser votre travail d'administration.</p>
+</div>
+
+<style>
+    .texte_crud_explicatif {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .texte_crud_explicatif {
+    font-size: 14px;
+    width: 95%;
+  }
+}
+</style>

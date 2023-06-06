@@ -11,7 +11,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 			Consultation de données enregistré dans la base de données
 		</div>
 	</div> -->
-	<ul class="nav justify-content-center nav-pills" id="menu">
+	<!-- <ul class="nav justify-content-center nav-pills" id="menu">
 		<li class="nav-item dropdown">
 			<a class="nav-link" href="?controller=home&action=home">Accueil</a>
 		</li>
@@ -62,5 +62,5 @@ if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) {
 			</div>
 		</li>
 	</ul>
-	</div>
+	</div> -->
 <?php } ?>

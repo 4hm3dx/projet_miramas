@@ -29,6 +29,13 @@
                 <?php }
                 ?>
                 <?php
+				if (isset($_SESSION['user']) && $_SESSION['user']['id_roles'] == 2) { ?>
+					<li class="nav-item">
+						<a class="nav-link" href="?controller=crud&action=crud">Dashboard</a>
+					</li>
+				<?php }
+				?>
+                <?php
                 if (!isset($_SESSION['user']['id_roles'])) {
 
                     ?>

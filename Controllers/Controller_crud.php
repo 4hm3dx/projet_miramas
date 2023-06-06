@@ -16,7 +16,7 @@ class Controller_crud extends Controller
 	public function action_all_utilisateur()
 	{
 		$m = Model::get_model();
-		$data = ["utilisateur" => $m->get_all_utilisateur()];
+		$data = ["utilisateur" => $m->get_all_utilisateur_crud()];
 		$this->render("crud", $data);
 	}
 }

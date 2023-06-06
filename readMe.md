@@ -7,9 +7,6 @@ Position relative sur sup en scss????????? <!--! OK -->
 cordova 
 
 <!-- ! 
-! erreur size undefined 
-erreur pas de vue apres sousmision new doc date ? 
-! cahier de test 
-maquette serve de reel suport ou ne seront pas presenté ? -->
+rechargement nav crud co deco  -->
 
 http://localhost/proto_miramas2/projet_miramas/?controller=utilisateur&action=all_utilisateur_prenom_list
