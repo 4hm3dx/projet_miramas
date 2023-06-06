@@ -142,6 +142,21 @@ formulaireContact.addEventListener('submit', function (e) {
 const contactForm = document.querySelector("#formulaire_contact");
 const contactMessage = document.querySelector("#contact_message");
 
+const storeContact = async (form) => {
+  const formdata = new FormData(form)
+const response = await fetch("./Controllers/Controller_store_contact.php", {
+  method: "POST",
+  // headers: {
+  //   "Content-Type": "application/json"
+  // },
+  body: formdata
+})
+
+const data = await response.json()
+console.log(data)
+  
+}
+
 function sendEmail(e) {
   e.preventDefault();
 
@@ -149,6 +164,7 @@ function sendEmail(e) {
     .sendForm("service_abqwplr", "template_gngdx9s", "#formulaire_contact", "nOiKEskodYeiN2fE8")
     .then(
       () => {
+        storeContact(e.target)
     //     //* Message de succès
         contactMessage.textContent = "Message envoyé avec succès ✅";
         //? Suppression du message après 5secondes
@@ -164,5 +180,7 @@ function sendEmail(e) {
       }
     );
 }
+
+
 
 contactForm.addEventListener("submit", sendEmail);
